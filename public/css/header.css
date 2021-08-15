@@ -1,0 +1,131 @@
+/* variables styles */
+:root {
+    --primary01: #6CBBB3;
+    --primary02: #8FE3D9;
+    --primary03: #D3FFF7;
+    --primary04: #F0FFFC;
+
+    --secondary02: #EE7674;
+    --secondary04: #FFEBEB;
+
+    --white: #F9F9F9;
+
+    --black01: #2B2E2D;
+    --black02: #454746;
+    --black03: #7C7C7C;
+    --black04: #AEAEAE;
+
+    --blue01: #17485B;
+}
+
+/* ------------------------- navbar ------------------------- */
+._navbar .logo_nav {
+    background-color: var(--primary04);
+    padding: 10px 0;
+}
+
+._navbar .hidden_logo {
+    display: none;
+}
+
+._navbar .nav_social_icon {
+    display: inline;
+    margin-right: 6px;
+}
+
+._navbar .nav_social_icons {
+    margin-top: 20px;
+}
+
+._navbar .nav_social_icon .fab {
+    background-color: var(--primary01);
+    font-size: 1em;
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    color: #FFF;
+    color: rgba(255, 255, 255, 0.8);
+    -webkit-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    -ms-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+    border-radius: 50%;
+}
+
+._navbar .nav_social_icon .fab:hover,
+._navbar .nav_social_icon .fab:active {
+    -webkit-transform: scale(1.1);
+    -moz-transform: scale(1.1);
+    -ms-transform: scale(1.1);
+    -o-transform: scale(1.1);
+    transform: scale(1.1);
+}
+
+.second_nav {
+    background-color: var(--primary02);
+    padding: 0;
+}
+
+.second_nav .navbar .navbar-toggler {
+    background-color: rgba(249, 249, 249, 0.4);
+}
+
+.second_nav .active {
+    background-color: var(--secondary04);
+}
+
+.second_nav .nav-item {
+    padding: 2px 0;
+    width: 130px;
+}
+
+.second_nav .nav-item:hover {
+    background-color: rgba(255, 235, 235, 0.5);
+}
+
+.second_nav .nav-link {
+    color: var(--black02) !important;
+}
+
+.second_nav .fa_hid {
+    display: block;
+    margin-bottom: 5px;
+}
+
+/* ------------------------- media query ------------------------- */
+@media (max-width: 1199px) {
+
+    .second_nav .nav-item {
+        width: 120px;
+    }
+
+}
+
+@media (max-width: 991px) {
+
+    ._navbar .logo_nav {
+        display: none;
+    }
+
+    .second_nav {
+        background-color: var(--primary04);
+        padding: 12px;
+    }
+
+    .second_nav .hidden_logo {
+        display: block;
+        margin: 5px;
+    }
+
+    .second_nav .nav-item {
+        padding: 6px 14px;
+        width: 144px;
+    }
+
+    .second_nav .fa_hid {
+        display: none;
+    }
+
+}

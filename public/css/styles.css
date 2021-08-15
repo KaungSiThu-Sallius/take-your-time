@@ -1,0 +1,1620 @@
+/* variables styles */
+:root {
+    --primary01: #6CBBB3;
+    --primary02: #8FE3D9;
+    --primary03: #D3FFF7;
+    --primary04: #F0FFFC;
+
+    --secondary02: #EE7674;
+    --secondary04: #FFEBEB;
+
+    --white: #F9F9F9;
+
+    --black01: #2B2E2D;
+    --black02: #454746;
+    --black03: #7C7C7C;
+    --black04: #AEAEAE;
+
+    --blue01: #17485B;
+    --blue04: #A3E4FF;
+}
+
+body {
+    background-color: var(--white);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+    font-family: "PT Serif", sans-serif;
+    font-weight: 600;
+}
+
+p,
+a {
+    font-family: "Open Sans", serif;
+}
+
+.button {
+    background-color: var(--secondary02) !important;
+    border-radius: 6px;
+    color: var(--white);
+    font-weight: 600;
+}
+
+.button:hover {
+    color: var(--white);
+}
+
+.button a {
+    color: var(--white);
+}
+
+/* ------------------------- main ------------------------- */
+.main {
+    background-image: url('../images/main_bg.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 85px 0;
+}
+
+.main .main_label {
+    margin-top: 35px;
+}
+
+.main .main_label h1,
+.main .main_label h3 {
+    color: var(--blue01);
+    margin-bottom: 15px;
+}
+
+.main .main_label h3 {
+    font-weight: 500;
+    margin-bottom: 40px;
+}
+
+.main .selectize-dropdown,
+.main .selectize-input {
+    line-height: 30px !important;
+}
+
+.main .main_label .btn {
+    margin: 14px 0;
+}
+
+.main select {
+    height: 45px;
+    margin-bottom: 15px;
+}
+
+/* ------------------------- featured_oppo ------------------------- */
+.featured_oppo {
+    padding: 65px 0;
+}
+
+.featured_oppo .featured_heading h2 {
+    color: var(--blue01);
+    margin-bottom: 45px;
+}
+
+.featured_oppo .featured_heading span {
+    position: relative;
+}
+
+.featured_oppo .featured_heading span::before,
+.featured_oppo .featured_heading span::after {
+    content: "";
+    position: absolute;
+    height: 1px;
+    width: 250px;
+    border-radius: 50%;
+    border-top: 3px solid var(--blue01);
+
+}
+
+.featured_oppo .featured_heading span::before {
+    left: -267px;
+    top: 21px;
+}
+
+.featured_oppo .featured_heading span::after {
+    transform: rotate(180deg);
+    right: -267px;
+    top: 22px;
+
+}
+
+.featured_oppo .featured_card {
+    background-color: var(--primary04);
+    height: 320px;
+
+}
+
+.featured_oppo .featured_card .card-body h5 {
+    color: var(--blue01);
+    margin: 0;
+}
+
+.featured_oppo .featured_card .card_img {
+    border-bottom: 5px var(--primary02) solid;
+    height: 150px;
+}
+
+.featured_oppo .featured_card .card_img img {
+    height: 150px;
+}
+
+.featured_oppo .featured_card_info {
+    background-color: var(--primary03);
+    padding: 10px 20px 15px;
+    border-radius: .25rem;
+}
+
+.featured_oppo .featured_card_info .badge {
+    font-size: 12px;
+    padding: 6px;
+    font-weight: 500;
+}
+
+.featured_oppo .featured_card_info .badge-light {
+    background-color: var(--secondary04) !important;
+    color: var(--black02) !important;
+}
+
+/* ------------------------- latest_scholar ------------------------- */
+.latest_scholar {
+    background-color: var(--primary04);
+    padding: 65px 0 50px;
+}
+
+.latest_scholar .explore_btn,
+.latest_courses .explore_btn {
+    margin-top: 30px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+
+.latest_scholar h2,
+.latest_oppo h2,
+.latest_courses h2 {
+    padding-bottom: 45px;
+    color: var(--blue01);
+}
+
+.latest_scholar h2 span,
+.latest_oppo h2 span,
+.latest_courses h2 span {
+    position: relative;
+    z-index: 100;
+}
+
+.latest_scholar h2 span::after,
+.latest_oppo h2 span::after,
+.latest_courses h2 span::after {
+    content: url("../images/heading_brush_bg.svg");
+    position: absolute;
+    left: -44px;
+    top: -8px;
+    z-index: -1;
+}
+
+
+.latest_scholar .img_holder {
+    position: relative;
+}
+
+.latest_scholar .img_holder span {
+    position: absolute;
+    background-color: var(--primary03);
+    padding: 8px;
+    top: 160px;
+    z-index: 200;
+    left: 0px;
+    font-weight: 500;
+    border-top-right-radius: 15px;
+    border-bottom-left-radius: 2px;
+    font-weight: 00;
+    color: var(--black01);
+}
+
+.latest_scholar .scholar_cards img {
+    height: 200px;
+    border-bottom: 5px solid var(--primary03);
+}
+
+.latest_scholar .title {
+    color: var(--blue01);
+}
+
+.latest_scholar .latest_scholar_detail p {
+    margin: 0;
+}
+
+.latest_scholar .latest_scholar_detail {
+    background-color: var(--primary03);
+    padding: 10px 0;
+    color: var(--black01);
+    font-weight: 600;
+}
+
+.latest_scholar .card-body {
+    height: 123px;
+}
+
+.latest_scholar .scholar_cards .card,
+.latest_courses .card {
+    position: relative;
+}
+
+
+.latest_scholar .scholar_cards .card:hover,
+.latest_courses .card:hover {
+    top: -8px;
+}
+
+/* ------------------------- latest_oppo ------------------------- */
+.latest_oppo {
+    padding: 65px 0;
+}
+
+.latest_oppo .oppo_card_heading {
+    border-bottom: 3px solid var(--primary02);
+}
+
+.latest_oppo .parallelogram {
+    margin-left: 5px;
+    padding: 3px 13px 5px 10px;
+    height: 32px;
+    transform: skew(-20deg);
+    background: var(--primary02);
+    width: 150px;
+}
+
+.latest_oppo .parallelogram .heading_text {
+    color: var(--black02);
+    font-weight: 500;
+    font-size: 20px;
+    transform: skew(20deg);
+    text-align: center;
+}
+
+.latest_oppo .latest_oppo_img {
+    margin: 0 auto;
+    text-align: center;
+
+}
+
+.latest_oppo .latest_oppo_card img {
+    width: 160px;
+    height: 91px;
+}
+
+.latest_oppo .latest_oppo_label h5 {
+    color: var(--blue01);
+}
+
+.latest_oppo .latest_oppo_label p {
+    margin: 0;
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.latest_oppo .latest_oppo_label h5 {
+    transition: all .5s ease-in-out;
+}
+
+.latest_oppo .latest_oppo_label:hover h5 {
+    font-size: 1.28rem;
+}
+
+/* ------------------------- latest_courses ------------------------- */
+.latest_courses {
+    background-color: var(--primary04);
+    padding: 65px 0 50px;
+}
+
+
+.latest_courses .courses_footer,
+.course_contents .courses_footer {
+    height: 46px;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    overflow: hidden;
+}
+
+.latest_courses .courses_footer .left_shape,
+.course_contents .courses_footer .left_shape {
+    background-color: rgba(238, 118, 116, 0.5);
+    transform: rotate(4deg);
+    outline: 1px solid transparent;
+    backface-visibility: hidden;
+}
+
+.latest_courses .courses_footer .right_shape,
+.course_contents .courses_footer .right_shape {
+    background-color: var(--secondary02);
+    transform: rotate(-4deg);
+    outline: 1px solid transparent;
+    backface-visibility: hidden;
+}
+
+.latest_courses .courses_footer .footer_shape,
+.course_contents .courses_footer .footer_shape {
+    height: 50px;
+    width: 180%;
+    left: -40%;
+    bottom: -35%;
+    position: absolute;
+}
+
+.latest_courses .courses_footer .course_info,
+.course_contents .courses_footer .course_info {
+    position: absolute;
+    left: 159px;
+    bottom: 9px;
+    font-size: 12px;
+    font-weight: 700;
+    color: white;
+}
+
+.latest_courses img,
+.course_contents img {
+    height: 172px;
+}
+
+.latest_courses .title h5,
+.course_contents .title h5 {
+    color: var(--blue01);
+
+}
+
+.latest_courses .card-body,
+.course_contents .card-body {
+    padding-bottom: 50px;
+    height: 154px;
+
+}
+
+/* ------------------------- preview ------------------------- */
+.preview {
+    background-image: url(../images/preview_img.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 189px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.preview .previewText {
+    color: var(--blue01);
+    margin: 0;
+}
+
+.preview .previewLink {
+    color: var(--black03);
+}
+
+.preview .breadcrumb {
+    background-color: transparent;
+    margin: 0;
+}
+
+.preview .activeLink {
+    color: var(--black02) !important;
+    font-weight: 600;
+}
+
+/* ------------------------- intro ------------------------- */
+.intro {
+    background-color: var(--primary04);
+    padding: 65px 0;
+}
+
+.intro .introText h3 {
+    color: var(--blue01);
+    margin-bottom: 20px;
+    line-height: 42px;
+}
+
+.intro .introText p {
+    color: var(--black02);
+    line-height: 2rem;
+    text-align: justify;
+}
+
+/* ------------------------- what_we_do ------------------------- */
+.what_we_do {
+    padding: 65px 0;
+}
+
+.what_we_do .what_we_do_task:hover .what_we_do_card {
+    border-left: 1px solid var(--primary01);
+    border-right: 1px solid var(--primary01);
+    border-bottom: 1px solid var(--primary01);
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+}
+
+.what_we_do .what_we_do_task:hover .what_we_do_card fieldset {
+    border-top-color: var(--primary01);
+}
+
+.what_we_do .what_we_do_task:hover .what_we_do_card .what_we_do_icon {
+    background-color: var(--primary01);
+    color: var(--black02);
+}
+
+.what_we_do h3 {
+    color: var(--blue01);
+    margin-bottom: 35px;
+    position: relative;
+}
+
+.what_we_do h3::before,
+.team .team_header::before {
+    content: "";
+    height: 1px;
+    width: 110px;
+    background-color: var(--primary01);
+    position: absolute;
+    right: 501px;
+    bottom: -15px;
+}
+
+.what_we_do h3::after,
+.team .team_header::after {
+    content: "";
+    height: 3px;
+    width: 110px;
+    background-color: var(--primary01);
+    position: absolute;
+    right: 501px;
+    bottom: -12px;
+}
+
+.team .team_header::before,
+.team .team_header::after {
+    right: 512px;
+}
+
+.what_we_do .what_we_do_card {
+    border-left: 1px solid var(--black04);
+    border-right: 1px solid var(--black04);
+    border-bottom: 1px solid var(--black04);
+}
+
+.what_we_do .what_we_do_card fieldset {
+    border: 1px solid transparent;
+    border-top-color: var(--black04);
+    box-sizing: border-box;
+    grid-area: 1 / 1;
+    padding: 0 117px;
+    width: 100%;
+}
+
+.what_we_do legend {
+    margin: auto;
+    padding: 0 4px;
+}
+
+.what_we_do .what_we_do_card .what_we_do_icon {
+    position: absolute;
+    top: -30px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 70px;
+    height: 70px;
+    background-color: var(--black05);
+    color: var(--black04);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 4px;
+}
+
+.what_we_do .what_we_do_info {
+    padding: 60px 15px 25px 15px;
+}
+
+.what_we_do .what_we_do_info h4 {
+    text-align: center;
+    margin-top: 10px;
+    color: var(--black02);
+}
+
+.what_we_do .what_we_do_info p {
+    color: var(--black02);
+}
+
+.what_we_do .what_we_do_info .divider {
+    display: flex;
+    justify-content: center;
+}
+
+.what_we_do_info .divider .line {
+    border-bottom: 2px solid var(--black04);
+    opacity: 0.2;
+    width: 63px;
+    margin-left: 3px;
+}
+
+.what_we_do .what_we_do_info .divider .circle {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    margin-bottom: -3.5px;
+    margin-left: 3px;
+    background-color: var(--black04);
+    opacity: 0.2;
+}
+
+.what_we_do .what_we_do_info .what_we_do_text {
+    text-align: center;
+    margin-top: 30px;
+}
+
+/* ------------------------- founder ------------------------- */
+.founder {
+    background-image: url('../images/founder_bg.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding: 65px 0;
+}
+
+.founder .founderImg {
+    width: 100%;
+    border: 1px solid var(--blue01);
+    border-radius: 4px;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+.founder .founderText {
+    color: var(--blue01);
+}
+
+.founder .founderText h3 {
+    margin-bottom: 1rem;
+}
+
+.founder .founderText p {
+    color: var(--black02);
+    line-height: 1.7rem;
+    text-align: justify;
+}
+
+.founder .founderText .founderIntro {
+    margin-bottom: 1rem;
+}
+
+/* ------------------------- team ------------------------- */
+.team {
+    padding: 65px 0;
+}
+
+.team h3 {
+    margin-bottom: 0;
+}
+
+.team .teamImg {
+    background-size: cover;
+    object-fit: cover;
+    width: 100%;
+    height: 244px;
+    position: relative;
+}
+
+.team .teamMember:hover {
+    transform: translateY(-20px);
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.4);
+}
+
+.team .teamInfo {
+    background-color: var(--primary01);
+    position: relative;
+}
+
+.team .teamInfo .teamInfoIcon {
+    position: absolute;
+    right: 14px;
+    top: -30%;
+}
+
+.team .teamInfo .teamInfoText {
+    padding: 25px 15px;
+}
+
+.team .teamInfo .teamInfoText h4 {
+    color: var(--white);
+}
+
+.team .teamInfo .teamInfoText p {
+    color: var(--blue01);
+    font-size: 14px;
+    font-weight: bolder;
+}
+
+
+/* ------------------------- keepInTouch ------------------------- */
+.keepInTouch {
+    padding: 65px 0;
+    background-image: url(../images/keep_in_touch_bg.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.keepInTouch h3 {
+    color: var(--blue01);
+}
+
+/* ------------------------- preview ------------------------- */
+.preview {
+    background-image: url(../images/preview_img.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 189px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.preview .previewText {
+    color: var(--blue01);
+    margin: 0;
+}
+
+.preview .previewLink {
+    color: var(--black03);
+}
+
+.preview .breadcrumb {
+    background-color: transparent;
+    margin: 0;
+}
+
+/* ------------------------- filter_nav ------------------------- */
+.filter_nav .filter_btns_group_section .container-fluid,
+.filter_nav .others_filter_btns_group_section .container-fluid,
+.filter_nav .jobs_filter_btns_group_section .container-fluid,
+.filter_nav .container-fluid,
+.filter_nav .course_filter_btns_group_section .container-fluid {
+    margin-top: 20px;
+    text-align: center;
+}
+
+
+.filter_btns_group>a.filter_btn_link>button.btn.filter_btn,
+.filter_btns_group>a.filter_btn_link>button.btn:hover {
+    font-size: 1rem;
+    background-color: var(--secondary02);
+    border-radius: 26px;
+    padding: 15px 18px;
+    color: var(--white);
+    box-shadow: none;
+    text-transform: none;
+}
+
+.filter_btns_group>a.filter_btn_link>button.btn {
+    box-shadow: none;
+    font-size: 1rem;
+    background: var(--white);
+    border: 1px solid var(--secondary02);
+    box-sizing: border-box;
+    border-radius: 26px;
+    line-height: 22px;
+    padding: 15px 18px;
+    color: var(--secondary02);
+    margin: 0px 10px;
+    cursor: pointer;
+    text-transform: none;
+}
+
+/* ------------------------- scholar_contents ------------------------- */
+.scholar_contents,
+.grant_contents,
+.conference_contents,
+.job_contents,
+.others_contents,
+.course_contents {
+    padding: 60px 0 15px;
+}
+
+.scholar_contents .card,
+.grant_contents .card,
+.conference_contents .card,
+.job_contents .card,
+.others_contents .card {
+    background: var(--primary04);
+    border: 0.3px var(--black02);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 20px 20px 20px 20px;
+    width: 330px;
+    height: 410px;
+    margin: 0px auto 65px;
+}
+
+.scholar_contents .card:hover,
+.grant_contents .card:hover,
+.conference_contents .card:hover,
+.job_contents .card:hover,
+.others_contents .card:hover,
+.course_contents .card:hover {
+    transform: translateY(-5px);
+    box-shadow: 2px 2px 26px 0px rgba(0, 0, 0, 0.3);
+}
+
+.scholar_contents .card-header,
+.grant_contents .card-header,
+.conference_contents .card-header,
+.job_contents .card-header,
+.others_contents .card-header {
+    line-height: 19px;
+    position: absolute;
+    width: 160px;
+    height: 40px;
+    bottom: 211px;
+    text-align: center;
+    background: #a3e4ff;
+    opacity: 0.85;
+    border-radius: 0px 12px 0px 0px;
+    color: var(--black01);
+    font-weight: 600;
+    font-size: 15px;
+}
+
+.scholar_contents .card-img-top,
+.grant_contents .card-img-top,
+.conference_contents .card-img-top,
+.job_contents .card-img-top,
+.others_contents .card-img-top {
+    border-radius: 20px 20px 0px 0px;
+    height: 198px;
+}
+
+.scholar_contents .card-body .card-text,
+.grant_contents .card-body .card-text,
+.conference_contents .card-body .card-text,
+.job_contents .card-body .card-text,
+.others_contents .card-body .card-text {
+    text-decoration: none;
+    font-family: "PT Serif", sans-serif;
+    font-size: 18px;
+    line-height: 23px;
+    padding: 10px;
+    align-items: center;
+    color: var(--blue01);
+}
+
+.scholar_contents .card-footer:last-child,
+.grant_contents .card-footer:last-child,
+.conference_contents .card-footer:last-child,
+.job_contents .card-footer:last-child,
+.others_contents .card-footer:last-child {
+    padding-left: 30px;
+    background: var(--primary03);
+    border-style: hidden;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    color: var(--black01);
+}
+
+/* ------------------------- brief_info ------------------------- */
+
+.detail_hr {
+    width: 350px;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+}
+
+.detail_preview h2 {
+    font-size: 26px;
+    text-align: center;
+}
+
+.brief_info {
+    margin: 55px 0;
+
+}
+
+.brief_info .img img {
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    border: 1px solid var(--primary02);
+    border-radius: 10px;
+    width: 320px;
+    height: 200px;
+    margin-top: 22px;
+}
+
+.brief_info .info {
+    border-left: 10px solid var(--primary02);
+    padding: 10px 0 10px 25px;
+}
+
+.brief_info .info p {
+    margin-bottom: 15px;
+    color: var(--black02);
+}
+
+.details,
+.criteria,
+.benefit,
+.application,
+.specification {
+    padding: 20px 0;
+}
+
+.details h3,
+.criteria h3,
+.benefit h3,
+.application h3,
+.specificatio h3 {
+    color: var(--black01);
+    text-decoration: underline;
+    text-decoration-color: var(--primary01);
+    text-decoration-thickness: 1px;
+    text-underline-offset: 4px;
+    margin-bottom: 30px;
+}
+
+.details h3 span,
+.criteria h3 span,
+.benefit h3 span,
+.application h3 span,
+.specificatio h3 span {
+    border-bottom: 2px solid var(--primary01);
+}
+
+.details .detail_contents p {
+    color: var(--black02);
+    line-height: 29px;
+}
+
+
+.criteria h3,
+.application h3 {
+    text-underline-offset: 9px;
+}
+
+.criteria h3 span,
+.application h3 span {
+    padding-bottom: 5px;
+}
+
+.criteria .criteria_intro {
+    font-weight: 600;
+    font-size: 18px;
+}
+
+.criteria ul li,
+.benefit ul li,
+.application ul li {
+    margin-bottom: 5px;
+}
+
+.detail_btns {
+    margin-bottom: 55px;
+}
+
+
+/* ------------------------- media query ------------------------- */
+@media (max-width: 1199px) {
+
+    .main .main_label {
+        margin-top: 18px;
+    }
+
+    .main .main_img {
+        width: 350px;
+    }
+
+    .latest_courses .card-body {
+        height: 191px;
+    }
+
+    .latest_courses .courses_footer .course_info {
+        left: 116px;
+    }
+
+    .intro .introImg {
+        width: 400px !important;
+    }
+
+    .intro .introText h3 {
+        margin-bottom: 18px;
+        line-height: 36px;
+    }
+
+    .intro .introText p {
+        font-size: 1rem;
+        line-height: 1.7rem;
+    }
+
+    .what_we_do .what_we_do_card fieldset {
+        border: 1px solid transparent;
+        border-top-color: var(--black04);
+        box-sizing: border-box;
+        grid-area: 1 / 1;
+        padding: 0 100px;
+        width: 100%;
+    }
+
+    .what_we_do h3::after {
+        right: 413px;
+    }
+
+    .what_we_do h3::before {
+        right: 413px;
+    }
+
+    .team .teamImg {
+        height: 200px;
+    }
+
+    .team .teamInfo .teamInfoText {
+        padding: 20px 10px;
+    }
+
+    .team .teamInfo .teamInfoText h4 {
+        margin-top: 8px;
+        margin-bottom: 4px;
+    }
+
+    .team .team_header::before,
+    .team .team_header::after {
+        right: 423px;
+    }
+
+    .team .teamInfo .teamInfoIcon {
+        width: 67px;
+        right: 9px;
+    }
+
+    .scholarship_header,
+    .grant_header,
+    .conference_header,
+    .job_header,
+    .others_header,
+    .course_header {
+        position: absolute;
+        left: 50%;
+        top: 20%;
+        transform: translate(-50%, -90%);
+    }
+
+    .course_contents .card {
+        width: 295px;
+        margin: 0 auto 55px !important;
+    }
+
+    .course_contents .card-body {
+        height: 160px;
+    }
+
+    .course_contents .courses_footer .course_info {
+        left: 193px;
+    }
+
+}
+
+@media (max-width: 991px) {
+
+    .main {
+        text-align: center;
+        padding: 50px 0 60px;
+    }
+
+    .main .main_label .btn {
+        margin: 18px 0;
+    }
+
+    .main .main_img {
+        margin-top: 35px;
+    }
+
+    .featured_oppo {
+        padding: 65px 0 40px;
+    }
+
+
+    .featured_oppo .featured_heading span::before,
+    .featured_oppo .featured_heading span::after {
+        width: 150px;
+    }
+
+    .featured_oppo .featured_heading span::before {
+        left: -170px;
+    }
+
+    .featured_oppo .featured_heading span::after {
+        right: -170px;
+    }
+
+    .featured_oppo .featured_card {
+        margin-bottom: 45px !important;
+        width: 255px;
+        margin: 0 auto;
+    }
+
+    .latest_scholar h2,
+    .latest_oppo h2,
+    .latest_courses h2 {
+        font-size: 28px;
+    }
+
+    .latest_scholar h2 span::after,
+    .latest_oppo h2 span::after {
+        content: url(../images/heading_brush_bg_md.svg);
+        top: -4px;
+    }
+
+    .latest_scholar .card-body {
+        height: 190px;
+    }
+
+    .latest_oppo .latest_oppo_img {
+        margin-bottom: 25px;
+    }
+
+    .latest_oppo .latest_oppo_card img {
+        width: 246px;
+        height: 140px;
+    }
+
+    .latest_courses .card {
+        width: 295px;
+        margin: 0 auto 35px !important;
+    }
+
+    .latest_courses .card-body,
+    .course_contents .card-body {
+        height: 161px;
+    }
+
+    .latest_courses .explore_btn {
+        margin-top: 10px;
+    }
+
+    .latest_courses h2 span::after {
+        content: url(../images/heading_brush_bg_md.svg);
+        top: -6px;
+        left: -26px;
+    }
+
+    .latest_courses .courses_footer .course_info,
+    .course_contents .courses_footer .course_info {
+        left: 196px;
+    }
+
+    .intro {
+        padding: 35px 0;
+    }
+
+
+    .intro .introImg {
+        width: 300px !important;
+    }
+
+    .intro .introText h3 {
+        margin-bottom: 14px;
+    }
+
+    .intro .introText p {
+        font-size: 15px;
+        line-height: 1.7rem;
+    }
+
+    .what_we_do .what_we_do_card fieldset {
+        border: 1px solid transparent;
+        border-top-color: var(--black04);
+        box-sizing: border-box;
+        grid-area: 1 / 1;
+        padding: 0 65px;
+        width: 100%;
+    }
+
+    .what_we_do h3::after {
+        right: 293px;
+    }
+
+    .what_we_do h3::before {
+        right: 293px;
+    }
+
+    .what_we_do .what_we_do_card .what_we_do_icon {
+        position: absolute;
+        top: -24px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 50px;
+        height: 50px;
+        background-color: var(--black05);
+        color: var(--black04);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 4px;
+    }
+
+    .what_we_do .what_we_do_info {
+        padding: 40px 15px 10px 15px;
+    }
+
+    .what_we_do .what_we_do_info h4 {
+        text-align: center;
+        margin-top: 15px;
+    }
+
+    .what_we_do .what_we_do_info .divider .line {
+        border-bottom: 2px solid var(--black04);
+        width: 55px;
+        margin-left: 3px;
+    }
+
+    .what_we_do .what_we_do_info .divider .circle {
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        margin-bottom: -3px;
+        margin-left: 3px;
+        background-color: var(--black04);
+    }
+
+    .what_we_do .what_we_do_info .what_we_do_text {
+        margin-top: 20px;
+        line-height: 1.5rem;
+    }
+
+
+    .founder {
+        padding: 60px 0;
+    }
+
+    .team {
+        padding: 65px 0 20px;
+    }
+
+    .team .teamMember {
+        width: 260px;
+        margin: auto;
+        margin-bottom: 50px;
+    }
+
+    .team .teamInfo .teamInfoIcon {
+        width: 70px;
+        right: 15px;
+        top: -34%;
+    }
+
+    .team .teamInfo .teamInfoText {
+        padding: 7px 20px;
+    }
+
+    .team .teamInfo .teamInfoText h4 {
+        font-size: 20px;
+    }
+
+    .team .teamInfo .teamInfoText p {
+        font-size: 14px;
+    }
+
+    .team .team_header::before,
+    .team .team_header::after {
+        right: 306px;
+    }
+
+    .scholarship_section .img_section,
+    .grant_section .img_section,
+    .conference_section .img_section,
+    .job_section .img_section,
+    .others_section .img_section,
+    .course_section .img_section {
+        overflow: hidden;
+        z-index: -100;
+        position: absolute;
+    }
+
+    .scholarship_section,
+    .grant_section,
+    .conference_section,
+    .job_section,
+    .others_section,
+    .course_section {
+        position: relative;
+        background-image: url(../images/preview_photo.png);
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+
+    .scholarship_section .container,
+    .grant_section .container,
+    .conference_section .container,
+    .job_section .container,
+    .others_section .container,
+    .course_section .container {
+        height: 150px;
+    }
+
+    .scholarship_header,
+    .grant_header,
+    .conference_header,
+    .job_header,
+    .others_header,
+    .course_header {
+        position: absolute;
+        left: 50%;
+        transform: translate(-50%, 0%);
+    }
+
+    .others_filter_btns_group_section,
+    .jobs_filter_btns_group_section,
+    .course_filter_btns_group_section {
+        height: 90px;
+    }
+
+    .brief_info .img img {
+        width: 274px;
+    }
+}
+
+@media (max-width: 767px) {
+
+    .main .main_label h1 {
+        font-size: 36px;
+    }
+
+    .main .main_label h3 {
+        font-size: 24px;
+    }
+
+    .featured_oppo .featured_heading span::before,
+    .featured_oppo .featured_heading span::after {
+        width: 50px;
+    }
+
+    .featured_oppo .featured_heading span::after {
+        right: -63px;
+    }
+
+    .featured_oppo .featured_heading span::before {
+        left: -64px;
+    }
+
+    .featured_oppo .featured_card {
+        width: 237px;
+        margin: 0 auto;
+    }
+
+    .latest_scholar h2 span::after,
+    .latest_oppo h2 span::after {
+        top: -6px;
+        left: -65px;
+    }
+
+    .latest_oppo h2 span::after {
+        left: -86px;
+    }
+
+    .latest_courses h2 span::after {
+        left: -80px;
+    }
+
+    .latest_scholar h2,
+    .latest_oppo h2,
+    .latest_courses h2 {
+        font-size: 24px;
+        text-align: center;
+    }
+
+    .latest_scholar .card {
+        width: 350px;
+        margin: 0 auto 45px !important;
+    }
+
+    .latest_scholar .card-body {
+        height: 140px;
+    }
+
+    .latest_scholar .explore_btn,
+    .latest_courses .explore_btn {
+        margin-top: 0;
+    }
+
+    .latest_oppo .latest_oppo_card {
+        margin-bottom: 40px;
+    }
+
+    .latest_oppo {
+        padding-bottom: 30px;
+    }
+
+    .latest_courses .courses_footer .course_info,
+    .course_contents .courses_footer .course_info {
+        left: 192px;
+    }
+
+    .intro {
+        padding: 60px 0;
+        text-align: center;
+    }
+
+    .intro .introText {
+        padding-top: 30px;
+    }
+
+
+    .intro .introImg {
+        width: 400px !important;
+        margin-bottom: 20px;
+        padding: 0;
+    }
+
+    .intro .introText h3 {
+        margin-bottom: 16px;
+    }
+
+    .intro .introText p {
+        line-height: 1.6rem;
+        text-align: center;
+        margin-bottom: 0;
+    }
+
+    .what_we_do {
+        padding: 65px 0 0;
+    }
+
+    .what_we_do .what_we_do_info {
+        padding: 35px 15px 15px 15px;
+    }
+
+    .what_we_do h3::after {
+        right: 206px;
+    }
+
+    .what_we_do h3::before {
+        right: 206px;
+    }
+
+    .what_we_do .what_we_do_task {
+        margin-bottom: 65px;
+    }
+
+    .what_we_do .what_we_do_info .divider .line {
+        border-bottom: 2px solid var(--black04);
+        width: 45px;
+        margin-left: 3px;
+    }
+
+    .what_we_do .what_we_do_info .divider .circle {
+        width: 6px;
+        height: 6px;
+        border-radius: 50%;
+        margin-bottom: -2.5px;
+        margin-left: 3px;
+        background-color: var(--black04);
+    }
+
+    .what_we_do .what_we_do_info .what_we_do_text {
+        margin-top: 20px;
+    }
+
+    .founder {
+        text-align: center;
+        padding: 50px 0;
+    }
+
+    .founder .founderImg {
+        width: 200px;
+        margin: 0 auto 30px;
+    }
+
+    .founder .founderText h3 {
+        margin-bottom: 1.3rem;
+    }
+
+    .founder .founderText p {
+        text-align: center;
+    }
+
+    .team {
+        padding: 55px 0;
+    }
+
+    .team .teamMember {
+        width: 308px;
+    }
+
+    .team .team_header::before,
+    .team .team_header::after {
+        right: 220px;
+    }
+
+
+    .filter_nav .filter_btns_group button {
+        margin-bottom: 15px !important;
+    }
+
+    .brief_info .img img {
+        margin-top: 0;
+    }
+
+    .brief_info .info {
+        box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+        margin-top: 30px;
+        padding-left: 25px;
+    }
+
+}
+
+@media (max-width: 575px) {
+
+    .brush_bg {
+        display: none;
+    }
+
+    .main {
+        text-align: center;
+        padding: 40px 0 70px;
+    }
+
+    .main .main_label h1 {
+        font-size: 30px;
+    }
+
+    .main .main_label h3 {
+        font-size: 18px;
+        font-weight: 500;
+    }
+
+    .main .main_img {
+        width: 320px;
+    }
+
+    .featured_oppo {
+        padding: 45px 0 40px;
+    }
+
+    .featured_oppo .featured_card {
+        margin-bottom: 40px !important;
+        width: 255px;
+        margin: 0 auto;
+    }
+
+    .featured_oppo .featured_heading h2 {
+        font-size: 24px;
+    }
+
+    .featured_oppo .featured_heading span::after {
+        right: -28px;
+        top: 17px;
+    }
+
+    .featured_oppo .featured_heading span::before {
+        left: -28px;
+        top: 17px;
+    }
+
+    .featured_oppo .featured_heading span::before,
+    .featured_oppo .featured_heading span::after {
+        width: 24px;
+    }
+
+    .latest_scholar h2 span::after,
+    .latest_oppo h2 span::after,
+    .latest_courses h2 span::after {
+        content: url(../images/heading_brush_bg_sm.svg);
+        top: -3px;
+        left: -24px;
+    }
+
+    .latest_oppo h2 span::after {
+        left: -52px;
+    }
+
+    .latest_courses h2 span::after {
+        left: -51px;
+    }
+
+    .latest_scholar .card {
+        width: 300px;
+    }
+
+    .latest_oppo .latest_oppo_card img {
+        width: 260px;
+    }
+
+    .intro {
+        padding: 50px 0;
+    }
+
+    .intro .introImg {
+        width: 330px !important;
+
+    }
+
+    .intro .introText h3 {
+        margin-bottom: 18px;
+        font-size: 24px;
+    }
+
+
+    .intro .introText p {
+        line-height: 1.6rem;
+    }
+
+    .what_we_do {
+        padding: 50px 0 0;
+    }
+
+    .what_we_do h3::after {
+        right: 37%;
+    }
+
+    .what_we_do h3::before {
+        right: 37%;
+    }
+
+    .team .team_header::before,
+    .team .team_header::after {
+        right: 37%;
+    }
+
+
+    .what_we_do .what_we_do_card .what_we_do_icon {
+        width: 60px;
+        height: 60px;
+    }
+
+    .what_we_do .what_we_do_info {
+        padding: 60px 15px 25px 15px;
+    }
+
+    .what_we_do .what_we_do .what_we_do_info h4 {
+        font-size: 23px;
+    }
+
+    .what_we_do .what_we_do_info .divider .line {
+        width: 70px;
+    }
+
+    .what_we_do .what_we_do_info .what_we_do_text {
+        font-size: 15px;
+        line-height: 1.8rem;
+    }
+
+    .team .teamMember {
+        margin: 25px auto 25px;
+    }
+
+    .keepInTouch {
+        padding: 50px 0;
+    }
+
+
+    .scholar_contents .card,
+    .grant_contents .card,
+    .conference_contents .card,
+    .job_contents .card,
+    .others_contents .card {
+
+        width: 318px;
+
+    }
+
+    .detail_preview h2 {
+        font-size: 22px;
+    }
+
+    .detail_preview ul {
+        margin-top: 10px !important;
+    }
+
+    .detail_preview ul li {
+        font-size: 12px;
+    }
+
+}

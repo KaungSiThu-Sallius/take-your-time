@@ -1,0 +1,84 @@
+1. Scholarships
+    - slug
+    - type
+    - title
+    - deadline
+    - funding
+    - country
+    - given_by
+    - details
+    - criteria_scholarships_id (foreign_key)
+    - benefits_scholarships_id (foreign_key)
+    - application_scholarships_id (foreign_key)
+    - official_website
+    - apply_form_link
+
+2. Grants
+    - level
+    - title
+    - deadline
+    - funding
+    - country
+    - given_by
+    - details
+    - criteria_grants_id (foreign_key)
+    - benefits_grants_id (foreign_key)
+    - application_grants_id (foreign_key)
+    - official_website
+    - apply_form_link
+
+3. Conferences
+    - title
+    - deadline
+    - funding
+    - place (online / country)
+    - given_by
+    - details
+    - criteria_conferences_id (foreign_key)
+    - benefits_conferences_id (foreign_key)
+    - application_conferences_id (foreign_key)
+    - field
+    - official_website
+    - apply_form_link
+
+4. Courses
+    - type
+    - course_name
+    - deadline
+    - price
+    - start_date
+    - taught_by
+    - details
+    - requirement_courses_id (foreign_key)
+    - contents_courses_id (foreign_key)
+    - course_duration
+    - platform
+    - apply_form_link
+
+5. Jobs
+    - type
+    - title
+    - deadline
+    - place (online / country)
+    - start_date
+    - oraganization_name
+    - details
+    - quilification_jobs_id (foreign_key)
+    - benefits_jobs_id (foreign_key)
+    - documents_jobs_id (foreign_key)
+    - job_duration
+    - apply_form_link
+
+6. Others
+    - type
+    - title
+    - deadline
+    - place (online / country)
+    - start_date
+    - oraganization_name
+    - details
+    - criteria_others_id (foreign_key)
+    - benefits_others_id (foreign_key)
+    - apply_form_link
+
+

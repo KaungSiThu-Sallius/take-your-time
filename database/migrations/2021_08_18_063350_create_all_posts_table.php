@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateFeaturedOppotunitiesTable extends Migration
+class CreateAllPostsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,14 @@ class CreateFeaturedOppotunitiesTable extends Migration
      */
     public function up()
     {
-        Schema::create('featured_oppotunities', function (Blueprint $table) {
+        Schema::create('all_posts', function (Blueprint $table) {
             $table->id();
-            $table->string('title');
-            $table->dateTime('deadline');
+            $table->bigInteger('post_id');
             $table->string('type');
+            $table->string('name');
+            $table->string('slug');
+            $table->string('title');
+            $table->date('deadline');
             $table->string('image');
             $table->timestamps();
         });
@@ -30,6 +33,6 @@ class CreateFeaturedOppotunitiesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('featured_oppotunities');
+        Schema::dropIfExists('all_posts');
     }
 }

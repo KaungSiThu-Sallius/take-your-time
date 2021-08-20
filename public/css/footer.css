@@ -76,6 +76,7 @@
 }
 
 .footer .contact_items ul {
+    color: var(--black02);
     list-style: none;
     padding: 0;
 }

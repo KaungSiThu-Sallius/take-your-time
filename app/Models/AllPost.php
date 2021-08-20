@@ -5,13 +5,16 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class FeaturedOppotunity extends Model
+class AllPost extends Model
 {
     use HasFactory;
     protected $fillable = [
+        'type',
+        'post_id',
+        'name',
+        'slug',
         'title',
         'deadline',
-        'type',
-        'image'
+        'image',
     ];
 }

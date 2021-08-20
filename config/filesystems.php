@@ -42,11 +42,11 @@ return [
             'visibility' => 'public',
         ],
 
-        'image' => [
+        'images_database' => [
             'driver' => 'local',
-            'root' => storage_path('app/image'),
-            'url' => env('APP_URL') . '/image',
-            'visibility' => 'private',
+            'root' => storage_path('app/images_database'),
+            'url' => env('APP_URL') . '/images_database',
+            'visibility' => 'public',
         ],
 
         's3' => [
@@ -75,7 +75,7 @@ return [
 
     'links' => [
         public_path('storage') => storage_path('app/public'),
-        public_path('image') => storage_path('app/image'),
+        public_path('images_database') => storage_path('app/images_database'),
     ],
 
 ];

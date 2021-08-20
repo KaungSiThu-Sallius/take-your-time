@@ -15,11 +15,12 @@ Route::get('/about', function () {
 
 // Scholarships
 Route::prefix('scholarships')->namespace('Scholarship')->group(function () {
-    Route::get('/', 'ScholarshipController@index');
+    Route::get('/', 'ScholarshipController@allScholarship');
     Route::get('undergraduate', 'UndergraduateController@index');
     Route::get('master', 'MasterController@index');
     Route::get('phd', 'PhDController@index');
     Route::get('fellowship', 'FellowshipController@index');
+    Route::get('detail/{slug}/{id}', 'ScholarshipController@detail');
 });
 
 // Grants
@@ -61,8 +62,3 @@ Route::prefix('admin')->middleware('admin')->group(function () {
     Route::get('scholarshipIndex/search', 'Scholarship\ScholarshipController@searchData');
     Route::resource('scholarship', 'Scholarship\ScholarshipController');
 });
-
-//test
-// Route::get('/testing', function () {
-//     return view('test');
-// });

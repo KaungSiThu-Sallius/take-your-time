@@ -15,6 +15,7 @@ class CreateOppotunityPlacesTable extends Migration
     {
         Schema::create('oppotunity_places', function (Blueprint $table) {
             $table->id();
+            $table->bigInteger('post_id');
             $table->enum('oppotunity', ['undergraduate', 'master', 'phd', 'fellowship', 'grant', 'conference', 'free_course', 'paid_course', 'internship', 'part_time_job', 'full_time_job', 'seminar', 'competition']);
             $table->string('place');
             $table->timestamps();

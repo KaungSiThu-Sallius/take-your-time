@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateScholarshipsTable extends Migration
+class CreateFellowshipsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,10 @@ class CreateScholarshipsTable extends Migration
      */
     public function up()
     {
-        Schema::create('scholarships', function (Blueprint $table) {
+        Schema::create('fellowships', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
+            $table->unsignedBigInteger('scholarship_id');
+            $table->foreign('scholarship_id')->references('id')->on('scholarships')->onDelete('cascade');
             $table->string('slug');
             $table->string('type');
             $table->string('title');
@@ -40,6 +41,6 @@ class CreateScholarshipsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('scholarships');
+        Schema::dropIfExists('fellowships');
     }
 }

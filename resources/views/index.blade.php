@@ -1,4 +1,7 @@
 @extends('layout.master')
+@section('title')
+<title>Take Your Time</title>
+@endsection
 @section('nav_items')
 
     <li class="nav-item active">
@@ -88,7 +91,6 @@
                         <h1>Youths... Grab a Chance!</h1>
                         <h3>Just take your time and do it right...</h3>
                         <form action="{{url('search')}}" method="get">
-
                             <div class="row">
                                 <div class="col-6">
                                     <select name="oppotunity" id="oppotunity-select" class="browser-default custom-select" placeholder="Oppotunities">
@@ -149,10 +151,17 @@
             <div class="row">
                 @foreach ($featured_oppo as $f)
                     <div class="col-lg-3 col-md-6 col-sm-6">
-                        <a href="#">
+                        @if ($f->name == 'scholarship')
+                            <a href="{{url("/scholarships/detail/$f->slug/$f->post_id")}}">
+                        @elseif ($f->type == 'grant')
+                            <a href="#">
+                        @elseif($f->type == 'conference')
+                            <a href="#">
+                        @endif
+
                             <div class="featured_card card">
                                 <div class="view overlay card_img">
-                                    <img class="card-img-top" src="{{$f->image}}" alt="Featured Image">
+                                    <img class="card-img-top" src="{{asset("images_database/$f->image")}}" alt="Featured Image">
                                 </div>
                                 <div class="card-body">
                                     <h5 class="card-title">{{$f->title}}</h5>
@@ -163,34 +172,31 @@
                                         {{date('F j, Y', strtotime($f->deadline))}}</span>
                                         <br>
                                     <span class="badge badge-pill badge-light">
-                                        @if ($f->type == 'scholarship')
-                                        Scholarship
-                                        @endif
-                                        @if ($f->type == 'fellowship')
-                                        Fellowship
+                                        @if ($f->name == 'scholarship')
+                                        {{str_replace(',',', ',$f->type)}}
                                         @endif
                                         @if ($f->type == 'grant')
-                                        Grant
+                                            Grant
                                         @endif
                                         @if ($f->type == 'conference')
-                                        Conference
+                                            Conference
                                         @endif
                                         @if ($f->type == 'part_time_job')
-                                        Part-Time Job
+                                            Part-Time Job
                                         @endif
                                         @if ($f->type == 'full_time_job')
-                                        Full-Time Job
+                                            Full-Time Job
                                         @endif
                                         @if ($f->type == 'internship')
-                                        Internship
+                                            Internship
                                         @endif
                                         @if ($f->type == 'seminar')
-                                        Seminar
+                                            Seminar
                                         @endif
                                         @if ($f->type == 'competition')
-                                        Competition
+                                            Competition
                                         @endif
-                                        </span>
+                                    </span>
                                 </div>
                             </div>
                         </a>
@@ -209,22 +215,12 @@
                 <div class="row">
                     @foreach ($latest_scholar as $scholar)
                     <div class="col-md-4">
-                        <a href="#">
+                        <a href="{{url("/scholarships/detail/$scholar->slug/$scholar->id")}}">
                             <div class="card mb-2">
                                 <div class="img_holder">
-                                    <img class="card-img" src="{{$scholar->image}}" alt="Organization Image">
-                                    <span style="width: 145px; text-align:center;">
-                                        @if ($scholar->type == 'undergraduate')
-                                            Undergraduate
-                                        @elseif ($scholar->type == 'master')
-                                            Master
-                                        @elseif($scholar->type == 'phd')
-                                            PhD
-                                        @elseif($scholar->type == 'fellowship')
-                                            Fellowship
-                                        @else
-                                            Scholarship
-                                        @endif
+                                    <img class="card-img" src="{{asset("images_database/$scholar->image")}}" alt="Organization Image">
+                                    <span style="width: 100%; text-align:center; font-size: 14px">
+                                       {{str_replace(',',', ',$scholar->type)}}
                                     </span>
                                 </div>
                                 <div class="card-body title">

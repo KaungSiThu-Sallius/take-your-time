@@ -21,6 +21,8 @@
     <!-- Material Design Bootstrap -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/css/mdb.min.css" rel="stylesheet">
     <link rel="icon" href="{{asset('images/tyt_icon.svg')}}" type="image/svg+xml">
+
+
     @yield('title')
     <style>
         :root {
@@ -323,13 +325,52 @@
         }
 
         .create_scholar form{
-            margin-top: 40px;
+            margin: 40px 0;
             background-color: var(--primary04);
-            padding: 50px;
             border-radius: 20px;
-            box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+            box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
         }
 
+        .create_scholar .card{
+            border-radius: 20px !important;
+        }
+
+        .create_scholar .card-header{
+            border-top-left-radius: 20px;
+            border-top-right-radius: 20px;
+        }
+
+        .create_scholar .card-body{
+            padding: 40px;
+        }
+
+        .create_scholar form h2{
+            margin-bottom: 0 !important;
+            padding: 10px;
+        }
+
+        .funding, .type_checkbox, .image , .criteria, .benefit, .application_process, .date {
+            color: #757575;
+        }
+
+
+        .funding h5, .type_checkbox h5, .image h5, .detail_text h5, .other_text h5{
+            margin:25px 0 15px;
+            color: #454746;
+        }
+
+        .criteria h5, .benefit h5, .application_process h5{
+            margin:25px 0 0px;
+            color: #454746;
+        }
+
+        .funding .custom-radio, .type_checkbox .custom-checkbox{
+            margin-bottom: 5px;
+        }
+
+        .sub_btn .btn{
+            margin-top: 40px;
+        }
         /********************************* media query ********************************/
         @media (max-width: 1199px) {
             .searchTerm {
@@ -568,6 +609,7 @@
             });
         }
     </script>
+
     <!-- JQuery -->
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <!-- Bootstrap tooltips -->

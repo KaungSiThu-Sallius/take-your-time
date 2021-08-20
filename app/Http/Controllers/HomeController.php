@@ -2,21 +2,26 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\AllPost;
 use App\Models\Conference;
 use App\Models\Course;
 use App\Models\FeaturedOppotunity;
+use App\Models\Fellowship;
 use App\Models\Grant;
 use App\Models\Job;
+use App\Models\Master;
 use App\Models\OppotunityPlace;
 use App\Models\Other;
+use App\Models\Phd;
 use App\Models\Scholarship;
+use App\Models\Undergraduate;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
 {
     public function index()
     {
-        $featured_oppo = FeaturedOppotunity::orderBy('updated_at', 'DESC')->paginate(4);
+        $featured_oppo = AllPost::orderBy('updated_at', 'DESC')->paginate(4);
         $latest_scholar = Scholarship::orderBy('created_at', 'DESC')->paginate(3);
         $grants = Grant::orderBy('created_at', 'DESC')->paginate(3);
         $conferences = Conference::orderBy('created_at', 'DESC')->paginate(3);
@@ -33,22 +38,38 @@ class HomeController extends Controller
 
     public function search(Request $request)
     {
-        if ($request->oppotunity == 'undergraduate' or $request->oppotunity == 'master' or $request->oppotunity == 'phd' or $request->oppotunity == 'fellowship') {
+        if (strtolower($request->oppotunity) == 'undergraduate') {
             if ($request->place != "") {
-                $data = Scholarship::where('type', $request->oppotunity)->where('country', $request->place)->orderBy('id', 'DESC')->paginate(9);
+                $data = Undergraduate::where('type', ucfirst($request->oppotunity))->where('country', $request->place)->orderBy('id', 'DESC')->paginate(9);
             } else {
-                $data = Scholarship::where('type', $request->oppotunity)->orderBy('id', 'DESC')->paginate(9);
+                $data = Undergraduate::where('type', ucfirst($request->oppotunity))->orderBy('id', 'DESC')->paginate(9);
             }
             $data->appends($request->all());
-            if ($request->oppotunity == 'undergraduate') {
-                return view('scholarships.undergraduate_scholarships', compact('data'));
-            } else if ($request->oppotunity == 'master') {
-                return view('scholarships.master_scholarships', compact('data'));
-            } else if ($request->oppotunity == 'phd') {
-                return view('scholarships.phd_scholarships', compact('data'));
+            return view('scholarships.undergraduate_scholarships', compact('data'));
+        } else if (strtolower($request->oppotunity) == 'master') {
+            if ($request->place != "") {
+                $data = Master::where('type', ucfirst($request->oppotunity))->where('country', $request->place)->orderBy('id', 'DESC')->paginate(9);
             } else {
-                return view('scholarships.fellowship', compact('data'));
+                $data = Master::where('type', ucfirst($request->oppotunity))->orderBy('id', 'DESC')->paginate(9);
             }
+            $data->appends($request->all());
+            return view('scholarships.master_scholarships', compact('data'));
+        } else if (strtolower($request->oppotunity) == 'phd') {
+            if ($request->place != "") {
+                $data = Phd::where('type', ucfirst($request->oppotunity))->where('country', $request->place)->orderBy('id', 'DESC')->paginate(9);
+            } else {
+                $data = Phd::where('type', ucfirst($request->oppotunity))->orderBy('id', 'DESC')->paginate(9);
+            }
+            $data->appends($request->all());
+            return view('scholarships.phd_scholarships', compact('data'));
+        } else if (strtolower($request->oppotunity) == 'fellowship') {
+            if ($request->place != "") {
+                $data = Fellowship::where('type', ucfirst($request->oppotunity))->where('country', $request->place)->orderBy('id', 'DESC')->paginate(9);
+            } else {
+                $data = Fellowship::where('type', ucfirst($request->oppotunity))->orderBy('id', 'DESC')->paginate(9);
+            }
+            $data->appends($request->all());
+            return view('scholarships.fellowship', compact('data'));
         } else if ($request->oppotunity == 'grant') {
             if ($request->place != "") {
                 $data = Grant::where('country', $request->place)->orderBy('id', 'DESC')->paginate(9);

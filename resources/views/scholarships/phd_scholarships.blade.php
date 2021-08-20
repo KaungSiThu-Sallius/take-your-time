@@ -1,5 +1,7 @@
 @extends('layout.master')
-
+@section('title')
+<title>Take Your Time - PhD</title>
+@endsection
 @section('nav_items')
 
     <li class="nav-item">
@@ -112,9 +114,9 @@
             <div class="row">
                 @foreach ($data as $d)
                 <div class="col-md-6 col-lg-6 col-xl-4">
-                    <a href="#">
+                    <a href="{{url("/scholarships/detail/$d->slug/$d->scholarship_id")}}">
                         <div class="card">
-                            <img class="card-img-top" src="{{$d->image}}" alt="PhD Image">
+                            <img class="card-img-top" src="{{asset("images_database/$d->image")}}" alt="PhD Image">
                             <div class="card-header">PhD</div>
                             <div class="card-body">
                                 <div class="card-text">{{$d->title}} <br> <span

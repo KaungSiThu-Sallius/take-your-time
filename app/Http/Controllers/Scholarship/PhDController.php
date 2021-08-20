@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Scholarship;
 
 use App\Http\Controllers\Controller;
+use App\Models\Phd;
 use App\Models\Scholarship;
 use Illuminate\Http\Request;
 
@@ -15,7 +16,7 @@ class PhDController extends Controller
      */
     public function index()
     {
-        $data = Scholarship::where('type', 'phd')->orderBy('created_at', 'DESC')->paginate(9);
+        $data = Phd::orderBy('created_at', 'DESC')->paginate(9);
         return view('scholarships.phd_scholarships', compact('data'));
     }
 

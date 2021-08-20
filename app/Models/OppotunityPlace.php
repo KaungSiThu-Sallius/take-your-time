@@ -9,6 +9,7 @@ class OppotunityPlace extends Model
 {
     use HasFactory;
     protected $fillable  = [
+        'post_id',
         'oppotunity',
         'place'
     ];

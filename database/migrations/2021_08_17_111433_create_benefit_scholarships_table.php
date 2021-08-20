@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateCriteriaScholarshipsTable extends Migration
+class CreateBenefitScholarshipsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,11 @@ class CreateCriteriaScholarshipsTable extends Migration
      */
     public function up()
     {
-        Schema::create('criteria_scholarships', function (Blueprint $table) {
+        Schema::create('benefit_scholarships', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('scholarship_id');
             $table->foreign('scholarship_id')->references('id')->on('scholarships')->onDelete('cascade');
-            $table->longText('criteria');
+            $table->longText('benefit');
             $table->timestamps();
         });
     }
@@ -29,6 +29,6 @@ class CreateCriteriaScholarshipsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('criteria_scholarships');
+        Schema::dropIfExists('benefit_scholarships');
     }
 }

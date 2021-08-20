@@ -765,7 +765,11 @@ a {
     border-radius: 0px 12px 0px 0px;
     color: var(--black01);
     font-weight: 600;
-    font-size: 15px;
+    font-size: 14px;
+}
+
+.scholar_contents .scholar_header {
+    width: 100%;
 }
 
 .scholar_contents .card-img-top,
@@ -871,7 +875,7 @@ a {
 
 .details .detail_contents p {
     color: var(--black02);
-    line-height: 29px;
+    line-height: 38px;
 }
 
 
@@ -894,6 +898,7 @@ a {
 .benefit ul li,
 .application ul li {
     margin-bottom: 5px;
+    line-height: 30px;
 }
 
 .detail_btns {

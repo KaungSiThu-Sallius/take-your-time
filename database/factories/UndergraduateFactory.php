@@ -3,17 +3,18 @@
 namespace Database\Factories;
 
 use App\Models\Scholarship;
+use App\Models\Undergraduate;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Support\Str;
 
-class ScholarshipFactory extends Factory
+class UndergraduateFactory extends Factory
 {
     /**
      * The name of the factory's corresponding model.
      *
      * @var string
      */
-    protected $model = Scholarship::class;
+    protected $model = Undergraduate::class;
 
     /**
      * Define the model's default state.
@@ -23,10 +24,10 @@ class ScholarshipFactory extends Factory
     public function definition()
     {
         return [
-            'name' => 'scholarship',
-            'type' => $this->faker->randomElement(['Undergraduate', 'Master', 'Phd', 'Fellowship']),
+            'scholarship_id' => Scholarship::all()->random()->id,
+            'type' => 'Undergraduate',
             'title' => $this->faker->jobTitle(),
-            'slug' => Str::slug($this->faker->jobTitle()),
+            'slug' =>  Str::slug($this->faker->jobTitle()),
             'image' => $this->faker->imageUrl(),
             'start_application_date' => $this->faker->dateTime($max = 'now', $timezone = null),
             'deadline' => $this->faker->dateTime($max = 'now', $timezone = null),

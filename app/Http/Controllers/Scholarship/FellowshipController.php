@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Scholarship;
 
 use App\Http\Controllers\Controller;
+use App\Models\Fellowship;
 use App\Models\Scholarship;
 use Illuminate\Http\Request;
 
@@ -15,7 +16,7 @@ class FellowshipController extends Controller
      */
     public function index()
     {
-        $data = Scholarship::where('type', 'fellowship')->orderBy('created_at', 'DESC')->paginate(9);
+        $data = Fellowship::orderBy('created_at', 'DESC')->paginate(9);
         return view('scholarships.fellowship', compact('data'));
     }
 

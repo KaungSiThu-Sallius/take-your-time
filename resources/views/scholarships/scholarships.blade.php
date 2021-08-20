@@ -1,5 +1,7 @@
 @extends('layout.master')
-
+@section('title')
+<title>Take Your Time - Scholarships</title>
+@endsection
 @section('nav_items')
 
     <li class="nav-item">
@@ -113,21 +115,11 @@
             <div class="row">
                 @foreach ($scholarships as $d)
                     <div class="col-md-6 col-lg-6 col-xl-4">
-                        <a href="#">
+                        <a href="{{url("/scholarships/detail/$d->slug/$d->id")}}">
                             <div class="card">
-                                <img class="card-img-top" src="{{$d->image}}" alt="Undergraduate Image">
-                                <div class="card-header">
-                                    @if ($d->type == 'undergraduate')
-                                    Undergraduate
-                                    @elseif ($d->type == 'master')
-                                        Master
-                                    @elseif($d->type == 'phd')
-                                        PhD
-                                    @elseif($d->type == 'fellowship')
-                                        Fellowship
-                                    @else
-                                        Scholarship
-                                    @endif
+                                <img class="card-img-top" src="{{asset("images_database/$d->image")}}" alt="Scholarship Image">
+                                <div class="card-header scholar_header">
+                                    {{str_replace(',',', ',$d->type)}}
                                 </div>
                                 <div class="card-body">
                                     <div class="card-text">{{$d->title}} <br> <span

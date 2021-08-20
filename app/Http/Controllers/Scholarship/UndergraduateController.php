@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Scholarship;
 
 use App\Http\Controllers\Controller;
 use App\Models\Scholarship;
+use App\Models\Undergraduate;
 use Illuminate\Http\Request;
 
 class UndergraduateController extends Controller
@@ -15,7 +16,7 @@ class UndergraduateController extends Controller
      */
     public function index()
     {
-        $data = Scholarship::where('type', 'undergraduate')->orderBy('created_at', 'DESC')->paginate(9);
+        $data = Undergraduate::orderBy('created_at', 'DESC')->paginate(9);
         return view('scholarships.undergraduate_scholarships', compact('data'));
     }
 

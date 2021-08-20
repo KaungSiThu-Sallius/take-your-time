@@ -1,5 +1,7 @@
 @extends('layout.master')
-
+@section('title')
+<title>Take Your Time - About Us</title>
+@endsection
 @section('nav_items')
 
     <li class="nav-item">

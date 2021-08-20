@@ -23,7 +23,7 @@ class CriteriaScholarshipFactory extends Factory
     public function definition()
     {
         return [
-            'post_id' => Scholarship::all()->random()->id,
+            'scholarship_id' => Scholarship::all()->random()->id,
             'criteria' => $this->faker->paragraph($nbSentences = 3, $variableNbSentences = true)
         ];
     }

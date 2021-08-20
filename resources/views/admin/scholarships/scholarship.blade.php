@@ -65,6 +65,7 @@
 
 
                     <div class="table-responsive data_table">
+                        @include('admin.alert')
                         <table class="table table-striped">
                           <thead>
                             <tr>
@@ -83,9 +84,14 @@
                                 <td>{{$s->type}}</td>
                                 <td>{{date('F j, Y', strtotime($s->deadline))}}</td>
                                 <td>
-                                    <a href="#"><span class="badge badge-pill badge-info">Details</span></a>
-                                    <a href="#"><span class="badge badge-pill badge-warning">Update</span></a>
-                                    <a href="#"> <span class="badge badge-pill badge-danger">Delete</span></a>
+                                    <a href="{{route('scholarship.show',$s->id)}}"><span class="badge badge-pill badge-info">Details</span></a>
+                                    <a href="{{route('scholarship.edit',$s->id)}}"><span class="badge badge-pill badge-warning">Update</span></a>
+                                    <form action="{{route('scholarship.destroy', $s->id)}}" method="post" style="display:inline;">
+                                        @method('delete')
+                                        @csrf
+                                        <button type="submit" class="badge badge-pill badge-danger"
+                                      onclick="return confirm('Are you want to delete {{$s->title}} ?')">Delete</button>
+                                    </form>
                                 </td>
                               </tr>
                             @endforeach

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Scholarship;
 
 use App\Http\Controllers\Controller;
+use App\Models\Master;
 use App\Models\Scholarship;
 use Illuminate\Http\Request;
 
@@ -15,7 +16,7 @@ class MasterController extends Controller
      */
     public function index()
     {
-        $data = Scholarship::where('type', 'master')->orderBy('created_at', 'DESC')->paginate(9);
+        $data = Master::orderBy('created_at', 'DESC')->paginate(9);
         return view('scholarships.master_scholarships', compact('data'));
     }
 

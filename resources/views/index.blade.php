@@ -153,8 +153,8 @@
                     <div class="col-lg-3 col-md-6 col-sm-6">
                         @if ($f->name == 'scholarship')
                             <a href="{{url("/scholarships/detail/$f->slug/$f->post_id")}}">
-                        @elseif ($f->type == 'grant')
-                            <a href="#">
+                        @elseif ($f->name == 'grant')
+                            <a href="{{url("/grants/detail/$f->slug/$f->post_id")}}">
                         @elseif($f->type == 'conference')
                             <a href="#">
                         @endif
@@ -175,25 +175,25 @@
                                         @if ($f->name == 'scholarship')
                                         {{str_replace(',',', ',$f->type)}}
                                         @endif
-                                        @if ($f->type == 'grant')
+                                        @if ($f->name == 'grant')
                                             Grant
                                         @endif
-                                        @if ($f->type == 'conference')
+                                        @if ($f->name == 'conference')
                                             Conference
                                         @endif
-                                        @if ($f->type == 'part_time_job')
+                                        @if ($f->name == 'part_time_job')
                                             Part-Time Job
                                         @endif
-                                        @if ($f->type == 'full_time_job')
+                                        @if ($f->name == 'full_time_job')
                                             Full-Time Job
                                         @endif
-                                        @if ($f->type == 'internship')
+                                        @if ($f->name == 'internship')
                                             Internship
                                         @endif
-                                        @if ($f->type == 'seminar')
+                                        @if ($f->name == 'seminar')
                                             Seminar
                                         @endif
-                                        @if ($f->type == 'competition')
+                                        @if ($f->name == 'competition')
                                             Competition
                                         @endif
                                     </span>
@@ -259,7 +259,7 @@
                             <div class="row">
                                 <div class="col-lg-5">
                                     <div class="latest_oppo_img">
-                                        <img src="{{$grants[0]->image}}" alt="organization_photo">
+                                        <img src="{{asset("images_database/".$grants[0]->image)}}" alt="organization_photo">
                                     </div>
                                 </div>
                                 <div class="col-lg-7">

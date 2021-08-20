@@ -15,6 +15,12 @@
             <span>Scholarship</span>
         </a>
     </li>
+    <li class="">
+        <a href="{{url('admin/grantIndex')}}">
+            <img src="{{asset('images/grant.svg')}}" alt="grant" type="image/svg+xml" class="svg_icon" />
+            <span>Grant</span>
+        </a>
+    </li>
 
 @endsection
 

@@ -1,6 +1,6 @@
 @extends('admin.layout.master')
 @section('title')
-<title>Create Scholarship</title>
+<title>Create Grant</title>
 @endsection
 @section('nav_items')
     <li class="">
@@ -9,13 +9,13 @@
             <span>Dashboard</span>
         </a>
     </li>
-    <li class="active">
+    <li class="">
         <a href="{{url('admin/scholarshipIndex')}}">
             <img src="{{asset('images/scholar.svg')}}" alt="scholarship" type="image/svg+xml" class="svg_icon icon_sidebar" />
             <span>Scholarship</span>
         </a>
     </li>
-    <li class="">
+    <li class="active">
         <a href="{{url('admin/grantIndex')}}">
             <img src="{{asset('images/grant.svg')}}" alt="grant" type="image/svg+xml" class="svg_icon" />
             <span>Grant</span>
@@ -29,10 +29,10 @@
         <div class="container">
             <div class="row">
                 <div class="offset-md-3 col-md-9 col-12">
-                    <form action="{{route('scholarship.store')}}" method="POST" enctype="multipart/form-data" class="card">
+                    <form action="{{route('grant.store')}}" method="POST" enctype="multipart/form-data" class="card">
                         @csrf
                         <div class="card-header">
-                            <h2 class="mb-4">Create Scholarship <span style="font-size:14px; color:red">(<? echo date("d M, Y") ?>)</span>
+                            <h2 class="mb-4">Create Grant <span style="font-size:14px; color:red">(<? echo date("d M, Y") ?>)</span>
                             </h2>
                         </div>
                         @include('admin.alert')
@@ -115,22 +115,18 @@
 
                             <div class="row mb-4">
                                 <div class="col-md-6 type_checkbox">
-                                    <h5>Type</h5>
+                                    <h5>Level</h5>
                                     <div class="custom-control custom-checkbox">
-                                        <input type="checkbox" class="custom-control-input" id="undergraduate" name="type[]" value="Undergraduate">
+                                        <input type="checkbox" class="custom-control-input" id="undergraduate" name="level[]" value="Undergraduate">
                                         <label class="custom-control-label" for="undergraduate">Undergraduate</label>
                                     </div>
                                     <div class="custom-control custom-checkbox">
-                                        <input type="checkbox" class="custom-control-input" id="master" name="type[]" value="Master">
+                                        <input type="checkbox" class="custom-control-input" id="master" name="level[]" value="Master">
                                         <label class="custom-control-label" for="master">Master</label>
                                     </div>
                                     <div class="custom-control custom-checkbox">
-                                        <input type="checkbox" class="custom-control-input" id="phd" name="type[]" value="Phd">
+                                        <input type="checkbox" class="custom-control-input" id="phd" name="level[]" value="Phd">
                                         <label class="custom-control-label" for="phd">PhD</label>
-                                    </div>
-                                    <div class="custom-control custom-checkbox">
-                                        <input type="checkbox" class="custom-control-input" id="fellowship" name="type[]" value="Fellowship">
-                                        <label class="custom-control-label" for="fellowship">Fellowship</label>
                                     </div>
                                 </div>
                                 <div class="col-md-6 funding">
@@ -149,8 +145,6 @@
                                     </div>
                                 </div>
                             </div>
-
-
 
                             <div class="row mb-4 criteria">
                                 <div class="col-12">
@@ -328,7 +322,7 @@
 
                             <div class="row mb-2">
                                 <div class="col-12 image">
-                                    <h5 class="mb-4">Scholarship Image</h5>
+                                    <h5 class="mb-4">Grant Image</h5>
                                     <div class="input-group">
                                         <div class="input-group-prepend">
                                           <span class="input-group-text" id="inputGroupFileAddon01">Upload</span>
@@ -337,11 +331,6 @@
                                           <input type="file" class="custom-file-input" id="inputGroupFile01"
                                             aria-describedby="inputGroupFileAddon01" name="image" required>
                                           <label class="custom-file-label" for="inputGroupFile01">Choose image</label>
-                                          <small>
-                                                @error('image')
-                                                    {{$message}}
-                                                 @enderror
-                                          </small>
                                         </div>
                                       </div>
                                 </div>

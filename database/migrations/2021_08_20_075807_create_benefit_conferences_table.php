@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateAllPostsTable extends Migration
+class CreateBenefitConferencesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,15 +13,11 @@ class CreateAllPostsTable extends Migration
      */
     public function up()
     {
-        Schema::create('all_posts', function (Blueprint $table) {
+        Schema::create('benefit_conferences', function (Blueprint $table) {
             $table->id();
-            $table->bigInteger('post_id');
-            $table->string('type')->nullable();
-            $table->string('name');
-            $table->string('slug');
-            $table->string('title');
-            $table->date('deadline');
-            $table->string('image');
+            $table->unsignedBigInteger('conference_id');
+            $table->foreign('conference_id')->references('id')->on('conferences')->onDelete('cascade');
+            $table->longText('benefit');
             $table->timestamps();
         });
     }
@@ -33,6 +29,6 @@ class CreateAllPostsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('all_posts');
+        Schema::dropIfExists('benefit_conferences');
     }
 }

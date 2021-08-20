@@ -6,7 +6,6 @@ use App\Http\Controllers\Controller;
 use App\Models\AllPost;
 use App\Models\BenefitScholarship;
 use App\Models\CriteriaScholarship;
-use App\Models\FeaturedOppotunity;
 use App\Models\Fellowship;
 use App\Models\Master;
 use App\Models\OppotunityPlace;
@@ -448,12 +447,12 @@ class ScholarshipController extends Controller
     public function destroy($id)
     {
         Scholarship::where('id', $id)->delete();
-        AllPost::where('post_id', $id)->delete();
+        AllPost::where('post_id', $id)->where('name', 'scholarship')->delete();
         Undergraduate::where('scholarship_id', $id)->delete();
         Master::where('scholarship_id', $id)->delete();
         Phd::where('scholarship_id', $id)->delete();
         Fellowship::where('scholarship_id', $id)->delete();
-        OppotunityPlace::where('post_id', $id)->delete();
+        OppotunityPlace::where('post_id', $id)->where('oppotunity', 'undergraduate')->orWhere('oppotunity', 'master')->orWhere('oppotunity', 'phd')->orWhere('oppotunity', 'fellowship')->delete();
         CriteriaScholarship::where('scholarship_id', $id)->delete();
         BenefitScholarship::where('scholarship_id', $id)->delete();
         ProcessScholarship::where('scholarship_id', $id)->delete();
@@ -486,6 +485,7 @@ class ScholarshipController extends Controller
 
     public function detail($slug, $id)
     {
+
         $detail = Scholarship::where('id', $id)->where('slug', $slug)->first();
         $criteria = CriteriaScholarship::where('scholarship_id', $id)->get();
         $benefit = BenefitScholarship::where('scholarship_id', $id)->get();

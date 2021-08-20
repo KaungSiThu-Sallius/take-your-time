@@ -772,6 +772,10 @@ a {
     width: 100%;
 }
 
+.grant_contents .card-header {
+    width: 100%;
+}
+
 .scholar_contents .card-img-top,
 .grant_contents .card-img-top,
 .conference_contents .card-img-top,

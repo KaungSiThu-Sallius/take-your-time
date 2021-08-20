@@ -21,9 +21,9 @@ class HomeController extends Controller
 {
     public function index()
     {
-        $featured_oppo = AllPost::orderBy('updated_at', 'DESC')->paginate(4);
+        $featured_oppo = AllPost::orderBy('updated_at', 'DESC')->take(4)->get();
         $latest_scholar = Scholarship::orderBy('created_at', 'DESC')->paginate(3);
-        $grants = Grant::orderBy('created_at', 'DESC')->paginate(3);
+        $grants = Grant::orderBy('created_at', 'DESC')->take(3)->get();
         $conferences = Conference::orderBy('created_at', 'DESC')->paginate(3);
         $jobs = Job::orderBy('created_at', 'DESC')->paginate(3);
         $others = Other::orderBy('created_at', 'DESC')->paginate(3);
@@ -70,14 +70,14 @@ class HomeController extends Controller
             }
             $data->appends($request->all());
             return view('scholarships.fellowship', compact('data'));
-        } else if ($request->oppotunity == 'grant') {
+        } else if (strtolower($request->oppotunity) == 'grant') {
             if ($request->place != "") {
                 $data = Grant::where('country', $request->place)->orderBy('id', 'DESC')->paginate(9);
             } else {
                 $data = Grant::orderBy('id', 'DESC')->paginate(9);
             }
             $data->appends($request->all());
-            return view('grants', compact('data'));
+            return view('grants.grants', compact('data'));
         } else if ($request->oppotunity == 'conference') {
             if ($request->place != "") {
                 $data = Conference::where('place', $request->place)->orderBy('id', 'DESC')->paginate(9);

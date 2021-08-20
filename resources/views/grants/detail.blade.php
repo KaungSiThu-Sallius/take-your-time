@@ -17,7 +17,7 @@
             Us</a>
     </li>
 
-    <li class="nav-item dropdown active">
+    <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink"
             data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i
                 class="fas fa-graduation-cap fa_hid"></i>Scholarships</a>
@@ -31,7 +31,7 @@
         </div>
     </li>
 
-    <li class="nav-item">
+    <li class="nav-item active">
         <a class="nav-link" href="{{url('/grants')}}"><i
                 class="fas fa-hand-holding-usd fa_hid"></i></i>Grants</a>
     </li>
@@ -87,17 +87,7 @@
             <h2 class="previewText">{{$detail->title}}</h2>
             <ul class="breadcrumb">
                 <li class="breadcrumb-item"><a href="{{url('/')}}" class="previewLink">Home</a></li>
-                <li class="breadcrumb-item"><a href="{{url('/scholarships')}}" class="previewLink">Scholarships</a></li>
-                @if ($detail->type == 'Undergraduate')
-                    <li class="breadcrumb-item"><a href="{{url('scholarships/undergraduate')}}"           class="previewLink">Undergraudate</a></li>
-                @elseif ($detail->type == 'Master')
-                    <li class="breadcrumb-item"><a href="{{url('scholarships/master')}}"           class="previewLink">Master</a></li>
-                @elseif ($detail->type == 'Phd')
-                    <li class="breadcrumb-item"><a href="{{url('scholarships/phd')}}"           class="previewLink">PhD</a></li>
-                @elseif ($detail->type == 'Fellowship')
-                    <li class="breadcrumb-item"><a href="{{url('scholarships/fellowship')}}"           class="previewLink">Fellowship</a></li>
-                @endif
-
+                <li class="breadcrumb-item"><a href="{{url('/grants')}}" class="previewLink">Grants</a></li>
                 <li class="breadcrumb-item"><a href="{{url('#')}}" class="previewLink activeLink">Details</a></li>
             </ul>
         </div>
@@ -115,7 +105,7 @@
                 <div class="col-xl-8 col-md-7">
                     <div class="info">
                         <p><i class="far fa-calendar-alt"></i>   <span style="font-weight: 600;">Deadline :</span> <span style="color: red">{{date('F j, Y', strtotime($detail->deadline))}}</span></p>
-                        <p> <i class="fas fa-signal"></i>   <span style="font-weight: 600;">Level :</span>  {{str_replace(',',', ',$detail->type)}}</p>
+                        <p> <i class="fas fa-signal"></i>   <span style="font-weight: 600;">Level :</span>  {{str_replace(',',', ',$detail->level)}}</p>
                         <p><i class="fas fa-graduation-cap"></i>   <span style="font-weight: 600;">Funding :</span> {{$detail->funding}}</p>
                         <p><i class="fas fa-globe"></i>   <span style="font-weight: 600;">Place :</span> {{$detail->country}}</p>
                         <p><i class="fa fa-user"></i>   <span style="font-weight: 600;">Given by :</span> {{$detail->given_by}}<br></p>
@@ -200,7 +190,7 @@
             <table class="table table-white table-striped mx-3 my-5">
                 <tr>
                   <th>Type of Oppotunity</th>
-                  <td>{{str_replace(',',', ',$detail->type)}}</td>
+                  <td>{{str_replace(',',', ',$detail->level)}}</td>
                 </tr>
 
                 <tr>

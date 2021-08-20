@@ -24,7 +24,8 @@ Route::prefix('scholarships')->namespace('Scholarship')->group(function () {
 });
 
 // Grants
-Route::get('/grants', 'GrantController@index');
+Route::get('/grants', 'GrantController@allGrant');
+Route::get('grants/detail/{slug}/{id}', 'GrantController@detail');
 
 // Conferences
 Route::get('/conferences', 'ConferenceController@index');
@@ -61,4 +62,7 @@ Route::prefix('admin')->middleware('admin')->group(function () {
     Route::get('scholarshipIndex', 'Scholarship\ScholarshipController@allData');
     Route::get('scholarshipIndex/search', 'Scholarship\ScholarshipController@searchData');
     Route::resource('scholarship', 'Scholarship\ScholarshipController');
+    Route::get('grantIndex', 'GrantController@allData');
+    Route::get('grantIndex/search', 'GrantController@searchData');
+    Route::resource('grant', 'GrantController');
 });

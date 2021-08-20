@@ -1,6 +1,6 @@
 @extends('admin.layout.master')
 @section('title')
-<title>Detail Scholarship</title>
+<title>Detail Grant</title>
 @endsection
 @section('nav_items')
     <li class="">
@@ -9,13 +9,13 @@
             <span>Dashboard</span>
         </a>
     </li>
-    <li class="active">
+    <li class="">
         <a href="{{url('admin/scholarshipIndex')}}">
             <img src="{{asset('images/scholar.svg')}}" alt="scholarship" type="image/svg+xml" class="svg_icon icon_sidebar" />
             <span>Scholarship</span>
         </a>
     </li>
-    <li class="">
+    <li class="active">
         <a href="{{url('admin/grantIndex')}}">
             <img src="{{asset('images/grant.svg')}}" alt="grant" type="image/svg+xml" class="svg_icon" />
             <span>Grant</span>
@@ -36,7 +36,7 @@
                 <div class="offset-md-3 col-md-9">
                     <div class="card">
                         <div class="card-header">
-                            <h5>Scholarship Detail</h5>
+                            <h5>Grant Detail</h5>
                         </div>
                         <div class="card-body">
                             <div class="table-responsive">
@@ -44,41 +44,37 @@
                                     <tbody>
                                     <tr>
                                         <th scope="row">Title</th>
-                                        <td>{{$scholarship->title}}</td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row">Section</th>
-                                        <td>{{$scholarship->name}}</td>
+                                        <td>{{$grant->title}}</td>
                                     </tr>
                                     <tr>
                                         <th scope="row">Type</th>
-                                        <td>{{$scholarship->type}}</td>
+                                        <td>{{$grant->level}}</td>
                                     </tr>
                                     <tr>
                                         <th scope="row">Start Application Date</th>
-                                        <td>{{date('F j, Y', strtotime($scholarship->start_application_date))}}</td>
+                                        <td>{{date('F j, Y', strtotime($grant->start_application_date))}}</td>
                                     </tr>
                                     <tr>
                                         <th scope="row">Deadline</th>
-                                        <td>{{date('F j, Y', strtotime($scholarship->deadline))}}</td>
+                                        <td>{{date('F j, Y', strtotime($grant->deadline))}}</td>
                                     </tr>
                                     <tr>
                                         <th scope="row">Funding</th>
-                                        <td>{{$scholarship->funding}}</td>
+                                        <td>{{$grant->funding}}</td>
                                     </tr>
                                     <tr>
                                         <th scope="row">Country</th>
-                                        <td>{{$scholarship->country}}</td>
+                                        <td>{{$grant->country}}</td>
                                     </tr>
                                     <tr>
                                         <th scope="row">Details</th>
-                                        <td>{{$scholarship->details}}</td>
+                                        <td>{{$grant->details}}</td>
                                     </tr>
-                                    @if ($scholarship->other_information != "")
+                                    @if ($grant->other_information != "")
                                     <tr>
                                         <th scope="row">Other Information</th>
                                         <td>
-                                            {{$scholarship->other_information}}
+                                            {{$grant->other_information}}
                                         </td>
                                      </tr>
                                     @endif
@@ -87,7 +83,7 @@
                                         <td>Criteria</td>
                                         <td>
                                             <ol>
-                                                @foreach ($scholarship->criteria as $c)
+                                                @foreach ($grant->criteria as $c)
                                                     <li>{{$c->criteria}}</li>
                                                 @endforeach
                                             </ol>
@@ -97,10 +93,9 @@
                                         <td>Benefit</td>
                                         <td>
                                             <ol>
-                                                @foreach ($scholarship->benefit as $b)
-                                                <li>{{$b->benefit}}</li>
-                                            @endforeach
-
+                                                @foreach ($grant->benefit as $b)
+                                                    <li>{{$b->benefit}}</li>
+                                                @endforeach
                                             </ol>
                                         </td>
                                     </tr>
@@ -108,7 +103,7 @@
                                         <td>Application Process</td>
                                         <td>
                                             <ol>
-                                                @foreach ($scholarship->process as $p)
+                                                @foreach ($grant->process as $p)
                                                 <li>{{$p->process}}</li>
                                             @endforeach
 
@@ -117,16 +112,16 @@
                                     </tr>
                                     <tr>
                                         <th scope="row">Source</th>
-                                        <td>{{$scholarship->apply_form_link}}</td>
+                                        <td>{{$grant->apply_form_link}}</td>
                                     </tr>
                                     <tr>
                                         <th scope="row">Official Website</th>
-                                        <td>{{$scholarship->official_website}}</td>
+                                        <td>{{$grant->official_website}}</td>
                                     </tr>
                                     <tr>
                                         <th>Image</th>
                                         <td>
-                                            <img src="{{asset("images_database/$scholarship->image")}}" alt="scholarship_image" style="width:200px">
+                                            <img src="{{asset("images_database/$grant->image")}}" alt="scholarship_image" style="width:200px">
                                         </td>
                                     </tr>
                                     <tr>
@@ -139,7 +134,7 @@
                                     </tbody>
                                 </table>
                                 <div style="float: right;" class="mb-4">
-                                    <a href="{{url('admin/scholarshipIndex')}}"><div class="button btn">Back</div></a>
+                                    <a href="{{url('admin/grantIndex')}}"><div class="button btn">Back</div></a>
                                 </div>
                             </div>
                         </div>

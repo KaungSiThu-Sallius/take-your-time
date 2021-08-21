@@ -1,5 +1,7 @@
 @extends('layout.master')
-
+@section('title')
+<title>Take Your Time - Courses</title>
+@endsection
 @section('nav_items')
 
     <li class="nav-item">
@@ -111,9 +113,9 @@
             <div class="row">
                 @foreach ($courses as $c)
                 <div class="col-md-6 col-lg-6 col-xl-3">
-                    <a href="#">
+                    <a href="{{url("/courses/detail/$c->slug/$c->id")}}">
                         <div class="card mb-5">
-                            <img class="card-img" src="{{$c->image}}" alt="Course Image">
+                            <img class="card-img" src="{{asset("images_database/$c->image")}}" alt="Course Image">
                             <div class="card-body title">
                                 <h5 class="card-title text-center">{{$c->course_name}}
                                 </h5>

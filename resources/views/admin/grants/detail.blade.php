@@ -21,6 +21,18 @@
             <span>Grant</span>
         </a>
     </li>
+    <li class="">
+        <a href="{{url('admin/conferenceIndex')}}">
+            <img src="{{asset('images/conference.svg')}}" alt="conference" type="image/svg+xml" class="svg_icon" />
+            <span>Conference</span>
+        </a>
+    </li>
+    <li class="">
+        <a href="{{url('admin/courseIndex')}}">
+            <img src="{{asset('images/courses.svg')}}" alt="course" type="image/svg+xml" class="svg_icon" />
+            <span>Course</span>
+        </a>
+    </li>
 
 @endsection
 
@@ -30,7 +42,7 @@
         line-height: 30px;
     }
 </style>
-    <div class="detail_scholar">
+    <div class="grant detail_scholar">
         <div class="container">
             <div class="row mt-5 mb-5">
                 <div class="offset-md-3 col-md-9">
@@ -121,7 +133,7 @@
                                     <tr>
                                         <th>Image</th>
                                         <td>
-                                            <img src="{{asset("images_database/$grant->image")}}" alt="scholarship_image" style="width:200px">
+                                            <img src="{{asset("images_database/$grant->image")}}" alt="grant_image" style="width:200px">
                                         </td>
                                     </tr>
                                     <tr>

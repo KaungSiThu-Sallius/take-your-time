@@ -21,11 +21,23 @@
             <span>Grant</span>
         </a>
     </li>
+    <li class="">
+        <a href="{{url('admin/conferenceIndex')}}">
+            <img src="{{asset('images/conference.svg')}}" alt="conference" type="image/svg+xml" class="svg_icon" />
+            <span>Conference</span>
+        </a>
+    </li>
+    <li class="">
+        <a href="{{url('admin/courseIndex')}}">
+            <img src="{{asset('images/courses.svg')}}" alt="course" type="image/svg+xml" class="svg_icon" />
+            <span>Course</span>
+        </a>
+    </li>
 
 @endsection
 
 @section('contents')
-<div class="scholarships">
+<div class="grants">
     <div class="container">
         <div class="row mt-4">
             <div class="offset-md-3 col-md-9 col-12">

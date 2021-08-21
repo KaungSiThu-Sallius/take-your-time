@@ -49,11 +49,6 @@ class GrantController extends Controller
      */
     public function store(Request $request)
     {
-        $request->validate([
-            'image' => 'required|mimes:png,jpg,jpeg',
-        ], [
-            'image.mimes' => 'Please choose image',
-        ]);
 
         $title = $request->title;
         $start_application_date = $request->start_application_date;
@@ -248,7 +243,7 @@ class GrantController extends Controller
             'image' => $img_name,
         ]);
 
-        OppotunityPlace::where('post_id', $grant_id)->delete();
+        OppotunityPlace::where('post_id', $grant_id)->where('oppotunity', 'grant')->delete();
         OppotunityPlace::create([
             'post_id' => $grant_id,
             'oppotunity' => 'grant',
@@ -269,7 +264,7 @@ class GrantController extends Controller
     {
         Grant::where('id', $id)->delete();
         AllPost::where('post_id', $id)->where('name', 'grant')->delete();
-        OppotunityPlace::where('post_id', $id)->where('oppotunity', 'undergraduate')->delete();
+        OppotunityPlace::where('post_id', $id)->where('oppotunity', 'grant')->delete();
         CriteriaGrant::where('grant_id', $id)->delete();
         BenefitGrant::where('grant_id', $id)->delete();
         ProcessGrant::where('grant_id', $id)->delete();

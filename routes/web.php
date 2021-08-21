@@ -28,13 +28,15 @@ Route::get('/grants', 'GrantController@allGrant');
 Route::get('grants/detail/{slug}/{id}', 'GrantController@detail');
 
 // Conferences
-Route::get('/conferences', 'ConferenceController@index');
+Route::get('/conferences', 'ConferenceController@allConference');
+Route::get('conferences/detail/{slug}/{id}', 'ConferenceController@detail');
 
 // Courses
 Route::prefix('courses')->namespace('Course')->group(function () {
-    Route::get('/', 'CourseController@index');
+    Route::get('/', 'CourseController@allCourse');
     Route::get('/freeCourses', 'FreeCourseController@index');
     Route::get('/paidCourses', 'PaidCourseController@index');
+    Route::get('/detail/{slug}/{id}', 'CourseController@detail');
 });
 
 // Jobs
@@ -65,4 +67,10 @@ Route::prefix('admin')->middleware('admin')->group(function () {
     Route::get('grantIndex', 'GrantController@allData');
     Route::get('grantIndex/search', 'GrantController@searchData');
     Route::resource('grant', 'GrantController');
+    Route::get('conferenceIndex', 'ConferenceController@allData');
+    Route::get('conferenceIndex/search', 'ConferenceController@searchData');
+    Route::resource('conference', 'ConferenceController');
+    Route::get('courseIndex', 'Course\CourseController@allData');
+    Route::get('courseIndex/search', 'Course\CourseController@searchData');
+    Route::resource('course', 'Course\CourseController');
 });

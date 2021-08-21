@@ -21,6 +21,18 @@
             <span>Grant</span>
         </a>
     </li>
+    <li class="">
+        <a href="{{url('admin/conferenceIndex')}}">
+            <img src="{{asset('images/conference.svg')}}" alt="conference" type="image/svg+xml" class="svg_icon" />
+            <span>Conference</span>
+        </a>
+    </li>
+    <li class="">
+        <a href="{{url('admin/courseIndex')}}">
+            <img src="{{asset('images/courses.svg')}}" alt="course" type="image/svg+xml" class="svg_icon" />
+            <span>Course</span>
+        </a>
+    </li>
 
 @endsection
 

@@ -1,6 +1,6 @@
 @extends('admin.layout.master')
 @section('title')
-<title>Detail Scholarship</title>
+<title>Detail Course</title>
 @endsection
 @section('nav_items')
     <li class="">
@@ -9,7 +9,7 @@
             <span>Dashboard</span>
         </a>
     </li>
-    <li class="active">
+    <li class="">
         <a href="{{url('admin/scholarshipIndex')}}">
             <img src="{{asset('images/scholar.svg')}}" alt="scholarship" type="image/svg+xml" class="svg_icon icon_sidebar" />
             <span>Scholarship</span>
@@ -27,7 +27,7 @@
             <span>Conference</span>
         </a>
     </li>
-    <li class="">
+    <li class="active">
         <a href="{{url('admin/courseIndex')}}">
             <img src="{{asset('images/courses.svg')}}" alt="course" type="image/svg+xml" class="svg_icon" />
             <span>Course</span>
@@ -42,103 +42,75 @@
         line-height: 30px;
     }
 </style>
-    <div class="detail_scholar">
+    <div class="course detail_scholar">
         <div class="container">
             <div class="row mt-5 mb-5">
                 <div class="offset-md-3 col-md-9">
                     <div class="card">
                         <div class="card-header">
-                            <h5>Scholarship Detail</h5>
+                            <h5>Course Detail</h5>
                         </div>
                         <div class="card-body">
                             <div class="table-responsive">
                                 <table class="table table-striped">
                                     <tbody>
                                     <tr>
-                                        <th scope="row">Title</th>
-                                        <td>{{$scholarship->title}}</td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row">Section</th>
-                                        <td>{{$scholarship->name}}</td>
+                                        <th scope="row">Course Name</th>
+                                        <td>{{$course->course_name}}</td>
                                     </tr>
                                     <tr>
                                         <th scope="row">Type</th>
-                                        <td>{{$scholarship->type}}</td>
+                                        <td>{{$course->type}}</td>
                                     </tr>
                                     <tr>
-                                        <th scope="row">Start Application Date</th>
-                                        <td>{{date('F j, Y', strtotime($scholarship->start_application_date))}}</td>
+                                        <th scope="row">Taught By</th>
+                                        <td>{{$course->taught_by}}</td>
                                     </tr>
                                     <tr>
                                         <th scope="row">Deadline</th>
-                                        <td>{{date('F j, Y', strtotime($scholarship->deadline))}}</td>
+                                        <td>{{date('F j, Y', strtotime($course->deadline))}}</td>
                                     </tr>
                                     <tr>
-                                        <th scope="row">Funding</th>
-                                        <td>{{$scholarship->funding}}</td>
+                                        <th scope="row">Course Start Date</th>
+                                        <td>{{date('F j, Y', strtotime($course->start_date))}}</td>
+                                    </tr>
+
+                                    <tr>
+                                        <th scope="row">Price</th>
+                                        <td>
+                                            @if ($course->price == 0)
+                                                FOC
+                                            @else
+                                                {{$course->price}}
+                                            @endif
+                                        </td>
                                     </tr>
                                     <tr>
-                                        <th scope="row">Country</th>
-                                        <td>{{$scholarship->country}}</td>
+                                        <th scope="row">Class Timetable</th>
+                                        <td>
+                                            {{$course->timetable}}
+                                        </td>
+                                     </tr>
+                                    <tr>
+                                        <th scope="row">Place</th>
+                                        <td>{{$course->place}}</td>
                                     </tr>
                                     <tr>
                                         <th scope="row">Details</th>
-                                        <td>{{$scholarship->details}}</td>
-                                    </tr>
-                                    @if ($scholarship->other_information != "")
-                                    <tr>
-                                        <th scope="row">Other Information</th>
-                                        <td>
-                                            {{$scholarship->other_information}}
-                                        </td>
-                                     </tr>
-                                    @endif
-
-                                    <tr>
-                                        <td>Criteria</td>
-                                        <td>
-                                            <ol>
-                                                @foreach ($scholarship->criteria as $c)
-                                                    <li>{{$c->criteria}}</li>
-                                                @endforeach
-                                            </ol>
-                                        </td>
+                                        <td>{{$course->details}}</td>
                                     </tr>
                                     <tr>
-                                        <td>Benefit</td>
-                                        <td>
-                                            <ol>
-                                                @foreach ($scholarship->benefit as $b)
-                                                <li>{{$b->benefit}}</li>
-                                            @endforeach
-
-                                            </ol>
-                                        </td>
+                                        <th scope="row">Apply Form Link</th>
+                                        <td>{{$course->apply_form_link}}</td>
                                     </tr>
                                     <tr>
-                                        <td>Application Process</td>
-                                        <td>
-                                            <ol>
-                                                @foreach ($scholarship->process as $p)
-                                                <li>{{$p->process}}</li>
-                                            @endforeach
-
-                                            </ol>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row">Source</th>
-                                        <td>{{$scholarship->apply_form_link}}</td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row">Official Website</th>
-                                        <td>{{$scholarship->official_website}}</td>
+                                        <th scope="row">Course Duration</th>
+                                        <td>{{$course->course_duration}}</td>
                                     </tr>
                                     <tr>
                                         <th>Image</th>
                                         <td>
-                                            <img src="{{asset("images_database/$scholarship->image")}}" alt="scholarship_image" style="width:200px">
+                                            <img src="{{asset("images_database/$course->image")}}" alt="course_image" style="width:200px">
                                         </td>
                                     </tr>
                                     <tr>
@@ -151,7 +123,7 @@
                                     </tbody>
                                 </table>
                                 <div style="float: right;" class="mb-4">
-                                    <a href="{{url('admin/scholarshipIndex')}}"><div class="button btn">Back</div></a>
+                                    <a href="{{url('admin/courseIndex')}}"><div class="button btn">Back</div></a>
                                 </div>
                             </div>
                         </div>

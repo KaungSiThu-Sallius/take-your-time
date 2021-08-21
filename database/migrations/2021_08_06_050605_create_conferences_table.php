@@ -15,13 +15,16 @@ class CreateConferencesTable extends Migration
     {
         Schema::create('conferences', function (Blueprint $table) {
             $table->id();
+            $table->string('slug');
             $table->string('title');
             $table->string('image');
+            $table->dateTime('start_application_date');
             $table->dateTime('deadline');
             $table->string('funding');
             $table->string('place');
-            $table->string('given_by');
+            $table->string('organized_by');
             $table->longText('details');
+            $table->longText('other_information')->nullable();
             $table->string('field');
             $table->string('official_website');
             $table->string('apply_form_link');

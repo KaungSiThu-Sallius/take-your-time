@@ -337,7 +337,7 @@ class ScholarshipController extends Controller
             'image' => $img_name,
         ]);
 
-        OppotunityPlace::where('post_id', $scholarship_id)->delete();
+        OppotunityPlace::where('post_id', $id)->where('oppotunity', 'undergraduate')->orWhere('oppotunity', 'master')->orWhere('oppotunity', 'phd')->orWhere('oppotunity', 'fellowship')->delete();
         Undergraduate::where('scholarship_id', $scholarship_id)->delete();
         Master::where('scholarship_id', $scholarship_id)->delete();
         Phd::where('scholarship_id', $scholarship_id)->delete();

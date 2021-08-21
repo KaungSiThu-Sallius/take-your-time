@@ -15,6 +15,7 @@ class CreateCoursesTable extends Migration
     {
         Schema::create('courses', function (Blueprint $table) {
             $table->id();
+            $table->string('slug');
             $table->enum('type', ['free_course', 'paid_course']);
             $table->string('course_name');
             $table->string('image');
@@ -25,7 +26,7 @@ class CreateCoursesTable extends Migration
             $table->string('taught_by');
             $table->longText('details');
             $table->string('course_duration');
-            $table->enum('platform', ['zoom', 'googlemeet']);
+            $table->string('timetable');
             $table->string('apply_form_link');
             $table->timestamps();
         });

@@ -1,6 +1,6 @@
 @extends('admin.layout.master')
 @section('title')
-<title>Create Grant</title>
+<title>Create Conference</title>
 @endsection
 @section('nav_items')
     <li class="">
@@ -15,13 +15,13 @@
             <span>Scholarship</span>
         </a>
     </li>
-    <li class="active">
+    <li class="">
         <a href="{{url('admin/grantIndex')}}">
             <img src="{{asset('images/grant.svg')}}" alt="grant" type="image/svg+xml" class="svg_icon" />
             <span>Grant</span>
         </a>
     </li>
-    <li class="">
+    <li class="active">
         <a href="{{url('admin/conferenceIndex')}}">
             <img src="{{asset('images/conference.svg')}}" alt="conference" type="image/svg+xml" class="svg_icon" />
             <span>Conference</span>
@@ -37,14 +37,14 @@
 @endsection
 
 @section('contents')
-    <div class="grant create_scholar">
+    <div class="conference create_scholar">
         <div class="container">
             <div class="row">
                 <div class="offset-md-3 col-md-9 col-12">
-                    <form action="{{route('grant.store')}}" method="POST" enctype="multipart/form-data" class="card">
+                    <form action="{{route('conference.store')}}" method="POST" enctype="multipart/form-data" class="card">
                         @csrf
                         <div class="card-header">
-                            <h2 class="mb-4">Create Grant <span style="font-size:14px; color:red">(<? echo date("d M, Y") ?>)</span>
+                            <h2 class="mb-4">Create Conference <span style="font-size:14px; color:red">(<? echo date("d M, Y") ?>)</span>
                             </h2>
                         </div>
                         @include('admin.alert')
@@ -60,8 +60,8 @@
 
                                 <div class="col-md-6">
                                     <div class="md-form mb-0">
-                                        <input type="text" id="country" name="country" class="form-control" required>
-                                        <label for="country">Country</label>
+                                        <input type="text" id="place" name="place" class="form-control" required>
+                                        <label for="place">Place</label>
                                     </div>
                                 </div>
                             </div>
@@ -69,8 +69,8 @@
                             <div class="row mb-2">
                                 <div class="col-md-12">
                                     <div class="md-form mb-0">
-                                        <input type="text" id="given_by" name="given_by" class="form-control" required>
-                                        <label for="given_by" class="">Given By</label>
+                                        <input type="text" id="organized_by" name="organized_by" class="form-control" required>
+                                        <label for="organized_by" class="">Organized By</label>
                                     </div>
                                 </div>
                             </div>
@@ -126,22 +126,18 @@
                             </div>
 
                             <div class="row mb-4">
-                                <div class="col-md-6 type_checkbox">
-                                    <h5>Level</h5>
-                                    <div class="custom-control custom-checkbox">
-                                        <input type="checkbox" class="custom-control-input" id="undergraduate" name="level[]" value="Undergraduate">
-                                        <label class="custom-control-label" for="undergraduate">Undergraduate</label>
-                                    </div>
-                                    <div class="custom-control custom-checkbox">
-                                        <input type="checkbox" class="custom-control-input" id="master" name="level[]" value="Master">
-                                        <label class="custom-control-label" for="master">Master</label>
-                                    </div>
-                                    <div class="custom-control custom-checkbox">
-                                        <input type="checkbox" class="custom-control-input" id="phd" name="level[]" value="Phd">
-                                        <label class="custom-control-label" for="phd">PhD</label>
+                                <div class="col-md-12">
+                                    <div class="md-form mb-0">
+                                        <input type="text" id="field" name="field" class="form-control" required>
+                                        <label for="field" class="">Field</label>
                                     </div>
                                 </div>
-                                <div class="col-md-6 funding">
+
+                            </div>
+
+
+                            <div class="row mb-4">
+                                <div class="col-md-12 funding">
                                     <h5>Funding</h5>
                                     <div class="custom-control custom-radio funding">
                                         <input type="radio" class="custom-control-input" id="fully_funded" name="funding" value="Fully-Funded">
@@ -157,7 +153,6 @@
                                     </div>
                                 </div>
                             </div>
-
                             <div class="row mb-4 criteria">
                                 <div class="col-12">
                                     <h5>Eligibility Criteria</h5>
@@ -334,7 +329,7 @@
 
                             <div class="row mb-2">
                                 <div class="col-12 image">
-                                    <h5 class="mb-4">Grant Image</h5>
+                                    <h5 class="mb-4">Conference Image</h5>
                                     <div class="input-group">
                                         <div class="input-group-prepend">
                                           <span class="input-group-text" id="inputGroupFileAddon01">Upload</span>

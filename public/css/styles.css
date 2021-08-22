@@ -838,6 +838,11 @@ a {
     margin-top: 22px;
 }
 
+.other_detail .img img {
+    margin-top: 0px;
+
+}
+
 .brief_info .info {
     border-left: 10px solid var(--primary02);
     padding: 10px 0 10px 25px;

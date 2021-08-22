@@ -45,6 +45,11 @@ class CourseController extends Controller
      */
     public function store(Request $request)
     {
+        $request->validate([
+            'image' => 'required|mimes:png,jpg,jpeg',
+        ], [
+            'image.mimes' => 'Please choose image',
+        ]);
 
         $course_name = $request->course_name;
         $start_date = $request->start_date;

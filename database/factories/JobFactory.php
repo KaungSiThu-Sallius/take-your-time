@@ -4,6 +4,7 @@ namespace Database\Factories;
 
 use App\Models\Job;
 use Illuminate\Database\Eloquent\Factories\Factory;
+use Illuminate\Support\Str;
 
 class JobFactory extends Factory
 {
@@ -22,6 +23,7 @@ class JobFactory extends Factory
     public function definition()
     {
         return [
+            'slug' => Str::slug($this->faker->jobTitle()),
             'type' => $this->faker->randomElement(['full_time_job', 'part_time_job', 'internship']),
             'title' => $this->faker->jobTitle(),
             'image' => $this->faker->imageUrl(),
@@ -30,6 +32,7 @@ class JobFactory extends Factory
             'start_date' => $this->faker->dateTime($min = 'now', $timezone = null),
             'organization_name' => $this->faker->name(),
             'details' => $this->faker->paragraph($nbSentences = 3, $variableNbSentences = true),
+            'other_information' => $this->faker->paragraph($nbSentences = 3, $variableNbSentences = true),
             'job_duration' => $this->faker->date($format = 'Y-m-d', $max = 'now') . " - " . $this->faker->date($format = 'Y-m-d', $max = 'now'),
             'apply_form_link' => $this->faker->url(),
         ];

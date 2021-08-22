@@ -49,6 +49,11 @@ class GrantController extends Controller
      */
     public function store(Request $request)
     {
+        $request->validate([
+            'image' => 'required|mimes:png,jpg,jpeg',
+        ], [
+            'image.mimes' => 'Please choose image',
+        ]);
 
         $title = $request->title;
         $start_application_date = $request->start_application_date;

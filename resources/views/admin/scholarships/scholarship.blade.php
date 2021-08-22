@@ -33,6 +33,18 @@
             <span>Course</span>
         </a>
     </li>
+    <li class="">
+        <a href="{{url('admin/jobIndex')}}">
+            <img src="{{asset('images/jobs.svg')}}" alt="job" type="image/svg+xml" class="svg_icon" />
+            <span>Job</span>
+        </a>
+    </li>
+    <li class="">
+        <a href="{{url('admin/otherIndex')}}">
+            <img src="{{asset('images/others.svg')}}" alt="other" type="image/svg+xml" class="svg_icon" />
+            <span>Other</span>
+        </a>
+    </li>
 
 @endsection
 
@@ -54,16 +66,42 @@
 
         <div class="cards">
             <div class="row mt-5">
-                <div class="offset-md-3 col-md-4">
+                <div class="offset-md-3 col-md-3">
                     <div class="card_info text-center">
                         <h4>Total Scholarships</h4>
                         <span class="badge badge-pill badge-default">{{$total_scholar_count}}</span>
                     </div>
                 </div>
-                <div class="col-md-4">
+                <div class="col-md-3">
                     <div class="card_info text-center">
                         <h4>Today Scholarships</h4>
                         <span class="badge badge-pill badge-default">{{$today_scholar_count}}</span>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card_info text-center">
+                        <h4>Total Undergraduate</h4>
+                        <span class="badge badge-pill badge-default">{{$total_undergraduate_count}}</span>
+                    </div>
+                </div>
+            </div>
+            <div class="row mt-5">
+                <div class="offset-md-3 col-md-3">
+                    <div class="card_info text-center">
+                        <h4>Total Master</h4>
+                        <span class="badge badge-pill badge-default">{{$total_master_count}}</span>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card_info text-center">
+                        <h4>Total PhD</h4>
+                        <span class="badge badge-pill badge-default">{{$total_phd_count}}</span>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card_info text-center">
+                        <h4>Total Fellowship</h4>
+                        <span class="badge badge-pill badge-default">{{$total_fellowship_count}}</span>
                     </div>
                 </div>
             </div>

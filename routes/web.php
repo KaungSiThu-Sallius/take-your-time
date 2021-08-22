@@ -1,6 +1,5 @@
 <?php
 
-use App\Http\Controllers\Scholarship\ScholarshipController;
 use Illuminate\Support\Facades\Route;
 
 // Home
@@ -41,17 +40,19 @@ Route::prefix('courses')->namespace('Course')->group(function () {
 
 // Jobs
 Route::prefix('jobs')->namespace('Job')->group(function () {
-    Route::get('/', 'JobController@index');
+    Route::get('/', 'JobController@allJob');
     Route::get('/internships', 'InternshipController@index');
     Route::get('/partTimeJobs', 'PartTimeController@index');
     Route::get('/fullTimeJobs', 'FullTimeController@index');
+    Route::get('/detail/{slug}/{id}', 'JobController@detail');
 });
 
 // Others
 Route::prefix('others')->namespace('Other')->group(function () {
-    Route::get('/', 'OtherController@index');
+    Route::get('/', 'OtherController@allOther');
     Route::get('/seminars', 'SeminarController@index');
     Route::get('/competitions', 'CompetitionController@index');
+    Route::get('/detail/{slug}/{id}', 'OtherController@detail');
 });
 
 // Authentication
@@ -60,17 +61,36 @@ Route::post('/admin/login', 'Admin\AuthController@login');
 
 // Admin
 Route::prefix('admin')->middleware('admin')->group(function () {
+    Route::get('logout', 'Admin\AuthController@logout');
     Route::get('dashboard', 'Admin\DashboardController@index');
+
+    // Scholarship
     Route::get('scholarshipIndex', 'Scholarship\ScholarshipController@allData');
     Route::get('scholarshipIndex/search', 'Scholarship\ScholarshipController@searchData');
     Route::resource('scholarship', 'Scholarship\ScholarshipController');
+
+    // Grant
     Route::get('grantIndex', 'GrantController@allData');
     Route::get('grantIndex/search', 'GrantController@searchData');
     Route::resource('grant', 'GrantController');
+
+    // Conference
     Route::get('conferenceIndex', 'ConferenceController@allData');
     Route::get('conferenceIndex/search', 'ConferenceController@searchData');
     Route::resource('conference', 'ConferenceController');
+
+    // Course
     Route::get('courseIndex', 'Course\CourseController@allData');
     Route::get('courseIndex/search', 'Course\CourseController@searchData');
     Route::resource('course', 'Course\CourseController');
+
+    // Job
+    Route::get('jobIndex', 'Job\JobController@allData');
+    Route::get('jobIndex/search', 'Job\JobController@searchData');
+    Route::resource('job', 'Job\JobController');
+
+    // Other
+    Route::get('otherIndex', 'Other\OtherController@allData');
+    Route::get('otherIndex/search', 'Other\OtherController@searchData');
+    Route::resource('other', 'Other\OtherController');
 });

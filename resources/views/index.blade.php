@@ -157,6 +157,10 @@
                             <a href="{{url("/grants/detail/$f->slug/$f->post_id")}}">
                         @elseif($f->name == 'conference')
                             <a href="{{url("/conferences/detail/$f->slug/$f->post_id")}}">
+                        @elseif($f->name == 'job')
+                            <a href="{{url("/jobs/detail/$f->slug/$f->post_id")}}">
+                        @elseif($f->name == 'other')
+                                <a href="{{url("/others/detail/$f->slug/$f->post_id")}}">
                         @endif
                             <div class="featured_card card">
                                 <div class="view overlay card_img">
@@ -180,19 +184,19 @@
                                         @if ($f->name == 'conference')
                                             Conference
                                         @endif
-                                        @if ($f->name == 'part_time_job')
+                                        @if ($f->type == 'part_time_job')
                                             Part-Time Job
                                         @endif
-                                        @if ($f->name == 'full_time_job')
+                                        @if ($f->type == 'full_time_job')
                                             Full-Time Job
                                         @endif
-                                        @if ($f->name == 'internship')
+                                        @if ($f->type == 'internship')
                                             Internship
                                         @endif
-                                        @if ($f->name == 'seminar')
+                                        @if ($f->type == 'seminar')
                                             Seminar
                                         @endif
-                                        @if ($f->name == 'competition')
+                                        @if ($f->type == 'competition')
                                             Competition
                                         @endif
                                     </span>
@@ -364,12 +368,12 @@
                             <div class="row">
                                 <div class="col-lg-5">
                                     <div class="latest_oppo_img">
-                                        <img src="{{$jobs[0]->image}}" alt="organization_photo">
+                                        <img src="{{asset("images_database/".$jobs[0]->image)}}" alt="organization_photo">
                                     </div>
                                 </div>
                                 <div class="col-lg-7">
                                     <div class="latest_oppo_label">
-                                        <a href="#">
+                                        <a href="{{url("/jobs/detail/".$jobs[0]->slug."/".$jobs[0]->id)}}">
                                             <h5>{{$jobs[0]->title}}</h5>
                                         </a>
                                         <p>Deadline: {{date('F j, Y', strtotime($jobs[0]->deadline))}}</p>
@@ -381,7 +385,7 @@
                             <div class="row">
                                 <div class="col-12">
                                     <div class="latest_oppo_label">
-                                        <a href="#">
+                                        <a href="{{url("/jobs/detail/".$jobs[1]->slug."/".$jobs[1]->id)}}">
                                             <h5>{{$jobs[1]->title}}</h5>
                                         </a>
                                         <p>Deadline: {{date('F j, Y', strtotime($jobs[1]->deadline))}}</p>
@@ -392,7 +396,7 @@
                             <div class="row">
                                 <div class="col-12">
                                     <div class="latest_oppo_label">
-                                        <a href="#">
+                                        <a href="{{url("/jobs/detail/".$jobs[2]->slug."/".$jobs[2]->id)}}">
                                             <h5>{{$jobs[2]->title}}</h5>
                                         </a>
                                         <p>Deadline: {{date('F j, Y', strtotime($jobs[2]->deadline))}}</p>
@@ -416,12 +420,12 @@
                             <div class="row">
                                 <div class="col-lg-5">
                                     <div class="latest_oppo_img">
-                                        <img src="{{$others[0]->image}}" alt="organization_photo">
+                                        <img src="{{asset("images_database/".$others[0]->image)}}" alt="organization_photo">
                                     </div>
                                 </div>
                                 <div class="col-lg-7">
                                     <div class="latest_oppo_label">
-                                        <a href="#">
+                                        <a href="{{url("/others/detail/".$others[0]->slug."/".$others[0]->id)}}">
                                             <h5>{{$others[0]->title}}</h5>
                                         </a>
                                         <p>Deadline: {{date('F j, Y', strtotime($others[0]->deadline))}}</p>
@@ -433,7 +437,7 @@
                             <div class="row">
                                 <div class="col-12">
                                     <div class="latest_oppo_label">
-                                        <a href="#">
+                                        <a href="{{url("/others/detail/".$others[1]->slug."/".$others[1]->id)}}">
                                             <h5>{{$others[1]->title}}</h5>
                                         </a>
                                         <p>Deadline: {{date('F j, Y', strtotime($others[1]->deadline))}}</p>
@@ -444,7 +448,7 @@
                             <div class="row">
                                 <div class="col-12">
                                     <div class="latest_oppo_label">
-                                        <a href="#">
+                                        <a href="{{url("/others/detail/".$others[2]->slug."/".$others[2]->id)}}">
                                             <h5>{{$others[2]->title}}</h5>
                                         </a>
                                         <p>Deadline: {{date('F j, Y', strtotime($others[2]->deadline))}}</p>

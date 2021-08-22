@@ -22,12 +22,12 @@ class HomeController extends Controller
     public function index()
     {
         $featured_oppo = AllPost::orderBy('updated_at', 'DESC')->take(4)->get();
-        $latest_scholar = Scholarship::orderBy('created_at', 'DESC')->paginate(3);
+        $latest_scholar = Scholarship::orderBy('created_at', 'DESC')->take(3)->get();
         $grants = Grant::orderBy('created_at', 'DESC')->take(3)->get();
-        $conferences = Conference::orderBy('created_at', 'DESC')->paginate(3);
-        $jobs = Job::orderBy('created_at', 'DESC')->paginate(3);
-        $others = Other::orderBy('created_at', 'DESC')->paginate(3);
-        $courses = Course::orderBy('created_at', 'DESC')->paginate(4);
+        $conferences = Conference::orderBy('created_at', 'DESC')->take(3)->get();
+        $jobs = Job::orderBy('created_at', 'DESC')->take(3)->get();
+        $others = Other::orderBy('created_at', 'DESC')->take(3)->get();
+        $courses = Course::orderBy('created_at', 'DESC')->take(4)->get();
         return view('index', compact('featured_oppo', 'latest_scholar', 'grants', 'conferences', 'jobs', 'others', 'courses'));
     }
 

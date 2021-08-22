@@ -33,6 +33,19 @@
             <span>Course</span>
         </a>
     </li>
+    <li class="">
+        <a href="{{url('admin/jobIndex')}}">
+            <img src="{{asset('images/jobs.svg')}}" alt="job" type="image/svg+xml" class="svg_icon" />
+            <span>Job</span>
+        </a>
+    </li>
+    <li class="">
+        <a href="{{url('admin/otherIndex')}}">
+            <img src="{{asset('images/others.svg')}}" alt="other" type="image/svg+xml" class="svg_icon" />
+            <span>Other</span>
+        </a>
+    </li>
+
 
 @endsection
 

@@ -550,7 +550,13 @@
                 </li>
 
                 @yield('nav_items')
-
+                <hr>
+                <li class="">
+                    <a href="{{url('admin/logout')}}">
+                        <img src="{{asset('images/logout.svg')}}" alt="course" type="image/svg+xml" class="svg_icon" />
+                        <span>Logout</span>
+                    </a>
+                </li>
                 <button class="collapse-btn" aria-expanded="true" aria-label="collapse menu" style="background-color: #EE7674">
                     <svg aria-hidden="true">
                         <use xlink:href="#collapse"></use>

@@ -72,7 +72,7 @@
             <div class="container-fluid">
 
                 <!-- hidden_logo -->
-                <img src="images/logo.svg" alt="logo" type="image/svg+xml" class="hidden_logo">
+                <img src="{{asset('images/logo.svg')}}" alt="logo" type="image/svg+xml" class="hidden_logo">
 
                 <!-- Collapse button -->
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar_collapse"

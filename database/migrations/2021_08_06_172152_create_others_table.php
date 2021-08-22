@@ -15,6 +15,7 @@ class CreateOthersTable extends Migration
     {
         Schema::create('others', function (Blueprint $table) {
             $table->id();
+            $table->string('slug');
             $table->enum('type', ['competition', 'seminar']);
             $table->string('title');
             $table->string('image');
@@ -23,6 +24,7 @@ class CreateOthersTable extends Migration
             $table->dateTime('start_date');
             $table->string('organization_name');
             $table->longText('details');
+            $table->longText('other_information')->nullable();
             $table->string('apply_form_link');
             $table->timestamps();
         });

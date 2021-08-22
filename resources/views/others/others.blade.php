@@ -110,9 +110,9 @@
             <div class="row">
                 @foreach ($other as $o)
                     <div class="col-md-6 col-lg-6 col-xl-4">
-                        <a href="#">
+                        <a href="{{url("/others/detail/".$o->slug."/".$o->id)}}">
                             <div class="card">
-                                <img class="card-img-top" src="{{$o->image}}" alt="Other Image">
+                                <img class="card-img-top" src="{{asset("images_database/".$o->image)}}" alt="Other Image">
                                 <div class="card-header">
                                     @if ($o->type == 'seminar')
                                         Seminar

@@ -28,4 +28,10 @@ class AuthController extends Controller
             return redirect()->back()->with('error', 'Email doesn\'t exists!');
         }
     }
+
+    public function logout()
+    {
+        Auth::logout();
+        return redirect('/admin/login')->with('success', 'Logout Successfully');
+    }
 }

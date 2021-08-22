@@ -337,7 +337,10 @@ class ScholarshipController extends Controller
             'image' => $img_name,
         ]);
 
-        OppotunityPlace::where('post_id', $id)->where('oppotunity', 'undergraduate')->orWhere('oppotunity', 'master')->orWhere('oppotunity', 'phd')->orWhere('oppotunity', 'fellowship')->delete();
+        OppotunityPlace::where('post_id', $id)->where('oppotunity', 'undergraduate')->delete();
+        OppotunityPlace::where('post_id', $id)->where('oppotunity', 'master')->delete();
+        OppotunityPlace::where('post_id', $id)->where('oppotunity', 'phd')->delete();
+        OppotunityPlace::where('post_id', $id)->where('oppotunity', 'fellowship')->delete();
         Undergraduate::where('scholarship_id', $scholarship_id)->delete();
         Master::where('scholarship_id', $scholarship_id)->delete();
         Phd::where('scholarship_id', $scholarship_id)->delete();
@@ -452,7 +455,10 @@ class ScholarshipController extends Controller
         Master::where('scholarship_id', $id)->delete();
         Phd::where('scholarship_id', $id)->delete();
         Fellowship::where('scholarship_id', $id)->delete();
-        OppotunityPlace::where('post_id', $id)->where('oppotunity', 'undergraduate')->orWhere('oppotunity', 'master')->orWhere('oppotunity', 'phd')->orWhere('oppotunity', 'fellowship')->delete();
+        OppotunityPlace::where('post_id', $id)->where('oppotunity', 'undergraduate')->delete();
+        OppotunityPlace::where('post_id', $id)->where('oppotunity', 'master')->delete();
+        OppotunityPlace::where('post_id', $id)->where('oppotunity', 'phd')->delete();
+        OppotunityPlace::where('post_id', $id)->where('oppotunity', 'fellowship')->delete();
         CriteriaScholarship::where('scholarship_id', $id)->delete();
         BenefitScholarship::where('scholarship_id', $id)->delete();
         ProcessScholarship::where('scholarship_id', $id)->delete();
@@ -469,8 +475,12 @@ class ScholarshipController extends Controller
     {
         $total_scholar_count = Scholarship::count();
         $today_scholar_count = Scholarship::whereDate('created_at', '=', Carbon::today()->toDateString())->count();
+        $total_undergraduate_count = Undergraduate::count();
+        $total_master_count = Master::count();
+        $total_phd_count = Phd::count();
+        $total_fellowship_count = Fellowship::count();
         $scholarships = Scholarship::orderBy('id', 'DESC')->paginate(10);
-        return view('admin.scholarships.scholarship', compact('total_scholar_count', 'today_scholar_count', 'scholarships'));
+        return view('admin.scholarships.scholarship', compact('total_fellowship_count', 'total_phd_count', 'total_master_count', 'total_undergraduate_count', 'total_scholar_count', 'today_scholar_count', 'scholarships'));
     }
 
     public function searchData(Request $request)

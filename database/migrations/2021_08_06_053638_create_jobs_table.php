@@ -15,14 +15,17 @@ class CreateJobsTable extends Migration
     {
         Schema::create('jobs', function (Blueprint $table) {
             $table->id();
+            $table->string('slug');
             $table->enum('type', ['part_time_job', 'full_time_job', 'internship']);
             $table->string('title');
             $table->string('image');
             $table->dateTime('deadline');
             $table->string('place');
+            $table->string('salary');
             $table->dateTime('start_date');
             $table->string('organization_name');
             $table->longText('details');
+            $table->longText('other_information')->nullable();
             $table->string('job_duration');
             $table->string('apply_form_link');
             $table->timestamps();

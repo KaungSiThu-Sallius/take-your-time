@@ -1,5 +1,7 @@
 @extends('layout.master')
-
+@section('title')
+<title>Take Your Time - Jobs</title>
+@endsection
 @section('nav_items')
 
     <li class="nav-item">
@@ -112,9 +114,9 @@
             <div class="row">
                 @foreach ($jobs as $j)
                     <div class="col-md-6 col-lg-6 col-xl-4">
-                        <a href="#">
+                        <a href="{{url("/jobs/detail/".$j->slug."/".$j->id)}}">
                             <div class="card">
-                                <img class="card-img-top" src="{{$j->image}}" alt="Job Image">
+                                <img class="card-img-top" src="{{asset("images_database/".$j->image)}}" alt="Job Image">
                                 <div class="card-header">
                                     @if ($j->type == 'internship')
                                         Internship

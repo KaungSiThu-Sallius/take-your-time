@@ -11,6 +11,7 @@ Route::get('search', 'HomeController@search');
 Route::get('/about', function () {
     return view('about');
 });
+Route::post('/sendMessage', 'MessageController@sendMessage');
 
 // Scholarships
 Route::prefix('scholarships')->namespace('Scholarship')->group(function () {
@@ -62,7 +63,11 @@ Route::post('/admin/login', 'Admin\AuthController@login');
 // Admin
 Route::prefix('admin')->middleware('admin')->group(function () {
     Route::get('logout', 'Admin\AuthController@logout');
+
+    // Dashboard
     Route::get('dashboard', 'Admin\DashboardController@index');
+    Route::get('dashboard/totalPosts', 'Admin\DashboardController@dashboardDetailAllPosts');
+    Route::get('dashboard/todayPosts', 'Admin\DashboardController@dashboardDetailTodayPosts');
 
     // Scholarship
     Route::get('scholarshipIndex', 'Scholarship\ScholarshipController@allData');

@@ -312,28 +312,23 @@
             <h3 class="text-center">Keep In Touch</h3>
             <div class="row">
                 <div class="offset-md-3 col-md-6">
-                    <form action="">
+                    <form action="{{url('/sendMessage')}}" method="POST">
+                        @csrf
                         <div class="form-group">
                             <label for="name">Name</label>
-                            <input type="text" name="name" id="" class="form-control" />
+                            <input type="text" name="name" id="" class="form-control" required/>
                         </div>
                         <div class="row">
-                            <div class="col-6">
-                                <div class="form-group">
-                                    <label for="phone">Phone</label>
-                                    <input type="text" name="phone" id="" class="form-control" />
-                                </div>
-                            </div>
-                            <div class="col-6">
+                            <div class="col-12">
                                 <div class="form-group">
                                     <label for="email">Email</label>
-                                    <input type="email" name="email" id="" class="form-control" />
+                                    <input type="email" name="email" id="" class="form-control" required/>
                                 </div>
                             </div>
                         </div>
                         <div class="form-group">
                             <label for="message">Message</label>
-                            <textarea name="message" id="" cols="20" rows="6" class="form-control"></textarea>
+                            <textarea name="message" id="" cols="20" rows="6" class="form-control" required></textarea>
                         </div>
                         <div class="text-center">
                             <input type="submit" value="Send Message" class="btn button" />
@@ -344,4 +339,7 @@
 
         </div>
     </section>
+@endsection
+@section('alert')
+    @include('alert')
 @endsection

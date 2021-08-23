@@ -68,19 +68,19 @@
             <div class="row mt-5">
                 <div class="offset-md-3 col-md-3">
                     <div class="card_info text-center">
-                        <h4>Total Jobs</h4>
+                        <h5>Total Jobs</h5>
                         <span class="badge badge-pill badge-default">{{$total_job_count}}</span>
                     </div>
                 </div>
                 <div class="col-md-3">
                     <div class="card_info text-center">
-                        <h4>Today Jobs</h4>
+                        <h5>Today Jobs</h5>
                         <span class="badge badge-pill badge-default">{{$today_job_count}}</span>
                     </div>
                 </div>
                 <div class="col-md-3">
                     <div class="card_info text-center">
-                        <h4>Total Internships</h4>
+                        <h5>Total Internships</h5>
                         <span class="badge badge-pill badge-default">{{$total_internship_count}}</span>
                     </div>
                 </div>
@@ -89,13 +89,13 @@
             <div class="row mt-5">
                 <div class="offset-md-3 col-md-3">
                     <div class="card_info text-center">
-                        <h4>Total Part-Time Jobs</h4>
+                        <h5>Total Part-Time Jobs</h5>
                         <span class="badge badge-pill badge-default">{{$total_part_time_count}}</span>
                     </div>
                 </div>
                 <div class="col-md-3">
                     <div class="card_info text-center">
-                        <h4>Total Full-Time Jobs</h4>
+                        <h5>Total Full-Time Jobs</h5>
                         <span class="badge badge-pill badge-default">{{$total_full_time_count}}</span>
                     </div>
                 </div>

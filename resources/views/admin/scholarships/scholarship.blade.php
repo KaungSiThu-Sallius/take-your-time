@@ -68,19 +68,19 @@
             <div class="row mt-5">
                 <div class="offset-md-3 col-md-3">
                     <div class="card_info text-center">
-                        <h4>Total Scholarships</h4>
+                        <h5>Total Scholarships</h5>
                         <span class="badge badge-pill badge-default">{{$total_scholar_count}}</span>
                     </div>
                 </div>
                 <div class="col-md-3">
                     <div class="card_info text-center">
-                        <h4>Today Scholarships</h4>
+                        <h5>Today Scholarships</h5>
                         <span class="badge badge-pill badge-default">{{$today_scholar_count}}</span>
                     </div>
                 </div>
                 <div class="col-md-3">
                     <div class="card_info text-center">
-                        <h4>Total Undergraduate</h4>
+                        <h5>Total Undergraduate</h5>
                         <span class="badge badge-pill badge-default">{{$total_undergraduate_count}}</span>
                     </div>
                 </div>
@@ -88,19 +88,19 @@
             <div class="row mt-5">
                 <div class="offset-md-3 col-md-3">
                     <div class="card_info text-center">
-                        <h4>Total Master</h4>
+                        <h5>Total Master</h5>
                         <span class="badge badge-pill badge-default">{{$total_master_count}}</span>
                     </div>
                 </div>
                 <div class="col-md-3">
                     <div class="card_info text-center">
-                        <h4>Total PhD</h4>
+                        <h5>Total PhD</h5>
                         <span class="badge badge-pill badge-default">{{$total_phd_count}}</span>
                     </div>
                 </div>
                 <div class="col-md-3">
                     <div class="card_info text-center">
-                        <h4>Total Fellowship</h4>
+                        <h5>Total Fellowship</h5>
                         <span class="badge badge-pill badge-default">{{$total_fellowship_count}}</span>
                     </div>
                 </div>

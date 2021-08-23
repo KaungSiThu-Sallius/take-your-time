@@ -245,7 +245,40 @@
             color: #454746;
         }
 
+        /********************************* dashboard ********************************/
 
+        .dashboard_card .card_info {
+            padding: 40px 20px;
+            background-color: var(--primary04);
+            border-radius: var(--border-radius);
+            cursor: pointer;
+            color: black;
+            box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+        }
+
+        .dashboard_card .card_info:hover {
+            background-color: var(--primary01);
+            color: white;
+        }
+
+        .dashboard_card .card_info:hover .detail_icon{
+            color: var(--side-bar-bgColor-hover);
+        }
+
+            .dashboard_card .detail_icon {
+                position: absolute;
+                font-size: 248%;
+                top: 40%;
+                right: 13%;
+                color: var(--primary01);
+            }
+
+
+
+            .dashboard_card .count_number {
+                font-size: 40px;
+
+            }
 
         /********************************* scholarship ********************************/
 
@@ -448,7 +481,17 @@
 
             .card_info{
                 margin-top: 40px;
+            }
 
+            .dashboard_card .card_info{
+                margin-top: 0;
+                margin-bottom: 40px;
+            }
+
+            .dashboard_card .detail_icon {
+                position: absolute;
+                font-size: 248%;
+                top: 31%;
             }
             .searchTerm {
                 width: 89%;

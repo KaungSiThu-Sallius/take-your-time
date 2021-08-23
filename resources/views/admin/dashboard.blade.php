@@ -50,5 +50,44 @@
 @endsection
 
 @section('contents')
+<section class="page-content">
+    <div class="dashboard">
+        <div class="container">
+            <div class="row mt-4">
+                <div class="offset-md-3 col-md-9 col-12">
+                        <div>
+                            <h2>Dashboard</h2>
+                        </div>
+                </div>
+            </div>
+            <div class="dashboard_card">
+                <div class="row mt-4">
+                    <div class="offset-md-3 col-md-4">
+                        <a href="#">
+                            <div class="card_info text-left">
+                                <h3 class="count_number">15</h3>
+                                <h4>Total Posts</h4>
+                                <i class="fa fa-arrow-circle-right detail_icon" aria-hidden="true"></i>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-md-4">
+                        <a href="#">
+                            <div class="card_info text-left">
+                                <h3 class="count_number">0</h3>
+                                <h4>Likes</h4>
+                                <i class="fa fa-arrow-circle-right detail_icon" aria-hidden="true"></i>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
 
+
+
+
+
+        </div>
+    </div>
+</section>
 @endsection

@@ -45,6 +45,12 @@
             <span>Other</span>
         </a>
     </li>
+    <li class="">
+        <a href="{{url('admin/message')}}">
+            <img src="{{asset('images/message.svg')}}" alt="messge" type="image/svg+xml" class="svg_icon" />
+            <span>Message</span>
+        </a>
+    </li>
 
 @endsection
 

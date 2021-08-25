@@ -45,6 +45,12 @@
             <span>Other</span>
         </a>
     </li>
+    <li class="">
+        <a href="{{url('admin/message')}}">
+            <img src="{{asset('images/message.svg')}}" alt="messge" type="image/svg+xml" class="svg_icon" />
+            <span>Message</span>
+        </a>
+    </li>
 
 
 @endsection
@@ -86,7 +92,7 @@
                     <tr>
                         <th scope="row">{{($data->currentPage() - 1) * $data->perPage() + $loop->iteration}}</th>
                         <th>{{$d->title}}</th>
-                        <th>
+                        <td>
                             @if ($d->name == 'scholarship')
                                 Scholarship
                             @elseif ($d->name == 'grant')
@@ -98,7 +104,7 @@
                             @elseif ($d->name == 'other')
                                 Other
                             @endif
-                        </th>
+                        </td>
                         <td>
                             @if ($d->name == 'scholarship')
                                 <a href="{{route('scholarship.show',$d->id)}}"><span class="badge badge-pill badge-info">Details</span></a>
@@ -183,13 +189,13 @@
                     <tr>
                         <th scope="row">{{($course->currentPage() - 1) * $course->perPage() + $loop->iteration}}</th>
                         <th>{{$c->course_name}}</th>
-                        <th>
+                        <td>
                             @if ($c->type == 'free_course')
                                 Free Course
                             @else
                                 Paid Course
                             @endif
-                        </th>
+                        </td>
                         <td>{{date('F j, Y', strtotime($c->start_date))}}</td>
                         <td>
                             <a href="{{route('course.show',$c->id)}}"><span class="badge badge-pill badge-info">Details</span></a>

@@ -14,4 +14,9 @@ class Comment extends Model
         'name',
         'comment',
     ];
+
+    public function post()
+    {
+        return $this->belongsTo(AllPost::class, 'post_id');
+    }
 }

@@ -509,13 +509,14 @@ class ScholarshipController extends Controller
 
     public function like($id)
     {
-        if (Like::where('post_id', $id)->where('type', 'scholarship')->first()) {
-            Like::where('post_id', $id)->where('type', 'scholarship')->update([
+        $all_post_id = AllPost::where('name', 'scholarship')->where('post_id', $id)->first()->id;
+        if (Like::where('post_id', $all_post_id)->where('type', 'scholarship')->first()) {
+            Like::where('post_id', $all_post_id)->where('type', 'scholarship')->update([
                 'total_count' => DB::raw("total_count + 1")
             ]);
         } else {
             Like::create([
-                'post_id' => $id,
+                'post_id' => $all_post_id,
                 'type' => 'scholarship',
                 'total_count' => 1,
             ]);
@@ -527,16 +528,17 @@ class ScholarshipController extends Controller
         $post_id = $request->post_id;
         $comment = $request->comment;
         $name = $request->name;
+        $all_post_id = AllPost::where('name', 'scholarship')->where('post_id', $post_id)->first()->id;
         if ($post_id == null or $name == null) {
             return "failed";
         } else {
             Comment::create([
-                'post_id' => $post_id,
+                'post_id' => $all_post_id,
                 'type' => 'scholarship',
                 'comment' => $comment,
                 'name' => $name,
             ]);
-            $comments = Comment::where('post_id', $post_id)->where('type', 'scholarship')->latest()->get();
+            $comments = Comment::where('post_id', $all_post_id)->where('type', 'scholarship')->latest()->get();
             $data = "";
             foreach ($comments as $c) {
                 $date = date('F j, Y', strtotime($c->created_at));

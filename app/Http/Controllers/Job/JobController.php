@@ -318,13 +318,14 @@ class JobController extends Controller
 
     public function like($id)
     {
-        if (Like::where('post_id', $id)->where('type', 'job')->first()) {
-            Like::where('post_id', $id)->where('type', 'job')->update([
+        $all_post_id = AllPost::where('name', 'job')->where('post_id', $id)->first()->id;
+        if (Like::where('post_id', $all_post_id)->where('type', 'job')->first()) {
+            Like::where('post_id', $all_post_id)->where('type', 'job')->update([
                 'total_count' => DB::raw("total_count + 1")
             ]);
         } else {
             Like::create([
-                'post_id' => $id,
+                'post_id' => $all_post_id,
                 'type' => 'job',
                 'total_count' => 1,
             ]);
@@ -336,16 +337,17 @@ class JobController extends Controller
         $post_id = $request->post_id;
         $comment = $request->comment;
         $name = $request->name;
+        $all_post_id = AllPost::where('name', 'job')->where('post_id', $post_id)->first()->id;
         if ($post_id == null or $name == null) {
             return "failed";
         } else {
             Comment::create([
-                'post_id' => $post_id,
+                'post_id' => $all_post_id,
                 'type' => 'job',
                 'comment' => $comment,
                 'name' => $name,
             ]);
-            $comments = Comment::where('post_id', $post_id)->where('type', 'job')->latest()->get();
+            $comments = Comment::where('post_id', $all_post_id)->where('type', 'job')->latest()->get();
             $data = "";
             foreach ($comments as $c) {
                 $date = date('F j, Y', strtotime($c->created_at));

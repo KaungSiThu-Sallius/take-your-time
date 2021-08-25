@@ -17,4 +17,9 @@ class AllPost extends Model
         'deadline',
         'image',
     ];
+
+    public function like()
+    {
+        return $this->hasMany(Like::class, 'post_id');
+    }
 }

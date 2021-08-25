@@ -45,6 +45,12 @@
             <span>Other</span>
         </a>
     </li>
+    <li class="">
+        <a href="{{url('admin/message')}}">
+            <img src="{{asset('images/message.svg')}}" alt="messge" type="image/svg+xml" class="svg_icon" />
+            <span>Message</span>
+        </a>
+    </li>
 
 
 @endsection
@@ -63,15 +69,6 @@
             <div class="dashboard_card">
                 <div class="row mt-4">
                     <div class="offset-md-3 col-md-4">
-                        <a href="{{url('admin/dashboard/totalPosts')}}">
-                            <div class="card_info text-left">
-                                <h3 class="count_number">{{$total_posts_count}}</h3>
-                                <h4>Total Posts</h4>
-                                <i class="fa fa-arrow-circle-right detail_icon" aria-hidden="true"></i>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="col-md-4">
                         <a href="{{url('admin/dashboard/todayPosts')}}">
                             <div class="card_info text-left">
                                 <h3 class="count_number">{{$today_posts_count}}</h3>
@@ -80,44 +77,32 @@
                             </div>
                         </a>
                     </div>
+                    <div class="col-md-4">
+                        <a href="{{url('admin/dashboard/todayMessages')}}">
+                            <div class="card_info text-left">
+                                <h3 class="count_number">{{$today_messages_count}}</h3>
+                                <h4>Today Messages</h4>
+                                <i class="fa fa-arrow-circle-right detail_icon" aria-hidden="true"></i>
+                            </div>
+                        </a>
+                    </div>
                 </div>
 
                 <div class="row mt-5">
                     <div class="offset-md-3 col-md-4">
-                        <a href="#">
+                        <a href="{{url('admin/dashboard/todayComments')}}">
                             <div class="card_info text-left">
-                                <h3 class="count_number">0</h3>
+                                <h3 class="count_number">{{$today_comments_count}}</h3>
                                 <h4>Today Comments</h4>
                                 <i class="fa fa-arrow-circle-right detail_icon" aria-hidden="true"></i>
                             </div>
                         </a>
                     </div>
                     <div class="col-md-4">
-                        <a href="#">
+                        <a href="{{url('admin/dashboard/todayLikes')}}">
                             <div class="card_info text-left">
-                                <h3 class="count_number">0</h3>
-                                <h4>Today Like</h4>
-                                <i class="fa fa-arrow-circle-right detail_icon" aria-hidden="true"></i>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-                <div class="row mt-5">
-                    <div class="offset-md-3 col-md-4">
-                        <a href="#">
-                            <div class="card_info text-left">
-                                <h3 class="count_number">0</h3>
-                                <h4>Today New Users</h4>
-                                <i class="fa fa-arrow-circle-right detail_icon" aria-hidden="true"></i>
-                            </div>
-                        </a>
-                    </div>
-
-                    <div class="col-md-4">
-                        <a href="#">
-                            <div class="card_info text-left">
-                                <h3 class="count_number">0</h3>
-                                <h4>Total Users</h4>
+                                <h3 class="count_number">{{$today_likes_count}}</h3>
+                                <h4>Today Likes</h4>
                                 <i class="fa fa-arrow-circle-right detail_icon" aria-hidden="true"></i>
                             </div>
                         </a>
@@ -143,6 +128,7 @@
                                   <th scope="col">No.</th>
                                   <th scope="col">Title</th>
                                   <th scope="col">Section</th>
+                                  <th scope="col">Like Count</th>
                                   <th scope="col">Actions</th>
                                 </tr>
                               </thead>
@@ -151,7 +137,7 @@
                                 <tr>
                                     <th scope="row">{{$loop->iteration}}</th>
                                     <th>{{$d->title}}</th>
-                                    <th>
+                                    <td>
                                         @if ($d->name == 'scholarship')
                                             Scholarship
                                         @elseif ($d->name == 'grant')
@@ -163,53 +149,31 @@
                                         @elseif ($d->name == 'other')
                                             Other
                                         @endif
-                                    </th>
+                                    </td>
+                                    <td>
+                                        @if (count($d->like) ==  0)
+                                            0
+                                        @else
+                                            {{$d->like[0]->total_count}}
+                                        @endif
+
+                                    </td>
                                     <td>
                                         @if ($d->name == 'scholarship')
                                             <a href="{{route('scholarship.show',$d->id)}}"><span class="badge badge-pill badge-info">Details</span></a>
                                             <a href="{{route('scholarship.edit',$d->id)}}"><span class="badge badge-pill badge-warning">Update</span></a>
-                                            <form action="{{route('scholarship.destroy', $d->id)}}" method="post" style="display:inline;">
-                                                @method('delete')
-                                                @csrf
-                                                <button type="submit" class="badge badge-pill badge-danger"
-                                              onclick="return confirm('Are you want to delete {{$d->title}} ?')">Delete</button>
-                                            </form>
                                         @elseif ($d->name == 'grant')
                                             <a href="{{route('grant.show',$d->id)}}"><span class="badge badge-pill badge-info">Details</span></a>
                                             <a href="{{route('grant.edit',$d->id)}}"><span class="badge badge-pill badge-warning">Update</span></a>
-                                            <form action="{{route('grant.destroy', $d->id)}}" method="post" style="display:inline;">
-                                                @method('delete')
-                                                @csrf
-                                                <button type="submit" class="badge badge-pill badge-danger"
-                                            onclick="return confirm('Are you want to delete {{$d->title}} ?')">Delete</button>
-                                            </form>
                                         @elseif ($d->name == 'conference')
                                             <a href="{{route('conference.show',$d->id)}}"><span class="badge badge-pill badge-info">Details</span></a>
                                             <a href="{{route('conference.edit',$d->id)}}"><span class="badge badge-pill badge-warning">Update</span></a>
-                                            <form action="{{route('conference.destroy', $d->id)}}" method="post" style="display:inline;">
-                                                @method('delete')
-                                                @csrf
-                                                <button type="submit" class="badge badge-pill badge-danger"
-                                            onclick="return confirm('Are you want to delete {{$d->title}} ?')">Delete</button>
-                                            </form>
                                         @elseif ($d->name == 'job')
                                             <a href="{{route('job.show',$d->id)}}"><span class="badge badge-pill badge-info">Details</span></a>
                                                 <a href="{{route('job.edit',$d->id)}}"><span class="badge badge-pill badge-warning">Update</span></a>
-                                                <form action="{{route('job.destroy', $d->id)}}" method="post" style="display:inline;">
-                                                    @method('delete')
-                                                    @csrf
-                                                    <button type="submit" class="badge badge-pill badge-danger"
-                                                  onclick="return confirm('Are you want to delete {{$d->title}} ?')">Delete</button>
-                                            </form>
                                          @elseif ($d->name == 'other')
                                             <a href="{{route('other.show',$d->id)}}"><span class="badge badge-pill badge-info">Details</span></a>
                                             <a href="{{route('other.edit',$d->id)}}"><span class="badge badge-pill badge-warning">Update</span></a>
-                                            <form action="{{route('other.destroy', $d->id)}}" method="post" style="display:inline;">
-                                                @method('delete')
-                                                @csrf
-                                                <button type="submit" class="badge badge-pill badge-danger"
-                                              onclick="return confirm('Are you want to delete {{$d->title}} ?')">Delete</button>
-                                            </form>
                                         @endif
 
                                         </form>
@@ -235,18 +199,49 @@
                         <div class="table-responsive data_table">
                             @include('admin.alert')
                             <table class="table table-striped">
-                              <thead>
-                                <tr>
-                                  <th scope="col">No.</th>
-                                  <th scope="col">Title</th>
-                                  <th scope="col">Type</th>
-                                  <th scope="col">Actions</th>
-                                </tr>
-                              </thead>
-                              <tbody>
-
-                              </tbody>
-                            </table>
+                                <thead>
+                                  <tr>
+                                    <th scope="col">No.</th>
+                                    <th scope="col">Name</th>
+                                    <th scope="col">Title</th>
+                                    <th scope="col">Comment</th>
+                                    <th scope="col">
+                                      Action
+                                    </th>
+                                  </tr>
+                                </thead>
+                                <tbody>
+                                  @foreach ($recent_comments as $c)
+                                  <tr>
+                                    <th scope="row">{{$loop->iteration}}</th>
+                                      <td>{{$c->name}}</td>
+                                      <td>
+                                          {{$c->post->title}}
+                                      </td>
+                                      <td>
+                                          {{$c->comment}}
+                                      </td>
+                                      <td>
+                                          <?
+                                              $slug = $c->post->slug;
+                                              $post_id = $c->post->post_id;
+                                          ?>
+                                          @if ($c->post->name == 'scholarship')
+                                              <a href="{{url("/scholarships/detail/$slug/$post_id")}}" target="_blank"><span class="badge badge-pill badge-info">See Post</span></a>
+                                          @elseif ($c->post->name == 'grant')
+                                              <a href="{{url("/grants/detail/$slug/$post_id")}}" target="_blank"><span class="badge badge-pill badge-info">See Post</span></a>
+                                          @elseif ($c->post->name == 'conference')
+                                              <a href="{{url("/conferences/detail/$slug/$post_id")}}" target="_blank"><span class="badge badge-pill badge-info">See Post</span></a>
+                                          @elseif ($c->post->name == 'job')
+                                              <a href="{{url("/jobs/detail/$slug/$post_id")}}" target="_blank"><span class="badge badge-pill badge-info">See Post</span></a>
+                                          @elseif ($c->post->name == 'other')
+                                              <a href="{{url("/others/detail/$slug/$post_id")}}" target="_blank"><span class="badge badge-pill badge-info">See Post</span></a>
+                                          @endif
+                                      </td>
+                                    </tr>
+                                  @endforeach
+                                </tbody>
+                              </table>
                           </div>
 
 
@@ -255,6 +250,53 @@
 
                 </div>
             </div>
+
+            <div class="dashboard_card total_data  mb-5">
+                <div class="row mt-5">
+                    <div class="offset-md-3 col-md-4">
+                        <a href="{{url('admin/dashboard/totalPosts')}}">
+                            <div class="card_info text-left">
+                                <h3 class="count_number">{{$total_posts_count}}</h3>
+                                <h4>Total Posts</h4>
+                                <i class="fa fa-arrow-circle-right detail_icon" aria-hidden="true"></i>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="col-md-4">
+                        <a href="{{url('admin/dashboard/totalMessages')}}">
+                            <div class="card_info text-left">
+                                <h3 class="count_number">{{$total_messages_count}}</h3>
+                                <h4>Total Messages</h4>
+                                <i class="fa fa-arrow-circle-right detail_icon" aria-hidden="true"></i>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+
+                <div class="row mt-5">
+                    <div class="offset-md-3 col-md-4">
+                        <a href="{{url('admin/dashboard/totalComments')}}">
+                            <div class="card_info text-left">
+                                <h3 class="count_number">{{$total_comments_count}}</h3>
+                                <h4>Total Comments</h4>
+                                <i class="fa fa-arrow-circle-right detail_icon" aria-hidden="true"></i>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-md-4">
+                        <a href="{{url('admin/dashboard/totalLikes')}}">
+                            <div class="card_info text-left">
+                                <h3 class="count_number">{{$total_likes_count}}</h3>
+                                <h4>Total Likes</h4>
+                                <i class="fa fa-arrow-circle-right detail_icon" aria-hidden="true"></i>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
         </div>
     </div>
 </section>

@@ -13,6 +13,7 @@ Route::get('/about', function () {
 });
 Route::post('/sendMessage', 'MessageController@sendMessage');
 
+
 // Scholarships
 Route::prefix('scholarships')->namespace('Scholarship')->group(function () {
     Route::get('/', 'ScholarshipController@allScholarship');
@@ -80,6 +81,12 @@ Route::prefix('admin')->middleware('admin')->group(function () {
     Route::get('dashboard', 'Admin\DashboardController@index');
     Route::get('dashboard/totalPosts', 'Admin\DashboardController@dashboardDetailAllPosts');
     Route::get('dashboard/todayPosts', 'Admin\DashboardController@dashboardDetailTodayPosts');
+    Route::get('dashboard/todayMessages', 'Admin\DashboardController@dashboardDetailTodayMessages');
+    Route::get('dashboard/totalMessages', 'Admin\DashboardController@dashboardDetailTotalMessages');
+    Route::get('dashboard/todayComments', 'Admin\DashboardController@dashboardDetailTodayComments');
+    Route::get('dashboard/totalComments', 'Admin\DashboardController@dashboardDetailTotalComments');
+    Route::get('dashboard/todayLikes', 'Admin\DashboardController@dashboardDetailTodayLikes');
+    Route::get('dashboard/totalLikes', 'Admin\DashboardController@dashboardDetailTotalLikes');
 
     // Scholarship
     Route::get('scholarshipIndex', 'Scholarship\ScholarshipController@allData');
@@ -110,4 +117,11 @@ Route::prefix('admin')->middleware('admin')->group(function () {
     Route::get('otherIndex', 'Other\OtherController@allData');
     Route::get('otherIndex/search', 'Other\OtherController@searchData');
     Route::resource('other', 'Other\OtherController');
+
+    // Message
+    Route::get('message', 'MessageController@index');
+    Route::delete('messages/{id}', 'MessageController@destroy');
+
+    // Comment
+    Route::delete('/comments/{id}', 'Admin\DashboardController@dashboardCommentsDelete');
 });

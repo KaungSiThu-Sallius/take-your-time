@@ -21,15 +21,21 @@ Route::prefix('scholarships')->namespace('Scholarship')->group(function () {
     Route::get('phd', 'PhDController@index');
     Route::get('fellowship', 'FellowshipController@index');
     Route::get('detail/{slug}/{id}', 'ScholarshipController@detail');
+    Route::get('/post/like/{id}', 'ScholarshipController@like');
+    Route::post('/post/comment', 'ScholarshipController@comment');
 });
 
 // Grants
 Route::get('/grants', 'GrantController@allGrant');
 Route::get('grants/detail/{slug}/{id}', 'GrantController@detail');
+Route::get('grants/post/like/{id}', 'GrantController@like');
+Route::post('grants/post/comment', 'GrantController@comment');
 
 // Conferences
 Route::get('/conferences', 'ConferenceController@allConference');
 Route::get('conferences/detail/{slug}/{id}', 'ConferenceController@detail');
+Route::get('conferences/post/like/{id}', 'ConferenceController@like');
+Route::post('conferences/post/comment', 'ConferenceController@comment');
 
 // Courses
 Route::prefix('courses')->namespace('Course')->group(function () {
@@ -46,6 +52,8 @@ Route::prefix('jobs')->namespace('Job')->group(function () {
     Route::get('/partTimeJobs', 'PartTimeController@index');
     Route::get('/fullTimeJobs', 'FullTimeController@index');
     Route::get('/detail/{slug}/{id}', 'JobController@detail');
+    Route::get('/post/like/{id}', 'JobController@like');
+    Route::post('/post/comment', 'JobController@comment');
 });
 
 // Others
@@ -54,7 +62,11 @@ Route::prefix('others')->namespace('Other')->group(function () {
     Route::get('/seminars', 'SeminarController@index');
     Route::get('/competitions', 'CompetitionController@index');
     Route::get('/detail/{slug}/{id}', 'OtherController@detail');
+    Route::get('/post/like/{id}', 'OtherController@like');
+    Route::post('/post/comment', 'OtherController@comment');
 });
+
+
 
 // Authentication
 Route::get('/admin/login', 'Admin\AuthController@loginForm');

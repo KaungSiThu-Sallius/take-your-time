@@ -219,5 +219,129 @@
             </div>
         </div>
     </div>
+  <!-- ------------------------- comment_section -------------------------  -->
+  <hr class="comment_hr">
+  <div class="is_useful text-center">
+      <div class="container">
+          <div class="show_feedback">
+              <h4>Is this content useful to you?</h4>
+              <button type="button" class="btn btn-link button" id="yes_feedback">Yes</button>
+              <button type="button" class="btn btn-link button" id="no_feedback">No</button>
+          </div>
+          <div class="hide_feedback" id="thank">
+              <h4 style="margin: 0">Thanks for your feedback</h4>
+          </div>
 
+      </div>
+  </div>
+
+  <hr class="detail_hr">
+
+  <div class="comment_section">
+      <div class="container">
+          <div class="row">
+              <div class="col-lg-4">
+                  <div class="add_comment">
+                      <div class="card text-center">
+                          <h5 class="card-header white-text text-center py-4">
+                            <strong>Add Comment</strong>
+                          </h5>
+                          <div class="card-body px-lg-5 pt-0">
+                              <div class="md-form">
+                                <input type="text" id="cmt_name" name="cmt_name" class="form-control" required>
+                                <label for="cmt_name">Name</label>
+                              </div>
+
+                              <div class="md-form">
+                                  <textarea id="comment" class="md-textarea form-control" rows="3" name="comment" required></textarea>
+                                  <label for="comment">Comment</label>
+                              </div>
+
+                              <button type="button" class="btn button" id="create_comment_btn">Add Comments</button>
+                           </div>
+                        </div>
+                  </div>
+              </div>
+              <div class="col-lg-8">
+                <div class="row">
+                    <div class="col-12">
+                        <h3>Comments</h3>
+                    </div>
+                    <div class="col-12">
+                      <div class="row float_comment" style="float: right">
+                      <div id="comment_list">
+                          @if (count($comments) ==  0)
+                          <div class='card mt-5 comment_card'>
+                              <div class="card-body text-center">
+                                  No Comment Yet!
+                              </div>
+                          </div>
+                          @endif
+                          @foreach ($comments as $c)
+                          <div class='card mt-5 comment_card'>
+                              <div class='card-header'>
+                                  <div class='showcmt_header'>
+                                      <div class='showcmt_header_blog'>
+                                          <img src={{asset('images/comment.svg')}} style='width: 50px' alt='cmt_img' class='cmt_img'>
+
+                                          <h5>{{$c->name}} <small style='font-size:12px'>{{date('F j, Y', strtotime($c->created_at))}}</small></h5>
+                                      </div>
+                                  </div>
+                              </div>
+                              <div class='card-body'>
+                                  <p>{{$c->comment}}</p>
+                              </div>
+                          </div>
+                          @endforeach
+
+                      </div>
+                  </div>
+                    </div>
+                </div>
+            </div>
+
+          </div>
+
+      </div>
+  </div>
+  @section('script')
+      <script>
+         const yes_feedback = document.querySelector('#yes_feedback')
+         const no_feedback = document.querySelector('#no_feedback')
+         yes_feedback.addEventListener('click', ()=>{
+             $('.show_feedback').toggleClass('hide_feedback');
+             $('#thank').removeClass('hide_feedback');
+             axios.get('/conferences/post/like/'+{{$detail->id}})
+             .then(res=>{
+                 toastr.success('Feedback Successfully');
+             })
+         })
+
+         no_feedback.addEventListener('click',()=>{
+              $('.show_feedback').toggleClass('hide_feedback');
+              $('#thank').removeClass('hide_feedback');
+              toastr.success('Feedback Successfully');
+         })
+
+         const name = document.querySelector('#cmt_name');
+         const comment = document.querySelector('#comment');
+         const create_comment = document.querySelector('#create_comment_btn');
+         const comment_list = document.querySelector('#comment_list');
+
+          create_comment.addEventListener('click', ()=>{
+              const formData = new FormData();
+              formData.append('comment', comment.value);
+              formData.append('name', name.value);
+              formData.append('post_id', {{$detail->id}});
+              axios.post('/conferences/post/comment', formData)
+              .then(function (res){
+                  comment_list.innerHTML = res.data.data;
+                  toastr.success('Comment Successfully');
+                  comment.value = ""
+                  name.value=''
+              })
+              })
+
+      </script>
+  @endsection
 @endsection

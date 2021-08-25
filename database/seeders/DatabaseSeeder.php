@@ -28,23 +28,23 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         // \App\Models\User::factory(10)->create();
-        Scholarship::factory(15)->create();
-        Undergraduate::factory(15)->create();
-        Master::factory(15)->create();
-        Phd::factory(15)->create();
-        Fellowship::factory(15)->create();
-        Grant::factory(15)->create();
-        Conference::factory(15)->create();
-        Course::factory(15)->create();
-        Job::factory(15)->create();
-        Other::factory(15)->create();
+        // Scholarship::factory(15)->create();
+        // Undergraduate::factory(15)->create();
+        // Master::factory(15)->create();
+        // Phd::factory(15)->create();
+        // Fellowship::factory(15)->create();
+        // Grant::factory(15)->create();
+        // Conference::factory(15)->create();
+        // Course::factory(15)->create();
+        // Job::factory(15)->create();
+        // Other::factory(15)->create();
         User::create([
             'role' => 'admin',
             'name' => 'tyt_admin1',
             'email' => 'tyt_admin@gmail.com',
             'password' => Hash::make('tytAdmin'),
         ]);
-        OppotunityPlace::factory(25)->create();
-        CriteriaScholarship::factory(10)->create();
+        // OppotunityPlace::factory(25)->create();
+        // CriteriaScholarship::factory(10)->create();
     }
 }

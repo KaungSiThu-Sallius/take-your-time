@@ -90,14 +90,14 @@
                             <div class="row mb-2">
                                 <div class="col-md-6">
                                     <div class="md-form input-with-post-icon datepicker">
-                                        <input placeholder="Select date" type="date" id="start_application_date" class="form-control" name="start_application_date">
+                                        <input placeholder="Select date" type="date" id="start_application_date" class="form-control" name="start_application_date" required>
                                         <label for="start_application_date">Start Application Date</label>
                                     </div>
                                 </div>
 
                                 <div class="col-md-6">
                                     <div class="md-form input-with-post-icon datepicker">
-                                        <input placeholder="Select date" type="date" id="deadline" class="form-control" name="deadline">
+                                        <input placeholder="Select date" type="date" id="deadline" class="form-control" name="deadline" required>
                                         <label for="deadline">Deadline</label>
                                     </div>
                                 </div>

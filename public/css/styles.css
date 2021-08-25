@@ -819,6 +819,71 @@ a {
     box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
 }
 
+.is_useful {
+    background-color: #ECECEC;
+    width: 70%;
+    padding: 35px 0;
+    margin: 50px auto;
+    border-radius: 20px;
+    box-shadow: rgb(232, 204, 207) 3px 3px 6px 0px inset, rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset;
+}
+
+.hide_feedback {
+    display: none;
+}
+
+.is_useful h4 {
+    margin-bottom: 20px;
+}
+
+.is_useful .button {
+    text-decoration: none;
+    padding: 10px 15px;
+    width: 60px;
+}
+
+.is_useful .button:hover {
+    opacity: 0.5;
+}
+
+.comment_hr {
+    width: 75%;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+    background-color: var(--primary02);
+}
+
+.comment_section {
+    margin: 65px 0;
+}
+
+.comment_section h3 {
+    margin-left: 139px;
+    margin-bottom: 0;
+}
+
+.comment_section .button:hover {
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+}
+
+.comment_section .comment_card {
+    width: 600px
+}
+
+.comment_section .comment_card h5 {
+    margin-left: 10px;
+    border-left: 3px solid var(--secondary02);
+    padding-left: 7px;
+    display: inline;
+}
+
+.add_comment .card-header {
+    background-color: var(--secondary02);
+}
+
+.show_small_screen {
+    display: none;
+}
+
 .detail_preview h2 {
     font-size: 26px;
     text-align: center;
@@ -1011,6 +1076,11 @@ a {
 
     .course_contents .courses_footer .course_info {
         left: 193px;
+    }
+
+    .comment_section h3 {
+
+        margin-left: 23px;
     }
 
 }
@@ -1273,6 +1343,33 @@ a {
     .brief_info .img img {
         width: 274px;
     }
+
+    .add_comment {
+        margin: 0 auto;
+        width: 350px;
+        margin-bottom: 65px;
+    }
+
+    .float_comment {
+
+        float: none !important;
+    }
+
+    .comment_section h3 {
+        margin-left: 0;
+    }
+
+    .comment_section .comment_card {
+        width: 700px;
+    }
+
+    .show_small_screen {
+        display: block;
+    }
+
+    .show_large_screen {
+        display: none;
+    }
 }
 
 @media (max-width: 767px) {
@@ -1462,6 +1559,10 @@ a {
         padding-left: 25px;
     }
 
+    .comment_section .comment_card {
+        width: 530px;
+    }
+
 }
 
 @media (max-width: 575px) {
@@ -1629,6 +1730,17 @@ a {
 
     .detail_preview ul li {
         font-size: 12px;
+    }
+
+    .comment_section .comment_card {
+        width: 350px;
+        margin-left: 15px;
+    }
+
+    .add_comment {
+
+        width: 325px;
+
     }
 
 }

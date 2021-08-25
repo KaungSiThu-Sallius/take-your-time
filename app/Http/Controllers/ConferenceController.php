@@ -4,12 +4,15 @@ namespace App\Http\Controllers;
 
 use App\Models\AllPost;
 use App\Models\BenefitConference;
+use App\Models\Comment;
 use App\Models\Conference;
 use App\Models\CriteriaConference;
+use App\Models\Like;
 use App\Models\OppotunityPlace;
 use App\Models\ProcessConference;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
 
@@ -298,6 +301,63 @@ class ConferenceController extends Controller
         $criteria = CriteriaConference::where('conference_id', $id)->get();
         $benefit = BenefitConference::where('conference_id', $id)->get();
         $process = ProcessConference::where('conference_id', $id)->get();
-        return view('conferences.detail', compact('detail', 'criteria', 'benefit', 'process'));
+        $comments = Comment::where('post_id', $id)->where('type', 'conference')->latest()->get();
+        return view('conferences.detail', compact('detail', 'criteria', 'benefit', 'process', 'comments'));
+    }
+    public function like($id)
+    {
+        if (Like::where('post_id', $id)->where('type', 'conference')->first()) {
+            Like::where('post_id', $id)->where('type', 'conference')->update([
+                'total_count' => DB::raw("total_count + 1")
+            ]);
+        } else {
+            Like::create([
+                'post_id' => $id,
+                'type' => 'conference',
+                'total_count' => 1,
+            ]);
+        }
+    }
+
+    public function comment(Request $request)
+    {
+        $post_id = $request->post_id;
+        $comment = $request->comment;
+        $name = $request->name;
+        if ($post_id == null or $name == null) {
+            return "failed";
+        } else {
+            Comment::create([
+                'post_id' => $post_id,
+                'type' => 'conference',
+                'comment' => $comment,
+                'name' => $name,
+            ]);
+            $comments = Comment::where('post_id', $post_id)->where('type', 'conference')->latest()->get();
+            $data = "";
+            foreach ($comments as $c) {
+                $date = date('F j, Y', strtotime($c->created_at));
+                $name = $c->name;
+                $comment = $c->comment;
+                $image = asset('images/comment.svg');
+                $data .= "
+                        <div class='card mt-5 comment_card'>
+                            <div class='card-header'>
+                                <div class='showcmt_header'>
+                                    <div class='showcmt_header_blog'>
+                                        <img src={$image} style='width: 50px' alt='cmt_img' class='cmt_img'>
+
+                                        <h5>{$name} <small style='font-size:12px'>{$date}</small></h5>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class='card-body'>
+                                <p>{$comment}</p>
+                            </div>
+                        </div>
+                ";
+            }
+            return response()->json(['data' => $data]);
+        }
     }
 }

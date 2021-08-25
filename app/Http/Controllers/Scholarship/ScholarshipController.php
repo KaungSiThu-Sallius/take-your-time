@@ -5,8 +5,10 @@ namespace App\Http\Controllers\Scholarship;
 use App\Http\Controllers\Controller;
 use App\Models\AllPost;
 use App\Models\BenefitScholarship;
+use App\Models\Comment;
 use App\Models\CriteriaScholarship;
 use App\Models\Fellowship;
+use App\Models\Like;
 use App\Models\Master;
 use App\Models\OppotunityPlace;
 use App\Models\Phd;
@@ -15,6 +17,7 @@ use App\Models\Scholarship;
 use App\Models\Undergraduate;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
 
@@ -500,6 +503,64 @@ class ScholarshipController extends Controller
         $criteria = CriteriaScholarship::where('scholarship_id', $id)->get();
         $benefit = BenefitScholarship::where('scholarship_id', $id)->get();
         $process = ProcessScholarship::where('scholarship_id', $id)->get();
-        return view('scholarships.detail', compact('detail', 'criteria', 'benefit', 'process'));
+        $comments = Comment::where('post_id', $id)->where('type', 'scholarship')->latest()->get();
+        return view('scholarships.detail', compact('detail', 'criteria', 'benefit', 'process', 'comments'));
+    }
+
+    public function like($id)
+    {
+        if (Like::where('post_id', $id)->where('type', 'scholarship')->first()) {
+            Like::where('post_id', $id)->where('type', 'scholarship')->update([
+                'total_count' => DB::raw("total_count + 1")
+            ]);
+        } else {
+            Like::create([
+                'post_id' => $id,
+                'type' => 'scholarship',
+                'total_count' => 1,
+            ]);
+        }
+    }
+
+    public function comment(Request $request)
+    {
+        $post_id = $request->post_id;
+        $comment = $request->comment;
+        $name = $request->name;
+        if ($post_id == null or $name == null) {
+            return "failed";
+        } else {
+            Comment::create([
+                'post_id' => $post_id,
+                'type' => 'scholarship',
+                'comment' => $comment,
+                'name' => $name,
+            ]);
+            $comments = Comment::where('post_id', $post_id)->where('type', 'scholarship')->latest()->get();
+            $data = "";
+            foreach ($comments as $c) {
+                $date = date('F j, Y', strtotime($c->created_at));
+                $name = $c->name;
+                $comment = $c->comment;
+                $image = asset('images/comment.svg');
+                $data .= "
+                        <div class='card mt-5 comment_card'>
+                            <div class='card-header'>
+                                <div class='showcmt_header'>
+                                    <div class='showcmt_header_blog'>
+                                        <img src={$image} style='width: 50px' alt='cmt_img' class='cmt_img'>
+
+                                        <h5>{$name} <small style='font-size:12px'>{$date}</small></h5>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class='card-body'>
+                                <p>{$comment}</p>
+                            </div>
+                        </div>
+                ";
+            }
+            return response()->json(['data' => $data]);
+        }
     }
 }

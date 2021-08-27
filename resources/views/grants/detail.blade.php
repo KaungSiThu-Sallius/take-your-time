@@ -325,18 +325,20 @@
          const comment_list = document.querySelector('#comment_list');
 
           create_comment.addEventListener('click', ()=>{
-              const formData = new FormData();
-              formData.append('comment', comment.value);
-              formData.append('name', name.value);
-              formData.append('post_id', <?php echo $detail->id ?>);
-              axios.post('/grants/post/comment', formData)
-              .then(function (res){
-                  comment_list.innerHTML = res.data.data;
-                  toastr.success('Comment Successfully');
-                  comment.value = ""
-                  name.value=''
-              })
-              })
+            if(name.value != "" && comment.value != ""){
+                const formData = new FormData();
+                formData.append('comment', comment.value);
+                formData.append('name', name.value);
+                formData.append('post_id', <?php echo $detail->id ?>);
+                axios.post('/grants/post/comment', formData)
+                .then(function (res){
+                    comment_list.innerHTML = res.data.data;
+                    toastr.success('Comment Successfully');
+                    comment.value = ""
+                    name.value=''
+                })
+            }
+        })
 
 
 

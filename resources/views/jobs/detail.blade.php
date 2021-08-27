@@ -354,7 +354,8 @@
         const comment_list = document.querySelector('#comment_list');
 
          create_comment.addEventListener('click', ()=>{
-             const formData = new FormData();
+            if(name.value != "" && comment.value != ""){
+                const formData = new FormData();
              formData.append('comment', comment.value);
              formData.append('name', name.value);
              formData.append('post_id',<?php echo $detail->id ?>);
@@ -365,6 +366,8 @@
                  comment.value = ""
                  name.value=''
              })
+            }
+
              })
 
      </script>

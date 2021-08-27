@@ -152,7 +152,7 @@
 
                                 <div class="col-md-6">
                                     <div class="md-form mb-0">
-                                        <input type="text" id="price" name="price" class="form-control" required
+                                        <input type="number" id="price" name="price" class="form-control" required
                                             value={{ $course->price }}>
                                         <label for="price">Course Fee</label>
                                     </div>

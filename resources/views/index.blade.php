@@ -164,7 +164,7 @@
                         @endif
                             <div class="featured_card card">
                                 <div class="view overlay card_img">
-                                    <img class="card-img-top" src="{{asset("images_database/$f->image")}}" alt="Featured Image">
+                                    <img class="card-img-top" src="{{asset("post_images/$f->image")}}" alt="Featured Image">
                                 </div>
                                 <div class="card-body">
                                     <h5 class="card-title">{{$f->title}}</h5>
@@ -221,8 +221,8 @@
                         <a href="{{url("/scholarships/detail/$scholar->slug/$scholar->id")}}">
                             <div class="card mb-2">
                                 <div class="img_holder">
-                                    <img class="card-img" src="{{asset("images_database/$scholar->image")}}" alt="Organization Image">
-                                    <span style="width: 100%; text-align:center; font-size: 14px">
+                                    <img class="card-img" src="{{asset("post_images/".$scholar->image)}}" alt="Organization Image">
+                                    <span style="width: 100%;text-align:center; font-size: 14px">
                                        {{str_replace(',',', ',$scholar->type)}}
                                     </span>
                                 </div>
@@ -262,7 +262,7 @@
                             <div class="row">
                                 <div class="col-lg-5">
                                     <div class="latest_oppo_img">
-                                        <img src="{{asset("images_database/".$grants[0]->image)}}" alt="organization_photo">
+                                        <img src="{{asset("post_images/".$grants[0]->image)}}" alt="organization_photo">
                                     </div>
                                 </div>
                                 <div class="col-lg-7">
@@ -314,7 +314,7 @@
                             <div class="row">
                                 <div class="col-lg-5">
                                     <div class="latest_oppo_img">
-                                        <img src="{{asset("images_database/".$conferences[0]->image)}}" alt="organization_photo">
+                                        <img src="{{asset("post_images/".$conferences[0]->image)}}" alt="organization_photo">
                                     </div>
                                 </div>
                                 <div class="col-lg-7">
@@ -368,7 +368,7 @@
                             <div class="row">
                                 <div class="col-lg-5">
                                     <div class="latest_oppo_img">
-                                        <img src="{{asset("images_database/".$jobs[0]->image)}}" alt="organization_photo">
+                                        <img src="{{asset("post_images/".$jobs[0]->image)}}" alt="organization_photo">
                                     </div>
                                 </div>
                                 <div class="col-lg-7">
@@ -420,7 +420,7 @@
                             <div class="row">
                                 <div class="col-lg-5">
                                     <div class="latest_oppo_img">
-                                        <img src="{{asset("images_database/".$others[0]->image)}}" alt="organization_photo">
+                                        <img src="{{asset("post_images/".$others[0]->image)}}" alt="organization_photo">
                                     </div>
                                 </div>
                                 <div class="col-lg-7">
@@ -473,7 +473,7 @@
                 <div class="col-lg-3 col-md-6 col-12">
                     <a href="{{url("/courses/detail/$c->slug/$c->id")}}">
                         <div class="card mb-2">
-                            <img class="card-img" src="{{asset("images_database/$c->image")}}" alt="Course Image">
+                            <img class="card-img" src="{{asset("post_images/$c->image")}}" alt="Course Image">
                             <div class="card-body title">
                                 <h5 class="card-title text-center">{{$c->course_name}}
                                 </h5>

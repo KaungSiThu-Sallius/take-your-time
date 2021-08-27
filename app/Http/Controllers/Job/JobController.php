@@ -53,12 +53,6 @@ class JobController extends Controller
      */
     public function store(Request $request)
     {
-        $request->validate([
-            'image' => 'required|mimes:png,jpg,jpeg',
-        ], [
-            'image.mimes' => 'Please choose image',
-        ]);
-
         $title = $request->title;
         $place = $request->place;
         $start_date = $request->start_date;
@@ -76,7 +70,7 @@ class JobController extends Controller
 
         $image = request()->file('image');
         $img_name = uniqid() . $image->getClientOriginalName();
-        $image->storeAs('images_database', $img_name);
+        Storage::disk('post_images')->put($img_name, $image->get());
 
         $job = Job::create([
             'slug' => Str::slug($title),
@@ -179,8 +173,8 @@ class JobController extends Controller
         } else {
             $image = request()->file('image');
             $img_name = uniqid() . $image->getClientOriginalName();
-            Storage::disk('images_database')->delete([$old_image]);
-            $image->storeAs('images_database', $img_name);
+            Storage::disk('post_images')->delete([$old_image]);
+            Storage::disk('post_images')->put($img_name, $image->get());
         }
 
         $title = $request->title;
@@ -312,7 +306,8 @@ class JobController extends Controller
         $criteria = CriteriaJob::where('job_id', $id)->get();
         $benefit = BenefitJob::where('job_id', $id)->get();
         $document = DocumentJob::where('job_id', $id)->get();
-        $comments = Comment::where('post_id', $id)->where('type', 'job')->latest()->get();
+        $all_post_id = AllPost::where('post_id', $id)->where('name', 'job')->first()->id;
+        $comments = Comment::where('post_id', $all_post_id)->where('type', 'job')->latest()->get();
         return view('jobs.detail', compact('detail', 'criteria', 'benefit', 'document', 'comments'));
     }
 

@@ -107,45 +107,45 @@
                         </td>
                         <td>
                             @if ($d->name == 'scholarship')
-                                <a href="{{route('scholarship.show',$d->id)}}"><span class="badge badge-pill badge-info">Details</span></a>
-                                <a href="{{route('scholarship.edit',$d->id)}}"><span class="badge badge-pill badge-warning">Update</span></a>
-                                <form action="{{route('scholarship.destroy', $d->id)}}" method="post" style="display:inline;">
+                            <a href="{{route('scholarship.show',$d->post_id)}}"><span class="badge badge-pill badge-info">Details</span></a>
+                                <a href="{{route('scholarship.edit',$d->post_id)}}"><span class="badge badge-pill badge-warning">Update</span></a>
+                                <form action="{{route('scholarship.destroy', $d->post_id)}}" method="post" style="display:inline;">
                                     @method('delete')
                                     @csrf
                                     <button type="submit" class="badge badge-pill badge-danger"
                                   onclick="return confirm('Are you want to delete {{$d->title}} ?')">Delete</button>
                                 </form>
                             @elseif ($d->name == 'grant')
-                                <a href="{{route('grant.show',$d->id)}}"><span class="badge badge-pill badge-info">Details</span></a>
-                                <a href="{{route('grant.edit',$d->id)}}"><span class="badge badge-pill badge-warning">Update</span></a>
-                                <form action="{{route('grant.destroy', $d->id)}}" method="post" style="display:inline;">
+                                <a href="{{route('grant.show',$d->post_id)}}"><span class="badge badge-pill badge-info">Details</span></a>
+                                <a href="{{route('grant.edit',$d->post_id)}}"><span class="badge badge-pill badge-warning">Update</span></a>
+                                <form action="{{route('grant.destroy', $d->post_id)}}" method="post" style="display:inline;">
                                     @method('delete')
                                     @csrf
                                     <button type="submit" class="badge badge-pill badge-danger"
                                 onclick="return confirm('Are you want to delete {{$d->title}} ?')">Delete</button>
                                 </form>
                             @elseif ($d->name == 'conference')
-                                <a href="{{route('conference.show',$d->id)}}"><span class="badge badge-pill badge-info">Details</span></a>
-                                <a href="{{route('conference.edit',$d->id)}}"><span class="badge badge-pill badge-warning">Update</span></a>
-                                <form action="{{route('conference.destroy', $d->id)}}" method="post" style="display:inline;">
+                                <a href="{{route('conference.show',$d->post_id)}}"><span class="badge badge-pill badge-info">Details</span></a>
+                                <a href="{{route('conference.edit',$d->post_id)}}"><span class="badge badge-pill badge-warning">Update</span></a>
+                                <form action="{{route('conference.destroy', $d->post_id)}}" method="post" style="display:inline;">
                                     @method('delete')
                                     @csrf
                                     <button type="submit" class="badge badge-pill badge-danger"
                                 onclick="return confirm('Are you want to delete {{$d->title}} ?')">Delete</button>
                                 </form>
                             @elseif ($d->name == 'job')
-                                <a href="{{route('job.show',$d->id)}}"><span class="badge badge-pill badge-info">Details</span></a>
-                                    <a href="{{route('job.edit',$d->id)}}"><span class="badge badge-pill badge-warning">Update</span></a>
-                                    <form action="{{route('job.destroy', $d->id)}}" method="post" style="display:inline;">
+                                <a href="{{route('job.show',$d->post_id)}}"><span class="badge badge-pill badge-info">Details</span></a>
+                                    <a href="{{route('job.edit',$d->post_id)}}"><span class="badge badge-pill badge-warning">Update</span></a>
+                                    <form action="{{route('job.destroy', $d->post_id)}}" method="post" style="display:inline;">
                                         @method('delete')
                                         @csrf
                                         <button type="submit" class="badge badge-pill badge-danger"
                                       onclick="return confirm('Are you want to delete {{$d->title}} ?')">Delete</button>
                                 </form>
                              @elseif ($d->name == 'other')
-                                <a href="{{route('other.show',$d->id)}}"><span class="badge badge-pill badge-info">Details</span></a>
-                                <a href="{{route('other.edit',$d->id)}}"><span class="badge badge-pill badge-warning">Update</span></a>
-                                <form action="{{route('other.destroy', $d->id)}}" method="post" style="display:inline;">
+                                <a href="{{route('other.show',$d->post_id)}}"><span class="badge badge-pill badge-info">Details</span></a>
+                                <a href="{{route('other.edit',$d->post_id)}}"><span class="badge badge-pill badge-warning">Update</span></a>
+                                <form action="{{route('other.destroy', $d->post_id)}}" method="post" style="display:inline;">
                                     @method('delete')
                                     @csrf
                                     <button type="submit" class="badge badge-pill badge-danger"

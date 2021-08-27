@@ -97,7 +97,7 @@
                             {{$c->comment}}
                         </td>
                         <td>
-                            <?
+                            <?php
                                 $slug = $c->post->slug;
                                 $post_id = $c->post->post_id;
                             ?>
@@ -163,7 +163,7 @@
                             {{$c->comment}}
                         </td>
                         <td>
-                            <?
+                            <?php
                                 $slug = $c->post->slug;
                                 $post_id = $c->post->post_id;
                             ?>

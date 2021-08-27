@@ -42,12 +42,12 @@ return [
             'visibility' => 'public',
         ],
 
-        'images_database' => [
+        'post_images' => [
             'driver' => 'local',
-            'root' => storage_path('app/images_database'),
-            'url' => env('APP_URL') . '/images_database',
+            'root'   => public_path() . '/post_images',
             'visibility' => 'public',
         ],
+
 
         's3' => [
             'driver' => 's3',
@@ -75,7 +75,6 @@ return [
 
     'links' => [
         public_path('storage') => storage_path('app/public'),
-        public_path('images_database') => storage_path('app/images_database'),
     ],
 
 ];

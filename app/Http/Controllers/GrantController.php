@@ -52,11 +52,6 @@ class GrantController extends Controller
      */
     public function store(Request $request)
     {
-        $request->validate([
-            'image' => 'required|mimes:png,jpg,jpeg',
-        ], [
-            'image.mimes' => 'Please choose image',
-        ]);
 
         $title = $request->title;
         $start_application_date = $request->start_application_date;
@@ -75,7 +70,7 @@ class GrantController extends Controller
 
         $image = request()->file('image');
         $img_name = uniqid() . $image->getClientOriginalName();
-        $image->storeAs('images_database', $img_name);
+        Storage::disk('post_images')->put($img_name, $image->get());
 
         $grant = Grant::create([
             'slug' => Str::slug($title),
@@ -178,8 +173,8 @@ class GrantController extends Controller
         } else {
             $image = request()->file('image');
             $img_name = uniqid() . $image->getClientOriginalName();
-            Storage::disk('images_database')->delete([$old_image]);
-            $image->storeAs('images_database', $img_name);
+            Storage::disk('post_images')->delete([$old_image]);
+            Storage::disk('post_images')->put($img_name, $image->get());
         }
 
         $title = $request->title;
@@ -304,7 +299,8 @@ class GrantController extends Controller
         $criteria = CriteriaGrant::where('grant_id', $id)->get();
         $benefit = BenefitGrant::where('grant_id', $id)->get();
         $process = ProcessGrant::where('grant_id', $id)->get();
-        $comments = Comment::where('post_id', $id)->where('type', 'grant')->latest()->get();
+        $all_post_id = AllPost::where('post_id', $id)->where('name', 'grant')->first()->id;
+        $comments = Comment::where('post_id', $all_post_id)->where('type', 'grant')->latest()->get();
         return view('grants.detail', compact('detail', 'criteria', 'benefit', 'process', 'comments'));
     }
 

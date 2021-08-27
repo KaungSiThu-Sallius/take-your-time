@@ -52,11 +52,6 @@ class ConferenceController extends Controller
      */
     public function store(Request $request)
     {
-        $request->validate([
-            'image' => 'required|mimes:png,jpg,jpeg',
-        ], [
-            'image.mimes' => 'Please choose image',
-        ]);
         $title = $request->title;
         $start_application_date = $request->start_application_date;
         $deadline = $request->deadline;
@@ -74,7 +69,7 @@ class ConferenceController extends Controller
 
         $image = request()->file('image');
         $img_name = uniqid() . $image->getClientOriginalName();
-        $image->storeAs('images_database', $img_name);
+        Storage::disk('post_images')->put($img_name, $image->get());
 
         $conference = Conference::create([
             'slug' => Str::slug($title),
@@ -176,8 +171,8 @@ class ConferenceController extends Controller
         } else {
             $image = request()->file('image');
             $img_name = uniqid() . $image->getClientOriginalName();
-            Storage::disk('images_database')->delete([$old_image]);
-            $image->storeAs('images_database', $img_name);
+            Storage::disk('post_images')->delete([$old_image]);
+            Storage::disk('post_images')->put($img_name, $image->get());
         }
 
         $title = $request->title;
@@ -301,9 +296,11 @@ class ConferenceController extends Controller
         $criteria = CriteriaConference::where('conference_id', $id)->get();
         $benefit = BenefitConference::where('conference_id', $id)->get();
         $process = ProcessConference::where('conference_id', $id)->get();
-        $comments = Comment::where('post_id', $id)->where('type', 'conference')->latest()->get();
+        $all_post_id = AllPost::where('post_id', $id)->where('name', 'conference')->first()->id;
+        $comments = Comment::where('post_id', $all_post_id)->where('type', 'conference')->latest()->get();
         return view('conferences.detail', compact('detail', 'criteria', 'benefit', 'process', 'comments'));
     }
+
     public function like($id)
     {
         $all_post_id = AllPost::where('name', 'conference')->where('post_id', $id)->first()->id;

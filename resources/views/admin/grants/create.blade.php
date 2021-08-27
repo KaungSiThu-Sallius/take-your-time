@@ -62,7 +62,7 @@
                     <form action="{{route('grant.store')}}" method="POST" enctype="multipart/form-data" class="card">
                         @csrf
                         <div class="card-header">
-                            <h2 class="mb-4">Create Grant <span style="font-size:14px; color:red">(<? echo date("d M, Y") ?>)</span>
+                            <h2 class="mb-4">Create Grant <span style="font-size:14px; color:red">(<?php echo date("d M, Y") ?>)</span>
                             </h2>
                         </div>
                         @include('admin.alert')

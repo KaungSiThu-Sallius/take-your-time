@@ -65,7 +65,7 @@ class CourseController extends Controller
 
         $image = request()->file('image');
         $img_name = uniqid() . $image->getClientOriginalName();
-        $image->storeAs('images_database', $img_name);
+        Storage::disk('post_images')->put($img_name, $image->get());
 
         $course = Course::create([
             'slug' => Str::slug($course_name),
@@ -132,8 +132,8 @@ class CourseController extends Controller
         } else {
             $image = request()->file('image');
             $img_name = uniqid() . $image->getClientOriginalName();
-            Storage::disk('images_database')->delete([$old_image]);
-            $image->storeAs('images_database', $img_name);
+            Storage::disk('post_images')->delete([$old_image]);
+            Storage::disk('post_images')->put($img_name, $image->get());
         }
 
         $course_name = $request->course_name;

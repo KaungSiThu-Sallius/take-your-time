@@ -160,20 +160,20 @@
                                     </td>
                                     <td>
                                         @if ($d->name == 'scholarship')
-                                            <a href="{{route('scholarship.show',$d->id)}}"><span class="badge badge-pill badge-info">Details</span></a>
-                                            <a href="{{route('scholarship.edit',$d->id)}}"><span class="badge badge-pill badge-warning">Update</span></a>
+                                            <a href="{{route('scholarship.show',$d->post_id)}}"><span class="badge badge-pill badge-info">Details</span></a>
+                                            <a href="{{route('scholarship.edit',$d->post_id)}}"><span class="badge badge-pill badge-warning">Update</span></a>
                                         @elseif ($d->name == 'grant')
-                                            <a href="{{route('grant.show',$d->id)}}"><span class="badge badge-pill badge-info">Details</span></a>
-                                            <a href="{{route('grant.edit',$d->id)}}"><span class="badge badge-pill badge-warning">Update</span></a>
+                                            <a href="{{route('grant.show',$d->post_id)}}"><span class="badge badge-pill badge-info">Details</span></a>
+                                            <a href="{{route('grant.edit',$d->post_id)}}"><span class="badge badge-pill badge-warning">Update</span></a>
                                         @elseif ($d->name == 'conference')
-                                            <a href="{{route('conference.show',$d->id)}}"><span class="badge badge-pill badge-info">Details</span></a>
-                                            <a href="{{route('conference.edit',$d->id)}}"><span class="badge badge-pill badge-warning">Update</span></a>
+                                            <a href="{{route('conference.show',$d->post_id)}}"><span class="badge badge-pill badge-info">Details</span></a>
+                                            <a href="{{route('conference.edit',$d->post_id)}}"><span class="badge badge-pill badge-warning">Update</span></a>
                                         @elseif ($d->name == 'job')
-                                            <a href="{{route('job.show',$d->id)}}"><span class="badge badge-pill badge-info">Details</span></a>
-                                                <a href="{{route('job.edit',$d->id)}}"><span class="badge badge-pill badge-warning">Update</span></a>
+                                            <a href="{{route('job.show',$d->post_id)}}"><span class="badge badge-pill badge-info">Details</span></a>
+                                                <a href="{{route('job.edit',$d->post_id)}}"><span class="badge badge-pill badge-warning">Update</span></a>
                                          @elseif ($d->name == 'other')
-                                            <a href="{{route('other.show',$d->id)}}"><span class="badge badge-pill badge-info">Details</span></a>
-                                            <a href="{{route('other.edit',$d->id)}}"><span class="badge badge-pill badge-warning">Update</span></a>
+                                            <a href="{{route('other.show',$d->post_id)}}"><span class="badge badge-pill badge-info">Details</span></a>
+                                            <a href="{{route('other.edit',$d->post_id)}}"><span class="badge badge-pill badge-warning">Update</span></a>
                                         @endif
 
                                         </form>
@@ -222,7 +222,7 @@
                                           {{$c->comment}}
                                       </td>
                                       <td>
-                                          <?
+                                          <?php
                                               $slug = $c->post->slug;
                                               $post_id = $c->post->post_id;
                                           ?>

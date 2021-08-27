@@ -151,7 +151,7 @@
                                     <tr>
                                         <th>Image</th>
                                         <td>
-                                            <img src="{{asset("images_database/$grant->image")}}" alt="grant_image" style="width:200px">
+                                            <img src="{{asset("post_images/$grant->image")}}" alt="grant_image" style="width:200px">
                                         </td>
                                     </tr>
                                     <tr>

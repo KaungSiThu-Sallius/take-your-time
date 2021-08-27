@@ -104,7 +104,7 @@
             <div class="row">
                 <div class="col-xl-4 col-md-5">
                     <div class="img text-center">
-                        <img src='{{asset("images_database/$detail->image")}}' alt="">
+                        <img src='{{asset("post_images/$detail->image")}}' alt="">
                     </div>
                 </div>
                 <div class="col-xl-8 col-md-7">

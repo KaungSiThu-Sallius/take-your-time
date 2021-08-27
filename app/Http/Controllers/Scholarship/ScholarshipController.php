@@ -52,11 +52,7 @@ class ScholarshipController extends Controller
     public function store(Request $request)
 
     {
-        $request->validate([
-            'image' => 'required|mimes:png,jpg,jpeg',
-        ], [
-            'image.mimes' => 'Please choose image',
-        ]);
+
 
         $title = $request->title;
         $start_application_date = $request->start_application_date;
@@ -75,7 +71,7 @@ class ScholarshipController extends Controller
 
         $image = request()->file('image');
         $img_name = uniqid() . $image->getClientOriginalName();
-        $image->storeAs('images_database', $img_name);
+        Storage::disk('post_images')->put($img_name, $image->get());
 
         $scholarship = Scholarship::create([
             'name' => 'Scholarship',
@@ -266,8 +262,8 @@ class ScholarshipController extends Controller
         } else {
             $image = request()->file('image');
             $img_name = uniqid() . $image->getClientOriginalName();
-            Storage::disk('images_database')->delete([$old_image]);
-            $image->storeAs('images_database', $img_name);
+            Storage::disk('post_images')->delete([$old_image]);
+            Storage::disk('post_images')->put($img_name, $image->get());
         }
 
         $title = $request->title;
@@ -503,7 +499,8 @@ class ScholarshipController extends Controller
         $criteria = CriteriaScholarship::where('scholarship_id', $id)->get();
         $benefit = BenefitScholarship::where('scholarship_id', $id)->get();
         $process = ProcessScholarship::where('scholarship_id', $id)->get();
-        $comments = Comment::where('post_id', $id)->where('type', 'scholarship')->latest()->get();
+        $all_post_id = AllPost::where('post_id', $id)->where('name', 'scholarship')->first()->id;
+        $comments = Comment::where('post_id', $all_post_id)->where('type', 'scholarship')->latest()->get();
         return view('scholarships.detail', compact('detail', 'criteria', 'benefit', 'process', 'comments'));
     }
 

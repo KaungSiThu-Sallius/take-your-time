@@ -96,7 +96,7 @@
                             {{$l->total_count}}
                         </td>
                         <td>
-                            <?
+                            <?php
                                 $slug = $l->post->slug;
                                 $post_id = $l->post->post_id;
                             ?>
@@ -162,7 +162,7 @@
                         </td>
                         <td>{{ucfirst($l->post->name)}}</td>
                         <td>
-                            <?
+                            <?php
                                 $slug = $l->post->slug;
                                 $post_id = $l->post->post_id;
                             ?>

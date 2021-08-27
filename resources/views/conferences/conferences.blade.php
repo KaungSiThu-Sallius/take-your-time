@@ -98,7 +98,7 @@
                     <div class="col-md-6 col-lg-6 col-xl-4">
                         <a href="{{url("/conferences/detail/".$d->slug."/".$d->id)}}">
                             <div class="card">
-                                <img class="card-img-top" src="{{asset("images_database/".$d->image)}}" alt="Conference Image">
+                                <img class="card-img-top" src="{{asset("post_images/".$d->image)}}" alt="Conference Image">
                                 <div class="card-header">Conference</div>
                                 <div class="card-body">
                                     <div class="card-text">{{$d->title}} <br> <span

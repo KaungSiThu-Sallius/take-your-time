@@ -63,7 +63,7 @@
                         @method('PUT')
                         @csrf
                         <div class="card-header">
-                            <h2 class="mb-4">Update Conference <span style="font-size:14px; color:red">(<? echo date("d M, Y") ?>)</span>
+                            <h2 class="mb-4">Update Conference <span style="font-size:14px; color:red">(<?php echo date("d M, Y") ?>)</span>
                             </h2>
 
                         </div>
@@ -253,7 +253,7 @@
                                           <label class="custom-file-label" for="inputGroupFile01">Choose image</label>
                                         </div>
                                       </div>
-                                      <img src="{{asset("images_database/$conference->image")}}" alt="scholarship_image" style="width:200px; border: 1px solid black; " class="mt-4">
+                                      <img src="{{asset("post_images/$conference->image")}}" alt="scholarship_image" style="width:200px; border: 1px solid black; " class="mt-4">
                                 </div>
                             </div>
 

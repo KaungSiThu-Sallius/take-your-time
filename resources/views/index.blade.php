@@ -1,11 +1,10 @@
 @extends('layout.master')
 @section('title')
-<title>Take Your Time</title>
+    <title>Take Your Time</title>
 @endsection
 @section('nav_items')
-
     <li class="nav-item active">
-        <a class="nav-link" href="{{url('/')}}">
+        <a class="nav-link" href="{{ url('/') }}">
             <i class="fas fa-home fa_hid"></i>
             <span>Home</span>
             <span class="sr-only">(current)</span>
@@ -13,68 +12,58 @@
     </li>
 
     <li class="nav-item">
-        <a class="nav-link" href="{{url('/about')}}"><i class="fas fa-user fa_hid"></i>About
+        <a class="nav-link" href="{{ url('/about') }}"><i class="fas fa-user fa_hid"></i>About
             Us</a>
     </li>
 
     <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink"
-            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i
-                class="fas fa-graduation-cap fa_hid"></i>Scholarships</a>
+        <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true"
+            aria-expanded="false"><i class="fas fa-graduation-cap fa_hid"></i>Scholarships</a>
 
-        <div class="dropdown-menu dropdown-primary"
-            aria-labelledby="navbarDropdownMenuLink">
-            <a class="dropdown-item" href="{{url('/scholarships/undergraduate')}}">Undergraduate</a>
-            <a class="dropdown-item" href="{{url('/scholarships/master')}}">Master</a>
-            <a class="dropdown-item" href="{{url('/scholarships/phd')}}">PhD</a>
-            <a class="dropdown-item" href="{{url('/scholarships/fellowship')}}">Fellowship</a>
+        <div class="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdownMenuLink">
+            <a class="dropdown-item" href="{{ url('/scholarships/undergraduate') }}">Undergraduate</a>
+            <a class="dropdown-item" href="{{ url('/scholarships/master') }}">Master</a>
+            <a class="dropdown-item" href="{{ url('/scholarships/phd') }}">PhD</a>
+            <a class="dropdown-item" href="{{ url('/scholarships/fellowship') }}">Fellowship</a>
         </div>
     </li>
 
     <li class="nav-item">
-        <a class="nav-link" href="{{url('/grants')}}"><i
-                class="fas fa-hand-holding-usd fa_hid"></i></i>Grants</a>
+        <a class="nav-link" href="{{ url('/grants') }}"><i class="fas fa-hand-holding-usd fa_hid"></i></i>Grants</a>
     </li>
 
     <li class="nav-item">
-        <a class="nav-link" href="{{url('/conferences')}}"> <i
-                class="fas fa-users fa_hid"></i></i></i>Conferences</a>
+        <a class="nav-link" href="{{ url('/conferences') }}"> <i class="fas fa-users fa_hid"></i></i></i>Conferences</a>
     </li>
 
     <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink"
-            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i
-                class="fab fa-leanpub fa_hid"></i>Courses</a>
+        <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true"
+            aria-expanded="false"> <i class="fab fa-leanpub fa_hid"></i>Courses</a>
 
-        <div class="dropdown-menu dropdown-primary"
-            aria-labelledby="navbarDropdownMenuLink">
-            <a class="dropdown-item" href="{{url('/courses/freeCourses')}}">Free Courses</a>
-            <a class="dropdown-item" href="{{url('/courses/paidCourses')}}">Paid Courses</a>
+        <div class="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdownMenuLink">
+            <a class="dropdown-item" href="{{ url('/courses/freeCourses') }}">Free Courses</a>
+            <a class="dropdown-item" href="{{ url('/courses/paidCourses') }}">Paid Courses</a>
         </div>
     </li>
 
     <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink"
-            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i
-                class="fas fa-briefcase fa_hid"></i>Jobs</a>
+        <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true"
+            aria-expanded="false"> <i class="fas fa-briefcase fa_hid"></i>Jobs</a>
 
-        <div class="dropdown-menu dropdown-primary"
-            aria-labelledby="navbarDropdownMenuLink">
-            <a class="dropdown-item" href="{{url('/jobs/internships')}}">Internships</a>
-            <a class="dropdown-item" href="{{url('/jobs/partTimeJobs')}}">Part-Time Jobs</a>
-            <a class="dropdown-item" href="{{url('/jobs/fullTimeJobs')}}">Full-Time Jobs</a>
+        <div class="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdownMenuLink">
+            <a class="dropdown-item" href="{{ url('/jobs/internships') }}">Internships</a>
+            <a class="dropdown-item" href="{{ url('/jobs/partTimeJobs') }}">Part-Time Jobs</a>
+            <a class="dropdown-item" href="{{ url('/jobs/fullTimeJobs') }}">Full-Time Jobs</a>
         </div>
     </li>
 
     <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink"
-            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i
-                class="fas fa-ellipsis-h fa_hid"></i>Others</a>
+        <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true"
+            aria-expanded="false"><i class="fas fa-ellipsis-h fa_hid"></i>Others</a>
 
-        <div class="dropdown-menu dropdown-primary"
-            aria-labelledby="navbarDropdownMenuLink">
-            <a class="dropdown-item" href="{{url('/others/seminars')}}">Seminars</a>
-            <a class="dropdown-item" href="{{url('/others/competitions')}}">Competitions</a>
+        <div class="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdownMenuLink">
+            <a class="dropdown-item" href="{{ url('/others/seminars') }}">Seminars</a>
+            <a class="dropdown-item" href="{{ url('/others/competitions') }}">Competitions</a>
         </div>
     </li>
 
@@ -90,10 +79,11 @@
                     <div class="main_label">
                         <h1>Youths... Grab a Chance!</h1>
                         <h3>Just take your time and do it right...</h3>
-                        <form action="{{url('search')}}" method="get">
+                        <form action="{{ url('search') }}" method="get">
                             <div class="row">
                                 <div class="col-6">
-                                    <select name="oppotunity" id="oppotunity-select" class="browser-default custom-select" placeholder="Oppotunities">
+                                    <select name="oppotunity" id="oppotunity-select" class="browser-default custom-select"
+                                        placeholder="Oppotunities">
                                         <option value="">Oppotunities</option>
                                         <optgroup label="Scholarships">
                                             <option value="undergraduate">Undergraduate</option>
@@ -123,7 +113,8 @@
                                     </select>
                                 </div>
                                 <div class="col-6">
-                                    <select name='place' class="browser-default custom-select" placeholder="Regions" id="place">
+                                    <select name='place' class="browser-default custom-select" placeholder="Regions"
+                                        id="place">
                                         <option value="">Regions</option>
                                     </select>
                                 </div>
@@ -152,58 +143,59 @@
                 @foreach ($featured_oppo as $f)
                     <div class="col-lg-3 col-md-6 col-sm-6">
                         @if ($f->name == 'scholarship')
-                            <a href="{{url("/scholarships/detail/$f->slug/$f->post_id")}}">
-                        @elseif ($f->name == 'grant')
-                            <a href="{{url("/grants/detail/$f->slug/$f->post_id")}}">
-                        @elseif($f->name == 'conference')
-                            <a href="{{url("/conferences/detail/$f->slug/$f->post_id")}}">
-                        @elseif($f->name == 'job')
-                            <a href="{{url("/jobs/detail/$f->slug/$f->post_id")}}">
-                        @elseif($f->name == 'other')
-                                <a href="{{url("/others/detail/$f->slug/$f->post_id")}}">
+                            <a href="{{ url("/scholarships/detail/$f->slug/$f->post_id") }}">
+                            @elseif ($f->name == 'grant')
+                                <a href="{{ url("/grants/detail/$f->slug/$f->post_id") }}">
+                                @elseif($f->name == 'conference')
+                                    <a href="{{ url("/conferences/detail/$f->slug/$f->post_id") }}">
+                                    @elseif($f->name == 'job')
+                                        <a href="{{ url("/jobs/detail/$f->slug/$f->post_id") }}">
+                                        @elseif($f->name == 'other')
+                                            <a href="{{ url("/others/detail/$f->slug/$f->post_id") }}">
                         @endif
-                            <div class="featured_card card">
-                                <div class="view overlay card_img">
-                                    <img class="card-img-top" src="{{asset("post_images/$f->image")}}" alt="Featured Image">
-                                </div>
-                                <div class="card-body">
-                                    <h5 class="card-title">{{$f->title}}</h5>
-
-                                </div>
-                                <div class="featured_card_info">
-                                    <span class="badge badge-pill badge-light" style="margin-bottom: 5px;">Deadline:
-                                        {{date('F j, Y', strtotime($f->deadline))}}</span>
-                                        <br>
-                                    <span class="badge badge-pill badge-light">
-                                        @if ($f->name == 'scholarship')
-                                        {{str_replace(',',', ',$f->type)}}
-                                        @endif
-                                        @if ($f->name == 'grant')
-                                            Grant
-                                        @endif
-                                        @if ($f->name == 'conference')
-                                            Conference
-                                        @endif
-                                        @if ($f->type == 'part_time_job')
-                                            Part-Time Job
-                                        @endif
-                                        @if ($f->type == 'full_time_job')
-                                            Full-Time Job
-                                        @endif
-                                        @if ($f->type == 'internship')
-                                            Internship
-                                        @endif
-                                        @if ($f->type == 'seminar')
-                                            Seminar
-                                        @endif
-                                        @if ($f->type == 'competition')
-                                            Competition
-                                        @endif
-                                    </span>
-                                </div>
+                        <div class="featured_card card">
+                            <div class="view overlay card_img">
+                                <img class="card-img-top" src="{{ asset("post_images/$f->image") }}"
+                                    alt="Featured Image">
                             </div>
+                            <div class="card-body">
+                                <h5 class="card-title">{{ $f->title }}</h5>
+
+                            </div>
+                            <div class="featured_card_info">
+                                <span class="badge badge-pill badge-light" style="margin-bottom: 5px;">Deadline:
+                                    {{ date('F j, Y', strtotime($f->deadline)) }}</span>
+                                <br>
+                                <span class="badge badge-pill badge-light">
+                                    @if ($f->name == 'scholarship')
+                                        {{ str_replace(',', ', ', $f->type) }}
+                                    @endif
+                                    @if ($f->name == 'grant')
+                                        Grant
+                                    @endif
+                                    @if ($f->name == 'conference')
+                                        Conference
+                                    @endif
+                                    @if ($f->type == 'part_time_job')
+                                        Part-Time Job
+                                    @endif
+                                    @if ($f->type == 'full_time_job')
+                                        Full-Time Job
+                                    @endif
+                                    @if ($f->type == 'internship')
+                                        Internship
+                                    @endif
+                                    @if ($f->type == 'seminar')
+                                        Seminar
+                                    @endif
+                                    @if ($f->type == 'competition')
+                                        Competition
+                                    @endif
+                                </span>
+                            </div>
+                        </div>
                         </a>
-                </div>
+                    </div>
                 @endforeach
 
             </div>
@@ -217,29 +209,32 @@
             <div class="scholar_cards">
                 <div class="row">
                     @foreach ($latest_scholar as $scholar)
-                    <div class="col-md-4">
-                        <a href="{{url("/scholarships/detail/$scholar->slug/$scholar->id")}}">
-                            <div class="card mb-2">
-                                <div class="img_holder">
-                                    <img class="card-img" src="{{asset("post_images/".$scholar->image)}}" alt="Organization Image">
-                                    <span style="width: 100%;text-align:center; font-size: 14px">
-                                       {{str_replace(',',', ',$scholar->type)}}
-                                    </span>
+                        <div class="col-md-4">
+                            <a href="{{ url("/scholarships/detail/$scholar->slug/$scholar->id") }}">
+                                <div class="card mb-2">
+                                    <div class="img_holder">
+                                        <img class="card-img" src="{{ asset('post_images/' . $scholar->image) }}"
+                                            alt="Organization Image">
+                                        <span style="width: 100%;text-align:center; font-size: 14px">
+                                            {{ str_replace(',', ', ', $scholar->type) }}
+                                        </span>
+                                    </div>
+                                    <div class="card-body title">
+                                        <h5 class="card-title">{{ $scholar->title }}</h5>
+                                    </div>
+                                    <div class="latest_scholar_detail text-center">
+                                        <p>More Info <i class="fas fa-caret-right"></i></p>
+                                    </div>
                                 </div>
-                                <div class="card-body title">
-                                    <h5 class="card-title">{{$scholar->title}}</h5>
-                                </div>
-                                <div class="latest_scholar_detail text-center">
-                                    <p>More Info <i class="fas fa-caret-right"></i></p>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
+                            </a>
+                        </div>
                     @endforeach
                 </div>
             </div>
             <div class="text-center">
-                <a href="{{url('scholarships')}}"> <div class="btn button explore_btn">Explore More <i class="fas fa-chevron-right ml-1"></i></div></a>
+                <a href="{{ url('scholarships') }}">
+                    <div class="btn button explore_btn">Explore More <i class="fas fa-chevron-right ml-1"></i></div>
+                </a>
             </div>
         </div>
     </div>
@@ -262,15 +257,16 @@
                             <div class="row">
                                 <div class="col-lg-5">
                                     <div class="latest_oppo_img">
-                                        <img src="{{asset("post_images/".$grants[0]->image)}}" alt="organization_photo">
+                                        <img src="{{ asset('post_images/' . $grants[0]->image) }}"
+                                            alt="organization_photo">
                                     </div>
                                 </div>
                                 <div class="col-lg-7">
                                     <div class="latest_oppo_label">
-                                        <a href="{{url("/grants/detail/".$grants[0]->slug."/".$grants[0]->id)}}">
-                                            <h5>{{$grants[0]->title}}</h5>
+                                        <a href="{{ url('/grants/detail/' . $grants[0]->slug . '/' . $grants[0]->id) }}">
+                                            <h5>{{ $grants[0]->title }}</h5>
                                         </a>
-                                        <p>Deadline: {{date('F j, Y', strtotime($grants[0]->deadline))}}</p>
+                                        <p>Deadline: {{ date('F j, Y', strtotime($grants[0]->deadline)) }}</p>
                                     </div>
 
                                 </div>
@@ -279,10 +275,10 @@
                             <div class="row">
                                 <div class="col-12">
                                     <div class="latest_oppo_label">
-                                        <a href="{{url("/grants/detail/".$grants[1]->slug."/".$grants[1]->id)}}">
-                                            <h5>{{$grants[1]->title}}</h5>
+                                        <a href="{{ url('/grants/detail/' . $grants[1]->slug . '/' . $grants[1]->id) }}">
+                                            <h5>{{ $grants[1]->title }}</h5>
                                         </a>
-                                        <p>Deadline: {{date('F j, Y', strtotime($grants[1]->deadline))}}</p>
+                                        <p>Deadline: {{ date('F j, Y', strtotime($grants[1]->deadline)) }}</p>
                                     </div>
                                 </div>
                             </div>
@@ -290,10 +286,10 @@
                             <div class="row">
                                 <div class="col-12">
                                     <div class="latest_oppo_label">
-                                        <a href="{{url("/grants/detail/".$grants[2]->slug."/".$grants[2]->id)}}">
-                                            <h5>{{$grants[2]->title}}</h5>
+                                        <a href="{{ url('/grants/detail/' . $grants[2]->slug . '/' . $grants[2]->id) }}">
+                                            <h5>{{ $grants[2]->title }}</h5>
                                         </a>
-                                        <p>Deadline: {{date('F j, Y', strtotime($grants[1]->deadline))}}</p>
+                                        <p>Deadline: {{ date('F j, Y', strtotime($grants[1]->deadline)) }}</p>
                                     </div>
                                 </div>
                             </div>
@@ -314,15 +310,17 @@
                             <div class="row">
                                 <div class="col-lg-5">
                                     <div class="latest_oppo_img">
-                                        <img src="{{asset("post_images/".$conferences[0]->image)}}" alt="organization_photo">
+                                        <img src="{{ asset('post_images/' . $conferences[0]->image) }}"
+                                            alt="organization_photo">
                                     </div>
                                 </div>
                                 <div class="col-lg-7">
                                     <div class="latest_oppo_label">
-                                        <a href="{{url("/conferences/detail/".$conferences[0]->slug."/".$conferences[0]->id)}}">
-                                            <h5>{{$conferences[0]->title}}</h5>
+                                        <a
+                                            href="{{ url('/conferences/detail/' . $conferences[0]->slug . '/' . $conferences[0]->id) }}">
+                                            <h5>{{ $conferences[0]->title }}</h5>
                                         </a>
-                                        <p>Deadline: {{date('F j, Y', strtotime($conferences[0]->deadline))}}</p>
+                                        <p>Deadline: {{ date('F j, Y', strtotime($conferences[0]->deadline)) }}</p>
                                     </div>
 
                                 </div>
@@ -331,10 +329,11 @@
                             <div class="row">
                                 <div class="col-12">
                                     <div class="latest_oppo_label">
-                                        <a href="{{url("/conferences/detail/".$conferences[1]->slug."/".$conferences[1]->id)}}">
-                                            <h5>{{$conferences[1]->title}}</h5>
+                                        <a
+                                            href="{{ url('/conferences/detail/' . $conferences[1]->slug . '/' . $conferences[1]->id) }}">
+                                            <h5>{{ $conferences[1]->title }}</h5>
                                         </a>
-                                        <p>Deadline: {{date('F j, Y', strtotime($conferences[1]->deadline))}}</p>
+                                        <p>Deadline: {{ date('F j, Y', strtotime($conferences[1]->deadline)) }}</p>
                                     </div>
                                 </div>
                             </div>
@@ -342,10 +341,12 @@
                             <div class="row">
                                 <div class="col-12">
                                     <div class="latest_oppo_label">
-                                        <a href="{{url("/conferences/detail/".$conferences[2]->slug."/".$conferences[2]->id)}}">
-                                            <h5>{{$conferences[2]->title}}</h5>
+                                        <a
+                                            href="{{ url('/conferences/detail/' . $conferences[2]->slug . '/' . $conferences[2]->id) }}">
+                                            <h5>{{ $conferences[2]->title }}</h5>
                                         </a>
-                                        <p>Deadline: Deadline: {{date('F j, Y', strtotime($conferences[2]->deadline))}}</p>
+                                        <p>Deadline: Deadline: {{ date('F j, Y', strtotime($conferences[2]->deadline)) }}
+                                        </p>
                                     </div>
                                 </div>
                             </div>
@@ -368,15 +369,16 @@
                             <div class="row">
                                 <div class="col-lg-5">
                                     <div class="latest_oppo_img">
-                                        <img src="{{asset("post_images/".$jobs[0]->image)}}" alt="organization_photo">
+                                        <img src="{{ asset('post_images/' . $jobs[0]->image) }}"
+                                            alt="organization_photo">
                                     </div>
                                 </div>
                                 <div class="col-lg-7">
                                     <div class="latest_oppo_label">
-                                        <a href="{{url("/jobs/detail/".$jobs[0]->slug."/".$jobs[0]->id)}}">
-                                            <h5>{{$jobs[0]->title}}</h5>
+                                        <a href="{{ url('/jobs/detail/' . $jobs[0]->slug . '/' . $jobs[0]->id) }}">
+                                            <h5>{{ $jobs[0]->title }}</h5>
                                         </a>
-                                        <p>Deadline: {{date('F j, Y', strtotime($jobs[0]->deadline))}}</p>
+                                        <p>Deadline: {{ date('F j, Y', strtotime($jobs[0]->deadline)) }}</p>
                                     </div>
 
                                 </div>
@@ -385,10 +387,10 @@
                             <div class="row">
                                 <div class="col-12">
                                     <div class="latest_oppo_label">
-                                        <a href="{{url("/jobs/detail/".$jobs[1]->slug."/".$jobs[1]->id)}}">
-                                            <h5>{{$jobs[1]->title}}</h5>
+                                        <a href="{{ url('/jobs/detail/' . $jobs[1]->slug . '/' . $jobs[1]->id) }}">
+                                            <h5>{{ $jobs[1]->title }}</h5>
                                         </a>
-                                        <p>Deadline: {{date('F j, Y', strtotime($jobs[1]->deadline))}}</p>
+                                        <p>Deadline: {{ date('F j, Y', strtotime($jobs[1]->deadline)) }}</p>
                                     </div>
                                 </div>
                             </div>
@@ -396,10 +398,10 @@
                             <div class="row">
                                 <div class="col-12">
                                     <div class="latest_oppo_label">
-                                        <a href="{{url("/jobs/detail/".$jobs[2]->slug."/".$jobs[2]->id)}}">
-                                            <h5>{{$jobs[2]->title}}</h5>
+                                        <a href="{{ url('/jobs/detail/' . $jobs[2]->slug . '/' . $jobs[2]->id) }}">
+                                            <h5>{{ $jobs[2]->title }}</h5>
                                         </a>
-                                        <p>Deadline: {{date('F j, Y', strtotime($jobs[2]->deadline))}}</p>
+                                        <p>Deadline: {{ date('F j, Y', strtotime($jobs[2]->deadline)) }}</p>
                                     </div>
                                 </div>
                             </div>
@@ -420,15 +422,16 @@
                             <div class="row">
                                 <div class="col-lg-5">
                                     <div class="latest_oppo_img">
-                                        <img src="{{asset("post_images/".$others[0]->image)}}" alt="organization_photo">
+                                        <img src="{{ asset('post_images/' . $others[0]->image) }}"
+                                            alt="organization_photo">
                                     </div>
                                 </div>
                                 <div class="col-lg-7">
                                     <div class="latest_oppo_label">
-                                        <a href="{{url("/others/detail/".$others[0]->slug."/".$others[0]->id)}}">
-                                            <h5>{{$others[0]->title}}</h5>
+                                        <a href="{{ url('/others/detail/' . $others[0]->slug . '/' . $others[0]->id) }}">
+                                            <h5>{{ $others[0]->title }}</h5>
                                         </a>
-                                        <p>Deadline: {{date('F j, Y', strtotime($others[0]->deadline))}}</p>
+                                        <p>Deadline: {{ date('F j, Y', strtotime($others[0]->deadline)) }}</p>
                                     </div>
 
                                 </div>
@@ -437,10 +440,10 @@
                             <div class="row">
                                 <div class="col-12">
                                     <div class="latest_oppo_label">
-                                        <a href="{{url("/others/detail/".$others[1]->slug."/".$others[1]->id)}}">
-                                            <h5>{{$others[1]->title}}</h5>
+                                        <a href="{{ url('/others/detail/' . $others[1]->slug . '/' . $others[1]->id) }}">
+                                            <h5>{{ $others[1]->title }}</h5>
                                         </a>
-                                        <p>Deadline: {{date('F j, Y', strtotime($others[1]->deadline))}}</p>
+                                        <p>Deadline: {{ date('F j, Y', strtotime($others[1]->deadline)) }}</p>
                                     </div>
                                 </div>
                             </div>
@@ -448,10 +451,10 @@
                             <div class="row">
                                 <div class="col-12">
                                     <div class="latest_oppo_label">
-                                        <a href="{{url("/others/detail/".$others[2]->slug."/".$others[2]->id)}}">
-                                            <h5>{{$others[2]->title}}</h5>
+                                        <a href="{{ url('/others/detail/' . $others[2]->slug . '/' . $others[2]->id) }}">
+                                            <h5>{{ $others[2]->title }}</h5>
                                         </a>
-                                        <p>Deadline: {{date('F j, Y', strtotime($others[2]->deadline))}}</p>
+                                        <p>Deadline: {{ date('F j, Y', strtotime($others[2]->deadline)) }}</p>
                                     </div>
                                 </div>
                             </div>
@@ -470,42 +473,43 @@
             <h2><span>Latest Courses</span></h2>
             <div class="row">
                 @foreach ($courses as $c)
-                <div class="col-lg-3 col-md-6 col-12">
-                    <a href="{{url("/courses/detail/$c->slug/$c->id")}}">
-                        <div class="card mb-2">
-                            <img class="card-img" src="{{asset("post_images/$c->image")}}" alt="Course Image">
-                            <div class="card-body title">
-                                <h5 class="card-title text-center">{{$c->course_name}}
-                                </h5>
+                    <div class="col-lg-3 col-md-6 col-12">
+                        <a href="{{ url("/courses/detail/$c->slug/$c->id") }}">
+                            <div class="card mb-2">
+                                <img class="card-img" src="{{ asset("post_images/$c->image") }}" alt="Course Image">
+                                <div class="card-body title">
+                                    <h5 class="card-title text-center">{{ $c->course_name }}
+                                    </h5>
+                                </div>
+                                <div class="courses_footer">
+                                    <div class="left_shape footer_shape"></div>
+                                    <div class="right_shape footer_shape"></div>
+                                    <span class="course_info">
+                                        @if ($c->type == 'free_course')
+                                            Free Course
+                                        @else
+                                            Paid Course
+                                        @endif
+                                    </span>
+                                </div>
                             </div>
-                            <div class="courses_footer">
-                                <div class="left_shape footer_shape"></div>
-                                <div class="right_shape footer_shape"></div>
-                                <span class="course_info">
-                                    @if ($c->type == 'free_course')
-                                        Free Course
-                                    @else
-                                        Paid Course
-                                    @endif
-                                </span>
-                            </div>
-                        </div>
-                    </a>
-                </div>
+                        </a>
+                    </div>
                 @endforeach
 
             </div>
             <div class="text-center">
-                <a href="{{url('/courses')}}"><div class="btn button explore_btn waves-effect waves-light">Explore More <i
-                    class="fas fa-chevron-right ml-1"></i></div></a>
+                <a href="{{ url('/courses') }}">
+                    <div class="btn button explore_btn waves-effect waves-light">Explore More <i
+                            class="fas fa-chevron-right ml-1"></i></div>
+                </a>
             </div>
 
         </div>
     </div>
     <script>
-
-        $(document).ready(function () {
-            $('#oppotunity-select').on('change', function () {
+        $(document).ready(function() {
+            $('#oppotunity-select').on('change', function() {
 
                 let oppotunity = $(this).val();
                 let responseArray = []
@@ -515,17 +519,19 @@
                 $.ajax({
                     type: 'GET',
                     url: 'regionFetch/' + oppotunity,
-                    success: function (response) {
+                    success: function(response) {
                         var response = JSON.parse(response);
                         $('#place').empty();
                         $('#place').append('<option value="">Regions</option>');
-                            response.forEach(element => {
-                                if (!responseArray.includes(element['place'])){
-                                    $('#place').append(`<option value="${element['place']}">${element['place']}</option>`);
+                        response.forEach(element => {
+                            if (!responseArray.includes(element['place'])) {
+                                $('#place').append(
+                                    `<option value="${element['place']}">${element['place']}</option>`
+                                );
 
-                                }
-                                responseArray.push(element['place'])
-                            });
+                            }
+                            responseArray.push(element['place'])
+                        });
                     }
                 });
             });

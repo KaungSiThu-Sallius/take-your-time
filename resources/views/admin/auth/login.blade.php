@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -23,22 +24,22 @@
 
     <title>Admin Login</title>
     <style>
-        .card{
+        .card {
             margin: 50px 0;
         }
 
         .card-header {
-            background-color:#EE7674;
+            background-color: #EE7674;
         }
 
-        .btn{
+        .btn {
             background-color: #EE7674;
             color: white;
         }
 
-
     </style>
 </head>
+
 <body>
     <div class="container">
         <div class="row">
@@ -46,55 +47,54 @@
                 <div class="card">
 
                     <h5 class="card-header white-text text-center py-4">
-                      <strong>Sign in</strong>
+                        <strong>Sign in</strong>
                     </h5>
                     @include('admin.alert')
                     <div class="card-body px-lg-5 pt-0">
 
-                      <form class="text-center" style="color: #757575;" action="{{url('admin/login')}}" method="POST">
+                        <form class="text-center" style="color: #757575;" action="{{ url('admin/login') }}"
+                            method="POST">
 
-                        @csrf
-                        <!-- Email -->
-                        <div class="md-form mb-0">
-                            <input type="email" id="email" name="email" class="form-control" required>
-                            <label for="email" class="">Email</label>
-                        </div>
+                            @csrf
+                            <!-- Email -->
+                            <div class="md-form mb-0">
+                                <input type="email" id="email" name="email" class="form-control" required>
+                                <label for="email" class="">Email</label>
+                            </div>
 
-                        <!-- Password -->
-                        <div class="md-form mb-0">
-                            <input type="password" id="password" name="password" class="form-control" required>
-                            <label for="password" class="">Password</label>
-                        </div>
+                            <!-- Password -->
+                            <div class="md-form mb-0">
+                                <input type="password" id="password" name="password" class="form-control" required>
+                                <label for="password" class="">Password</label>
+                            </div>
 
-                        <button class="btn btn-rounded btn-block my-4 waves-effect z-depth-0 text-white" type="submit">Sign in</button>
-                      </form>
+                            <button class="btn btn-rounded btn-block my-4 waves-effect z-depth-0 text-white"
+                                type="submit">Sign in</button>
+                        </form>
 
                     </div>
 
-                  </div>
+                </div>
             </div>
         </div>
 
     </div>
 
 
-  <!-- JQuery -->
-  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <!-- Bootstrap tooltips -->
-  <script type="text/javascript"
-      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.4/umd/popper.min.js"></script>
-  <!-- Bootstrap core JavaScript -->
-  <script type="text/javascript"
-      src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/js/bootstrap.min.js"></script>
-  <!-- MDB core JavaScript -->
-  <script type="text/javascript"
-      src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/js/mdb.min.js"></script>
-  <!-- Selectize JS -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/selectize.js/0.12.6/js/standalone/selectize.min.js"
-      integrity="sha256-+C0A5Ilqmu4QcSPxrlGpaZxJ04VjsRjKu+G82kl5UJk=" crossorigin="anonymous"></script>
+    <!-- JQuery -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!-- Bootstrap tooltips -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.4/umd/popper.min.js"></script>
+    <!-- Bootstrap core JavaScript -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/js/bootstrap.min.js">
+    </script>
+    <!-- MDB core JavaScript -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/js/mdb.min.js"></script>
+    <!-- Selectize JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/selectize.js/0.12.6/js/standalone/selectize.min.js"
+        integrity="sha256-+C0A5Ilqmu4QcSPxrlGpaZxJ04VjsRjKu+G82kl5UJk=" crossorigin="anonymous"></script>
 
-  <!-- js -->
+    <!-- js -->
 </body>
+
 </html>
-
-

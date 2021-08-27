@@ -1,53 +1,54 @@
 @extends('admin.layout.master')
 @section('title')
-<title>Create Job</title>
+    <title>Create Job</title>
 @endsection
 @section('nav_items')
     <li class="">
-        <a href="{{url('admin/dashboard')}}">
-            <img src="{{asset('images/dashboard.svg')}}" alt="dashboard" type="image/svg+xml" class="svg_icon" />
+        <a href="{{ url('admin/dashboard') }}">
+            <img src="{{ asset('images/dashboard.svg') }}" alt="dashboard" type="image/svg+xml" class="svg_icon" />
             <span>Dashboard</span>
         </a>
     </li>
     <li class="">
-        <a href="{{url('admin/scholarshipIndex')}}">
-            <img src="{{asset('images/scholar.svg')}}" alt="scholarship" type="image/svg+xml" class="svg_icon icon_sidebar" />
+        <a href="{{ url('admin/scholarshipIndex') }}">
+            <img src="{{ asset('images/scholar.svg') }}" alt="scholarship" type="image/svg+xml"
+                class="svg_icon icon_sidebar" />
             <span>Scholarship</span>
         </a>
     </li>
     <li class="">
-        <a href="{{url('admin/grantIndex')}}">
-            <img src="{{asset('images/grant.svg')}}" alt="grant" type="image/svg+xml" class="svg_icon" />
+        <a href="{{ url('admin/grantIndex') }}">
+            <img src="{{ asset('images/grant.svg') }}" alt="grant" type="image/svg+xml" class="svg_icon" />
             <span>Grant</span>
         </a>
     </li>
     <li class="">
-        <a href="{{url('admin/conferenceIndex')}}">
-            <img src="{{asset('images/conference.svg')}}" alt="conference" type="image/svg+xml" class="svg_icon" />
+        <a href="{{ url('admin/conferenceIndex') }}">
+            <img src="{{ asset('images/conference.svg') }}" alt="conference" type="image/svg+xml" class="svg_icon" />
             <span>Conference</span>
         </a>
     </li>
     <li class="">
-        <a href="{{url('admin/courseIndex')}}">
-            <img src="{{asset('images/courses.svg')}}" alt="course" type="image/svg+xml" class="svg_icon" />
+        <a href="{{ url('admin/courseIndex') }}">
+            <img src="{{ asset('images/courses.svg') }}" alt="course" type="image/svg+xml" class="svg_icon" />
             <span>Course</span>
         </a>
     </li>
     <li class="active">
-        <a href="{{url('admin/jobIndex')}}">
-            <img src="{{asset('images/jobs.svg')}}" alt="job" type="image/svg+xml" class="svg_icon" />
+        <a href="{{ url('admin/jobIndex') }}">
+            <img src="{{ asset('images/jobs.svg') }}" alt="job" type="image/svg+xml" class="svg_icon" />
             <span>Job</span>
         </a>
     </li>
     <li class="">
-        <a href="{{url('admin/otherIndex')}}">
-            <img src="{{asset('images/others.svg')}}" alt="other" type="image/svg+xml" class="svg_icon" />
+        <a href="{{ url('admin/otherIndex') }}">
+            <img src="{{ asset('images/others.svg') }}" alt="other" type="image/svg+xml" class="svg_icon" />
             <span>Other</span>
         </a>
     </li>
     <li class="">
-        <a href="{{url('admin/message')}}">
-            <img src="{{asset('images/message.svg')}}" alt="messge" type="image/svg+xml" class="svg_icon" />
+        <a href="{{ url('admin/message') }}">
+            <img src="{{ asset('images/message.svg') }}" alt="messge" type="image/svg+xml" class="svg_icon" />
             <span>Message</span>
         </a>
     </li>
@@ -59,10 +60,10 @@
         <div class="container">
             <div class="row">
                 <div class="offset-md-3 col-md-9 col-12">
-                    <form action="{{route('job.store')}}" method="POST" enctype="multipart/form-data" class="card">
+                    <form action="{{ route('job.store') }}" method="POST" enctype="multipart/form-data" class="card">
                         @csrf
                         <div class="card-header">
-                            <h2 class="mb-4">Create Job <span style="font-size:14px; color:red">(<?php echo date("d M, Y") ?>)</span>
+                            <h2 class="mb-4">Create Job <span style="font-size:14px; color:red">(<?php echo date('d M, Y'); ?>)</span>
                             </h2>
                         </div>
                         @include('admin.alert')
@@ -87,7 +88,8 @@
                             <div class="row mb-2">
                                 <div class="col-md-6">
                                     <div class="md-form mb-0">
-                                        <input type="text" id="organization" name="organization" class="form-control" required>
+                                        <input type="text" id="organization" name="organization" class="form-control"
+                                            required>
                                         <label for="organization" class="">Organization Name</label>
                                     </div>
                                 </div>
@@ -103,13 +105,15 @@
 
                                 <div class="col-md-6">
                                     <div class="md-form input-with-post-icon datepicker">
-                                        <input placeholder="Select date" type="date" id="deadline" class="form-control" name="deadline">
+                                        <input placeholder="Select date" type="date" id="deadline" class="form-control"
+                                            name="deadline">
                                         <label for="deadline">Application Deadline</label>
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="md-form input-with-post-icon datepicker">
-                                        <input placeholder="Select date" type="date" id="start_date" class="form-control" name="start_date">
+                                        <input placeholder="Select date" type="date" id="start_date" class="form-control"
+                                            name="start_date">
                                         <label for="start_date">Start Job Date</label>
                                     </div>
                                 </div>
@@ -118,14 +122,16 @@
                             <div class="row mb-2">
                                 <div class="col-md-6">
                                     <div class="md-form mb-0">
-                                        <input type="text" id="job_duration" name="job_duration" class="form-control" required>
+                                        <input type="text" id="job_duration" name="job_duration" class="form-control"
+                                            required>
                                         <label for="job_duration" class="">Job Duration</label>
                                     </div>
                                 </div>
 
                                 <div class="col-md-6">
                                     <div class="md-form mb-0">
-                                        <input type="text" id="apply_form_link" name="apply_form_link" class="form-control" required>
+                                        <input type="text" id="apply_form_link" name="apply_form_link" class="form-control"
+                                            required>
                                         <label for="apply_form_link">Source Link</label>
                                     </div>
                                 </div>
@@ -135,7 +141,8 @@
                                 <div class="col-12">
                                     <div class="form-group detail_text">
                                         <h5>Details</h5>
-                                        <textarea class="form-control rounded-0" id="detail" rows="3" name="detail" required></textarea>
+                                        <textarea class="form-control rounded-0" id="detail" rows="3" name="detail"
+                                            required></textarea>
                                     </div>
                                 </div>
                             </div>
@@ -144,7 +151,8 @@
                                 <div class="col-12">
                                     <div class="form-group other_text">
                                         <h5>Other Information</h5>
-                                        <textarea class="form-control rounded-0" id="other_information" rows="3" name="other_information"></textarea>
+                                        <textarea class="form-control rounded-0" id="other_information" rows="3"
+                                            name="other_information"></textarea>
                                     </div>
                                 </div>
                             </div>
@@ -153,15 +161,18 @@
                                 <div class="col-md-6 funding">
                                     <h5>Type</h5>
                                     <div class="custom-control custom-radio funding">
-                                        <input type="radio" class="custom-control-input" id="part_time_job" name="type" value="part_time_job">
+                                        <input type="radio" class="custom-control-input" id="part_time_job" name="type"
+                                            value="part_time_job">
                                         <label class="custom-control-label" for="part_time_job">Part-Time Job</label>
                                     </div>
                                     <div class="custom-control custom-radio">
-                                        <input type="radio" class="custom-control-input" id="full_time_job" name="type" value="full_time_job">
+                                        <input type="radio" class="custom-control-input" id="full_time_job" name="type"
+                                            value="full_time_job">
                                         <label class="custom-control-label" for="full_time_job">Full-Time Job</label>
                                     </div>
                                     <div class="custom-control custom-radio">
-                                        <input type="radio" class="custom-control-input" id="internship" name="type" value="internship">
+                                        <input type="radio" class="custom-control-input" id="internship" name="type"
+                                            value="internship">
                                         <label class="custom-control-label" for="internship">Internship</label>
                                     </div>
                                 </div>
@@ -211,7 +222,7 @@
                                 </div>
                                 <div class="col-md-6">
                                     <div class="md-form mb-0">
-                                        <input type="text" id="criteria7" name="criteria[]" class="form-control" >
+                                        <input type="text" id="criteria7" name="criteria[]" class="form-control">
                                         <label for="criteria7">Criteria 7</label>
                                     </div>
                                 </div>
@@ -348,14 +359,14 @@
                                     <h5 class="mb-4">Job Image</h5>
                                     <div class="input-group">
                                         <div class="input-group-prepend">
-                                          <span class="input-group-text" id="inputGroupFileAddon01">Upload</span>
+                                            <span class="input-group-text" id="inputGroupFileAddon01">Upload</span>
                                         </div>
                                         <div class="custom-file">
-                                          <input type="file" class="custom-file-input" id="inputGroupFile01"
-                                            aria-describedby="inputGroupFileAddon01" name="image" required>
-                                          <label class="custom-file-label" for="inputGroupFile01">Choose image</label>
+                                            <input type="file" class="custom-file-input" id="inputGroupFile01"
+                                                aria-describedby="inputGroupFileAddon01" name="image" required>
+                                            <label class="custom-file-label" for="inputGroupFile01">Choose image</label>
                                         </div>
-                                      </div>
+                                    </div>
                                 </div>
                             </div>
 
@@ -373,4 +384,3 @@
         </div>
     </div>
 @endsection
-

@@ -24,14 +24,14 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
 
     <!-- CSS -->
-    <link rel="stylesheet" href="{{asset('css/header.css')}}">
-    <link rel="stylesheet" href="{{asset('css/footer.css')}}">
-    <link rel="stylesheet" href="{{asset('css/styles.css')}}">
+    <link rel="stylesheet" href="{{ asset('css/header.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/footer.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/styles.css') }}">
 
     <!-- JQuery -->
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
-    <link rel="icon" href="{{asset('images/tyt_icon.svg')}}" type="image/svg+xml">
+    <link rel="icon" href="{{ asset('images/tyt_icon.svg') }}" type="image/svg+xml">
     @yield('title')
 </head>
 
@@ -44,7 +44,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-6">
-                        <img src="{{asset('images/logo.svg')}}" alt="logo" type="image/svg+xml">
+                        <img src="{{ asset('images/logo.svg') }}" alt="logo" type="image/svg+xml">
                     </div>
                     <div class="col-6">
                         <div class="nav_social_icons text-right">
@@ -68,7 +68,7 @@
             <div class="container-fluid">
 
                 <!-- hidden_logo -->
-                <img src="{{asset('images/logo.svg')}}" alt="logo" type="image/svg+xml" class="hidden_logo">
+                <img src="{{ asset('images/logo.svg') }}" alt="logo" type="image/svg+xml" class="hidden_logo">
 
                 <!-- Collapse button -->
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar_collapse"
@@ -82,7 +82,7 @@
                             <div class="nav_items mx-auto">
 
                                 <ul class="navbar-nav text-center">
-                                        @yield('nav_items')
+                                    @yield('nav_items')
                                 </ul>
 
                             </div>
@@ -103,7 +103,7 @@
 
                 <div class="col-lg-4">
                     <div class="description text-center">
-                        <img src="{{asset('images/logo.svg')}}" alt="logo" type="image/svg+xml" width="100">
+                        <img src="{{ asset('images/logo.svg') }}" alt="logo" type="image/svg+xml" width="100">
                         <p><span class="company_name">"Take Your Time"</span> is Opportunity Lorem Apsom for
                             youth.
                             Lorem Scholarships
@@ -115,8 +115,8 @@
                 <div class="col-lg-4">
                     <div class="sitemap text-center">
                         <div class="section_heading">
-                            <img src="{{asset('images/heading_bg.svg')}}" alt="brush_background" type="image/svg+xml"
-                                class="brush_bg">
+                            <img src="{{ asset('images/heading_bg.svg') }}" alt="brush_background"
+                                type="image/svg+xml" class="brush_bg">
                             <h4 class="sitemap_heading">Sitemap</h4>
                         </div>
                         <div class="sitemap_items">
@@ -139,14 +139,15 @@
                             </div>
                         </div>
                     </div>
-                    <img src="{{asset('images/footer_divider.svg')}}" alt="section_divider" type="image/svg+xml" class="divider1">
+                    <img src="{{ asset('images/footer_divider.svg') }}" alt="section_divider" type="image/svg+xml"
+                        class="divider1">
                 </div>
 
                 <div class="col-lg-4">
                     <div class="contact text-center">
                         <div class="section_heading">
-                            <img src="{{asset('images/heading_bg.svg')}}" alt="brush_background" type="image/svg+xml"
-                                class="brush_bg">
+                            <img src="{{ asset('images/heading_bg.svg') }}" alt="brush_background"
+                                type="image/svg+xml" class="brush_bg">
                             <h4 class="contact_heading">Contact Us</h4>
                         </div>
                         <div class="contact_items text-left">
@@ -166,7 +167,8 @@
                             </ul>
                         </div>
                     </div>
-                    <img src="{{asset('images/footer_divider.svg')}}" alt="section_divider" type="image/svg+xml" class="divider2">
+                    <img src="{{ asset('images/footer_divider.svg') }}" alt="section_divider" type="image/svg+xml"
+                        class="divider2">
                 </div>
 
             </div>
@@ -180,27 +182,27 @@
         </div>
     </div>
 
-
-
-
     <!-- Bootstrap tooltips -->
-    <script type="text/javascript"
-        src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.4/umd/popper.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.4/umd/popper.min.js"></script>
     <!-- Bootstrap core JavaScript -->
-    <script type="text/javascript"
-        src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/js/bootstrap.min.js">
+    </script>
     <!-- MDB core JavaScript -->
-    <script type="text/javascript"
-        src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/js/mdb.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js" integrity="sha512-bZS47S7sPOxkjU/4Bt0zrhEtWx0y0CRkhEp8IckzK+ltifIIE9EMIMTuT/mEzoIMewUINruDBIR/jJnbguonqQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/js/mdb.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+        integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"
+        integrity="sha512-bZS47S7sPOxkjU/4Bt0zrhEtWx0y0CRkhEp8IckzK+ltifIIE9EMIMTuT/mEzoIMewUINruDBIR/jJnbguonqQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
 
     <!-- js -->
-    <script src="{{asset('js/script.js')}}"></script>
+    <script src="{{ asset('js/script.js') }}"></script>
 
     @yield('alert')
     @yield('script')
+
 </body>
 
 </html>

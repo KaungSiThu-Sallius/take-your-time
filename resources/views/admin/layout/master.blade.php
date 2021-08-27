@@ -20,7 +20,7 @@
 
     <!-- Material Design Bootstrap -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/css/mdb.min.css" rel="stylesheet">
-    <link rel="icon" href="{{asset('images/tyt_icon.svg')}}" type="image/svg+xml">
+    <link rel="icon" href="{{ asset('images/tyt_icon.svg') }}" type="image/svg+xml">
 
 
     @yield('title')
@@ -48,6 +48,7 @@
             margin: 0;
             box-sizing: border-box;
         }
+
         body {
             background-color: var(--white);
         }
@@ -122,7 +123,7 @@
             font: 16px/1.5 "Lato", sans-serif;
         }
 
-        .logo_div{
+        .logo_div {
             margin: 0 auto;
         }
 
@@ -241,7 +242,7 @@
             padding: 15px;
         }
 
-        .icon_sidebar{
+        .icon_sidebar {
             color: #454746;
         }
 
@@ -261,28 +262,28 @@
             color: white;
         }
 
-        .dashboard_card .card_info:hover .detail_icon{
+        .dashboard_card .card_info:hover .detail_icon {
             color: var(--side-bar-bgColor-hover);
         }
 
-            .dashboard_card .detail_icon {
-                position: absolute;
-                font-size: 248%;
-                top: 40%;
-                right: 13%;
-                color: var(--primary01);
-            }
+        .dashboard_card .detail_icon {
+            position: absolute;
+            font-size: 248%;
+            top: 40%;
+            right: 13%;
+            color: var(--primary01);
+        }
 
 
 
-            .dashboard_card .count_number {
-                font-size: 40px;
+        .dashboard_card .count_number {
+            font-size: 40px;
 
-            }
+        }
 
         /********************************* scholarship ********************************/
 
-        .card_info{
+        .card_info {
             background-color: var(--primary04);
             box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
             padding: 40px 20px;
@@ -292,24 +293,24 @@
             font-size: 14px;
         }
 
-        .data_table .badge{
+        .data_table .badge {
             font-size: 12px;
             margin-left: 2px;
         }
 
-        .data{
+        .data {
             padding: 30px 0 60px;
         }
 
-        .data .heading{
+        .data .heading {
             margin-bottom: 30px;
         }
 
-        .data .heading h2{
+        .data .heading h2 {
             margin: 0;
         }
 
-        .data .heading .button{
+        .data .heading .button {
             margin: 0;
             float: right;
         }
@@ -317,99 +318,114 @@
 
 
         .search {
-        width: 100%;
-        position: relative;
-        display: flex;
+            width: 100%;
+            position: relative;
+            display: flex;
         }
 
-        .search form{
+        .search form {
             width: 98%;
         }
 
         .searchTerm {
-        width: 92%;
-        border: 3px solid var(--primary01);
-        border-right: none;
-        padding: 15px;
-        height: 20px;
-        border-radius: 5px 0 0 5px;
-        outline: none;
-        color: #9DBFAF;
+            width: 92%;
+            border: 3px solid var(--primary01);
+            border-right: none;
+            padding: 15px;
+            height: 20px;
+            border-radius: 5px 0 0 5px;
+            outline: none;
+            color: #9DBFAF;
         }
 
-        .searchTerm:focus{
-        color: var(--primary01);
+        .searchTerm:focus {
+            color: var(--primary01);
         }
 
         .searchButton {
-        width: 50px;
-        height: 36px;
-        border: 1px solid var(--primary01);
-        background: var(--primary01);
-        text-align: center;
-        color: #fff;
-        border-radius: 0 5px 5px 0;
-        cursor: pointer;
-        font-size: 20px;
+            width: 50px;
+            height: 36px;
+            border: 1px solid var(--primary01);
+            background: var(--primary01);
+            text-align: center;
+            color: #fff;
+            border-radius: 0 5px 5px 0;
+            cursor: pointer;
+            font-size: 20px;
         }
 
-        .search input{
+        .search input {
             color: #7C7C7C;
         }
 
-        .create_scholar form{
+        .create_scholar form {
             margin: 40px 0;
             background-color: var(--primary04);
             border-radius: 20px;
             box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
         }
 
-        .create_scholar .card{
+        .create_scholar .card {
             border-radius: 20px !important;
         }
 
-        .create_scholar .card-header{
+        .create_scholar .card-header {
             border-top-left-radius: 20px;
             border-top-right-radius: 20px;
         }
 
-        .create_scholar .card-body{
+        .create_scholar .card-body {
             padding: 40px;
         }
 
-        .create_scholar form h2{
+        .create_scholar form h2 {
             margin-bottom: 0 !important;
             padding: 10px;
         }
 
-        .funding, .type_checkbox, .image , .criteria, .benefit, .application_process, .date {
+        .funding,
+        .type_checkbox,
+        .image,
+        .criteria,
+        .benefit,
+        .application_process,
+        .date {
             color: #757575;
         }
 
 
-        .funding h5, .type_checkbox h5, .image h5, .detail_text h5, .other_text h5{
-            margin:25px 0 15px;
+        .funding h5,
+        .type_checkbox h5,
+        .image h5,
+        .detail_text h5,
+        .other_text h5 {
+            margin: 25px 0 15px;
             color: #454746;
         }
 
-        .criteria h5, .benefit h5, .application_process h5{
-            margin:25px 0 0px;
+        .criteria h5,
+        .benefit h5,
+        .application_process h5 {
+            margin: 25px 0 0px;
             color: #454746;
         }
 
-        .funding .custom-radio, .type_checkbox .custom-checkbox{
+        .funding .custom-radio,
+        .type_checkbox .custom-checkbox {
             margin-bottom: 5px;
         }
 
-        .sub_btn .btn{
+        .sub_btn .btn {
             margin-top: 40px;
         }
+
         /********************************* media query ********************************/
         @media (max-width: 1199px) {
             .searchTerm {
                 width: 86%;
             }
         }
+
         @media screen and (max-width: 767px) {
 
             .side-bar,
@@ -420,7 +436,7 @@
 
             .side-bar {
                 padding: 10px;
-           box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+                box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
             }
 
             .side-bar nav {
@@ -444,7 +460,8 @@
                 margin-top: 23px;
 
             }
-            .side-bar .admin-menu button{
+
+            .side-bar .admin-menu button {
                 display: none;
             }
 
@@ -475,15 +492,16 @@
                 min-height: 0;
                 padding: 10px;
             }
-            .cards .row{
+
+            .cards .row {
                 margin-top: 10px !important;
             }
 
-            .card_info{
+            .card_info {
                 margin-top: 40px;
             }
 
-            .dashboard_card .card_info{
+            .dashboard_card .card_info {
                 margin-top: 0;
                 margin-bottom: 40px;
             }
@@ -493,6 +511,7 @@
                 font-size: 248%;
                 top: 31%;
             }
+
             .searchTerm {
                 width: 89%;
             }
@@ -540,7 +559,7 @@
             }
         }
 
-        @media (max-width: 1199px){
+        @media (max-width: 1199px) {
             .searchTerm {
                 width: 81%;
             }
@@ -550,7 +569,6 @@
                 margin-top: 9px;
             }
         }
-
 
     </style>
 </head>
@@ -579,10 +597,10 @@
         <nav>
             <div class="logo_div">
                 <a href="#0" aria-label="logo" class="logo">
-                    <img src="{{asset('images/logo.svg')}}" alt="logo" type="image/svg+xml" />
+                    <img src="{{ asset('images/logo.svg') }}" alt="logo" type="image/svg+xml" />
                 </a>
             </div>
-           <button class="toggle-mob-menu" aria-expanded="false" aria-label="open menu">
+            <button class="toggle-mob-menu" aria-expanded="false" aria-label="open menu">
                 <svg width="20" height="20" aria-hidden="true">
                     <use xlink:href="#down"></use>
                 </svg>
@@ -595,12 +613,14 @@
                 @yield('nav_items')
                 <hr>
                 <li class="">
-                    <a href="{{url('admin/logout')}}">
-                        <img src="{{asset('images/logout.svg')}}" alt="course" type="image/svg+xml" class="svg_icon" />
+                    <a href="{{ url('admin/logout') }}">
+                        <img src="{{ asset('images/logout.svg') }}" alt="course" type="image/svg+xml"
+                            class="svg_icon" />
                         <span>Logout</span>
                     </a>
                 </li>
-                <button class="collapse-btn" aria-expanded="true" aria-label="collapse menu" style="background-color: #EE7674">
+                <button class="collapse-btn" aria-expanded="true" aria-label="collapse menu"
+                    style="background-color: #EE7674">
                     <svg aria-hidden="true">
                         <use xlink:href="#collapse"></use>
                     </svg>
@@ -622,30 +642,30 @@
         const collapsedClass = "collapsed";
 
         /*TOGGLE HEADER STATE*/
-        collapseBtn.addEventListener("click", function () {
+        collapseBtn.addEventListener("click", function() {
             body.classList.toggle(collapsedClass);
-            this.getAttribute("aria-expanded") == "true"
-                ? this.setAttribute("aria-expanded", "false")
-                : this.setAttribute("aria-expanded", "true");
-            this.getAttribute("aria-label") == "collapse menu"
-                ? this.setAttribute("aria-label", "expand menu")
-                : this.setAttribute("aria-label", "collapse menu");
+            this.getAttribute("aria-expanded") == "true" ?
+                this.setAttribute("aria-expanded", "false") :
+                this.setAttribute("aria-expanded", "true");
+            this.getAttribute("aria-label") == "collapse menu" ?
+                this.setAttribute("aria-label", "expand menu") :
+                this.setAttribute("aria-label", "collapse menu");
         });
 
         /*TOGGLE MOBILE MENU*/
-        toggleMobileMenu.addEventListener("click", function () {
+        toggleMobileMenu.addEventListener("click", function() {
             body.classList.toggle("mob-menu-opened");
-            this.getAttribute("aria-expanded") == "true"
-                ? this.setAttribute("aria-expanded", "false")
-                : this.setAttribute("aria-expanded", "true");
-            this.getAttribute("aria-label") == "open menu"
-                ? this.setAttribute("aria-label", "close menu")
-                : this.setAttribute("aria-label", "open menu");
+            this.getAttribute("aria-expanded") == "true" ?
+                this.setAttribute("aria-expanded", "false") :
+                this.setAttribute("aria-expanded", "true");
+            this.getAttribute("aria-label") == "open menu" ?
+                this.setAttribute("aria-label", "close menu") :
+                this.setAttribute("aria-label", "open menu");
         });
 
         /*SHOW TOOLTIP ON MENU LINK HOVER*/
         for (const link of menuLinks) {
-            link.addEventListener("mouseenter", function () {
+            link.addEventListener("mouseenter", function() {
                 if (
                     body.classList.contains(collapsedClass) &&
                     window.matchMedia("(min-width: 768px)").matches
@@ -662,14 +682,12 @@
     <!-- JQuery -->
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <!-- Bootstrap tooltips -->
-    <script type="text/javascript"
-        src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.4/umd/popper.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.4/umd/popper.min.js"></script>
     <!-- Bootstrap core JavaScript -->
-    <script type="text/javascript"
-        src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/js/bootstrap.min.js">
+    </script>
     <!-- MDB core JavaScript -->
-    <script type="text/javascript"
-        src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/js/mdb.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/js/mdb.min.js"></script>
 
 </body>
 

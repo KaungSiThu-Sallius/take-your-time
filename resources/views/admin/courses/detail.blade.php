@@ -131,7 +131,7 @@
                                         <tr>
                                             <th>Image</th>
                                             <td>
-                                                <img src="{{ asset("post_images/$course->image") }}" alt="course_image"
+                                                <img src="{{ asset("upload_images/$course->image") }}" alt="course_image"
                                                     style="width:200px">
                                             </td>
                                         </tr>

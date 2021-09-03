@@ -156,7 +156,7 @@
                                         <tr>
                                             <th>Image</th>
                                             <td>
-                                                <img src="{{ asset("post_images/$job->image") }}" alt="job_image"
+                                                <img src="{{ asset("upload_images/$job->image") }}" alt="job_image"
                                                     style="width:200px">
                                             </td>
                                         </tr>

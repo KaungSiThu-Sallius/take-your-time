@@ -96,7 +96,7 @@
             <div class="row">
                 <div class="col-xl-4 col-md-5">
                     <div class="img text-center">
-                        <img src='{{ asset("post_images/$detail->image") }}' alt="">
+                        <img src='{{ asset("upload_images/$detail->image") }}' alt="">
                     </div>
                 </div>
                 <div class="col-xl-8 col-md-7">
@@ -106,15 +106,15 @@
                         </p>
                         <p><i class="fas fa-hand-holding-usd"></i> <span style="font-weight: 600;"> Price :</span>
                             @if ($detail->price == 0)
-                                FOC
+                                Free Course
                             @else
                                 {{ $detail->price }} Kyats
                             @endif
                         </p>
                         <p><i class="fas fa-clock"></i> <span style="font-weight: 600;">Place :</span>
-                            {{ $detail->course_duration }}</p>
-                        <p><i class="fas fa-globe"></i> <span style="font-weight: 600;">Duration :</span>
                             {{ $detail->place }}</p>
+                        <p><i class="fas fa-globe"></i> <span style="font-weight: 600;">Duration :</span>
+                            {{ $detail->course_duration }}</p>
                         <p><i class="fa fa-user"></i> <span style="font-weight: 600;">Taught by :</span>
                             {{ $detail->taught_by }}<br></p>
                         <small>Updated on {{ date('F j, Y', strtotime($detail->updated_at)) }}</small>
@@ -177,7 +177,7 @@
                     <th>Price</th>
                     <td>
                         @if ($detail->price == 0)
-                            FOC
+                            Free Course
                         @else
                             {{ $detail->price }} Kyats
                         @endif

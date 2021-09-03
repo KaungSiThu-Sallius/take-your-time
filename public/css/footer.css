@@ -101,6 +101,10 @@
     opacity: 0.5;
 }
 
+.contact_items li a {
+    color: var(--black02);
+}
+
 /* ------------------------- copyright ------------------------- */
 .copyright {
     background-color: var(--primary03);

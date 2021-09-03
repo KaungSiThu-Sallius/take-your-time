@@ -46,9 +46,11 @@ class CourseController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'image' => 'required|mimes:png,jpg,jpeg',
+            'type' => 'required',
+            'image' => 'required|mimes:png,jpg,jpeg'
         ], [
-            'image.mimes' => 'Please choose image',
+            'type.required' => "Type need to be select",
+            'image.mimes' => "Your image format have to be JPG, JPEG, PNG",
         ]);
 
         $course_name = $request->course_name;
@@ -65,7 +67,7 @@ class CourseController extends Controller
 
         $image = request()->file('image');
         $img_name = uniqid() . $image->getClientOriginalName();
-        Storage::disk('post_images')->put($img_name, $image->get());
+        Storage::disk('upload_images')->put($img_name, $image->get());
 
         $course = Course::create([
             'slug' => Str::slug($course_name),
@@ -132,8 +134,8 @@ class CourseController extends Controller
         } else {
             $image = request()->file('image');
             $img_name = uniqid() . $image->getClientOriginalName();
-            Storage::disk('post_images')->delete([$old_image]);
-            Storage::disk('post_images')->put($img_name, $image->get());
+            Storage::disk('upload_images')->delete([$old_image]);
+            Storage::disk('upload_images')->put($img_name, $image->get());
         }
 
         $course_name = $request->course_name;
@@ -210,7 +212,7 @@ class CourseController extends Controller
         $total_free_course_count = Course::where('type', 'free_course')->count();
         $total_paid_course_count = Course::where('type', 'paid_course')->count();
         $searchData = $request->searchData;
-        $courses = Course::query()->where('course_name', 'LIKE', "%{$searchData}%")->orWhere('type', 'LIKE', "%{$searchData}%")->orWhere('platform', 'LIKE', "%{$searchData}%")->paginate(10);
+        $courses = Course::query()->where('course_name', 'LIKE', "%{$searchData}%")->orWhere('type', 'LIKE', "%{$searchData}%")->orWhere('place', 'LIKE', "%{$searchData}%")->paginate(10);
         $courses->appends($request->all());
         return view('admin.courses.course', compact('total_course_count', 'total_free_course_count', 'total_paid_course_count', 'courses'));
     }

@@ -53,6 +53,13 @@ class JobController extends Controller
      */
     public function store(Request $request)
     {
+        $request->validate([
+            'type' => 'required',
+            'image' => 'required|mimes:png,jpg,jpeg'
+        ], [
+            'type.required' => "Type need to be select",
+            'image.mimes' => "Your image format have to be JPG, JPEG, PNG",
+        ]);
         $title = $request->title;
         $place = $request->place;
         $start_date = $request->start_date;
@@ -70,7 +77,7 @@ class JobController extends Controller
 
         $image = request()->file('image');
         $img_name = uniqid() . $image->getClientOriginalName();
-        Storage::disk('post_images')->put($img_name, $image->get());
+        Storage::disk('upload_images')->put($img_name, $image->get());
 
         $job = Job::create([
             'slug' => Str::slug($title),
@@ -173,8 +180,8 @@ class JobController extends Controller
         } else {
             $image = request()->file('image');
             $img_name = uniqid() . $image->getClientOriginalName();
-            Storage::disk('post_images')->delete([$old_image]);
-            Storage::disk('post_images')->put($img_name, $image->get());
+            Storage::disk('upload_images')->delete([$old_image]);
+            Storage::disk('upload_images')->put($img_name, $image->get());
         }
 
         $title = $request->title;
@@ -294,10 +301,11 @@ class JobController extends Controller
         $total_part_time_count = Job::where('type', 'part_time_job')->count();
         $total_full_time_count = Job::where('type', 'full_time_job')->count();
         $total_internship_count = Job::where('type', 'internship')->count();
+        $today_job_count = Job::whereDate('created_at', '=', Carbon::today()->toDateString())->count();
         $searchData = $request->searchData;
         $jobs = Job::query()->where('title', 'LIKE', "%{$searchData}%")->orWhere('type', 'LIKE', "%{$searchData}%")->orWhere('place', 'LIKE', "%{$searchData}%")->paginate(10);
         $jobs->appends($request->all());
-        return view('admin.jobs.job', compact('total_part_time_count', 'total_full_time_count', 'total_internship_count', 'total_job_count', 'today_job_count', 'jobs'));
+        return view('admin.jobs.job', compact('today_job_count', 'total_part_time_count', 'total_full_time_count', 'total_internship_count', 'total_job_count', 'today_job_count', 'jobs'));
     }
 
     public function detail($slug, $id)

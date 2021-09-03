@@ -42,9 +42,10 @@ return [
             'visibility' => 'public',
         ],
 
-        'post_images' => [
+        'upload_images' => [
             'driver' => 'local',
-            'root'   => public_path() . '/post_images',
+            'root' => storage_path('app/upload_images'),
+            'url' => env('APP_URL') . '/upload_images',
             'visibility' => 'public',
         ],
 
@@ -74,6 +75,7 @@ return [
     */
 
     'links' => [
+        public_path('upload_images') => storage_path('app/upload_images'),
         public_path('storage') => storage_path('app/public'),
     ],
 

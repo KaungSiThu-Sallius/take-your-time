@@ -3,32 +3,32 @@
     <title>Create Job</title>
 @endsection
 @section('nav_items')
-    <li class="">
+    <li>
         <a href="{{ url('admin/dashboard') }}">
             <img src="{{ asset('images/dashboard.svg') }}" alt="dashboard" type="image/svg+xml" class="svg_icon" />
             <span>Dashboard</span>
         </a>
     </li>
-    <li class="">
+    <li>
         <a href="{{ url('admin/scholarshipIndex') }}">
             <img src="{{ asset('images/scholar.svg') }}" alt="scholarship" type="image/svg+xml"
                 class="svg_icon icon_sidebar" />
             <span>Scholarship</span>
         </a>
     </li>
-    <li class="">
+    <li>
         <a href="{{ url('admin/grantIndex') }}">
             <img src="{{ asset('images/grant.svg') }}" alt="grant" type="image/svg+xml" class="svg_icon" />
             <span>Grant</span>
         </a>
     </li>
-    <li class="">
+    <li>
         <a href="{{ url('admin/conferenceIndex') }}">
             <img src="{{ asset('images/conference.svg') }}" alt="conference" type="image/svg+xml" class="svg_icon" />
             <span>Conference</span>
         </a>
     </li>
-    <li class="">
+    <li>
         <a href="{{ url('admin/courseIndex') }}">
             <img src="{{ asset('images/courses.svg') }}" alt="course" type="image/svg+xml" class="svg_icon" />
             <span>Course</span>
@@ -40,13 +40,13 @@
             <span>Job</span>
         </a>
     </li>
-    <li class="">
+    <li class="___class_+?12___">
         <a href="{{ url('admin/otherIndex') }}">
             <img src="{{ asset('images/others.svg') }}" alt="other" type="image/svg+xml" class="svg_icon" />
             <span>Other</span>
         </a>
     </li>
-    <li class="">
+    <li>
         <a href="{{ url('admin/message') }}">
             <img src="{{ asset('images/message.svg') }}" alt="messge" type="image/svg+xml" class="svg_icon" />
             <span>Message</span>
@@ -60,10 +60,12 @@
         <div class="container">
             <div class="row">
                 <div class="offset-md-3 col-md-9 col-12">
-                    <form action="{{ route('job.store') }}" method="POST" enctype="multipart/form-data" class="card">
+                    <form action="{{ route('job.store') }}" method="POST" enctype="multipart/form-data"
+                        class="card">
                         @csrf
                         <div class="card-header">
-                            <h2 class="mb-4">Create Job <span style="font-size:14px; color:red">(<?php echo date('d M, Y'); ?>)</span>
+                            <h2 class="mb-4">Create Job <span
+                                    style="font-size:14px; color:red">(<?php echo date('d M, Y'); ?>)</span>
                             </h2>
                         </div>
                         @include('admin.alert')
@@ -73,7 +75,7 @@
                                 <div class="col-md-6">
                                     <div class="md-form mb-0">
                                         <input type="text" id="title" name="title" class="form-control" required>
-                                        <label for="title" class="">Job Title</label>
+                                        <label for="title">Job Title</label>
                                     </div>
                                 </div>
 
@@ -90,13 +92,13 @@
                                     <div class="md-form mb-0">
                                         <input type="text" id="organization" name="organization" class="form-control"
                                             required>
-                                        <label for="organization" class="">Organization Name</label>
+                                        <label for="organization">Organization Name</label>
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="md-form mb-0">
                                         <input type="text" id="salary" name="salary" class="form-control" required>
-                                        <label for="salary" class="">Salary</label>
+                                        <label for="salary">Salary</label>
                                     </div>
                                 </div>
                             </div>
@@ -124,14 +126,14 @@
                                     <div class="md-form mb-0">
                                         <input type="text" id="job_duration" name="job_duration" class="form-control"
                                             required>
-                                        <label for="job_duration" class="">Job Duration</label>
+                                        <label for="job_duration">Job Duration</label>
                                     </div>
                                 </div>
 
                                 <div class="col-md-6">
                                     <div class="md-form mb-0">
-                                        <input type="text" id="apply_form_link" name="apply_form_link" class="form-control"
-                                            required>
+                                        <input type="text" id="apply_form_link" name="apply_form_link"
+                                            class="form-control" required>
                                         <label for="apply_form_link">Source Link</label>
                                     </div>
                                 </div>
@@ -160,6 +162,11 @@
                             <div class="row mb-4">
                                 <div class="col-md-6 funding">
                                     <h5>Type</h5>
+                                    @error('type')
+                                        <small style="color: red;">
+                                            ( {{ $message }} )
+                                        </small>
+                                    @enderror
                                     <div class="custom-control custom-radio funding">
                                         <input type="radio" class="custom-control-input" id="part_time_job" name="type"
                                             value="part_time_job">
@@ -357,6 +364,11 @@
                             <div class="row mb-2">
                                 <div class="col-12 image">
                                     <h5 class="mb-4">Job Image</h5>
+                                    @error('image')
+                                        <small style="color: red;">
+                                            ( {{ $message }} )
+                                        </small>
+                                    @enderror
                                     <div class="input-group">
                                         <div class="input-group-prepend">
                                             <span class="input-group-text" id="inputGroupFileAddon01">Upload</span>

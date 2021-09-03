@@ -52,7 +52,15 @@ class ScholarshipController extends Controller
     public function store(Request $request)
 
     {
-
+        $request->validate([
+            'type' => 'required',
+            'funding' => 'required',
+            'image' => 'required|mimes:png,jpg,jpeg'
+        ], [
+            'type.required' => "Type need to be select",
+            'funding.required' => "Funding need to be select",
+            'image.mimes' => "Your image format have to be JPG, JPEG, PNG",
+        ]);
 
         $title = $request->title;
         $start_application_date = $request->start_application_date;
@@ -71,7 +79,7 @@ class ScholarshipController extends Controller
 
         $image = request()->file('image');
         $img_name = uniqid() . $image->getClientOriginalName();
-        Storage::disk('post_images')->put($img_name, $image->get());
+        Storage::disk('upload_images')->put($img_name, $image->get());
 
         $scholarship = Scholarship::create([
             'name' => 'Scholarship',
@@ -262,8 +270,8 @@ class ScholarshipController extends Controller
         } else {
             $image = request()->file('image');
             $img_name = uniqid() . $image->getClientOriginalName();
-            Storage::disk('post_images')->delete([$old_image]);
-            Storage::disk('post_images')->put($img_name, $image->get());
+            Storage::disk('upload_images')->delete([$old_image]);
+            Storage::disk('upload_images')->put($img_name, $image->get());
         }
 
         $title = $request->title;
@@ -484,12 +492,19 @@ class ScholarshipController extends Controller
 
     public function searchData(Request $request)
     {
-        $total_scholar_count = Scholarship::count();
-        $today_scholar_count = Scholarship::whereDate('created_at', '=', Carbon::today()->toDateString())->count();
-        $searchData = $request->searchData;
-        $scholarships = Scholarship::query()->where('title', 'LIKE', "%{$searchData}%")->orWhere('type', 'LIKE', "%{$searchData}%")->orWhere('country', 'LIKE', "%{$searchData}%")->paginate(10);
-        $scholarships->appends($request->all());
-        return view('admin.scholarships.scholarship', compact('total_scholar_count', 'today_scholar_count', 'scholarships'));
+        if ($request->searchData != null) {
+            $total_scholar_count = Scholarship::count();
+            $today_scholar_count = Scholarship::whereDate('created_at', '=', Carbon::today()->toDateString())->count();
+            $total_undergraduate_count = Undergraduate::count();
+            $total_master_count = Master::count();
+            $total_phd_count = Phd::count();
+            $total_fellowship_count = Fellowship::count();
+            $searchData = $request->searchData;
+            $scholarships = Scholarship::query()->where('title', 'LIKE', "%{$searchData}%")->orWhere('type', 'LIKE', "%{$searchData}%")->orWhere('country', 'LIKE', "%{$searchData}%")->paginate(10);
+            $scholarships->appends($request->all());
+            return view('admin.scholarships.scholarship', compact('total_fellowship_count', 'total_phd_count', 'total_master_count', 'total_undergraduate_count', 'total_scholar_count', 'today_scholar_count', 'scholarships'));
+        }
+        return redirect()->back();
     }
 
     public function detail($slug, $id)

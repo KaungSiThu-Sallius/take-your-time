@@ -44,19 +44,24 @@
             <div class="container">
                 <div class="row">
                     <div class="col-6">
-                        <img src="{{ asset('images/logo.svg') }}" alt="logo" type="image/svg+xml">
+                        <a href="{{ url('/') }}">
+                            <img src="{{ asset('images/logo.svg') }}" alt="logo" type="image/svg+xml">
+                        </a>
                     </div>
                     <div class="col-6">
                         <div class="nav_social_icons text-right">
                             <div class="nav_social_icon">
-                                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                                <a href="https://www.facebook.com/takeyourtimemyanmar" target="__black"><i
+                                        class="fab fa-facebook-f" target="__black"></i></a>
                             </div>
                             <div class="nav_social_icon">
-                                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                                <a href="https://www.linkedin.com/company/take-your-time-by-eric/?viewAsMember=true"
+                                    target="__black"><i class="fab fa-linkedin-in"></i></a>
 
                             </div>
                             <div class="nav_social_icon">
-                                <a href="#"><i class="fab fas fa-envelope"></i></a>
+                                <a href="mailto:admin@youthchancesbytakeyourtime.com"><i
+                                        class="fab fas fa-envelope"></i></a>
                             </div>
                         </div>
                     </div>
@@ -68,7 +73,11 @@
             <div class="container-fluid">
 
                 <!-- hidden_logo -->
-                <img src="{{ asset('images/logo.svg') }}" alt="logo" type="image/svg+xml" class="hidden_logo">
+                <a href="{{ url('/') }}">
+                    <img src="{{ asset('images/sm_logo.png') }}" alt="logo" class="hidden_logo"
+                        style="width: 150px;">
+
+                </a>
 
                 <!-- Collapse button -->
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar_collapse"
@@ -91,7 +100,6 @@
                 </div>
             </div>
         </nav>
-
     </div>
 
     @yield('contents')
@@ -123,17 +131,17 @@
                             <div class="row">
                                 <div class="col-6">
                                     <ul>
-                                        <li><a href="#">About Us</a></li>
-                                        <li><a href="#">Scholarships</a></li>
-                                        <li><a href="#">Grants</a></li>
-                                        <li><a href="#">Conferences</a></li>
+                                        <li><a href="{{ url('/about') }}">About Us</a></li>
+                                        <li><a href="{{ url('scholarships') }}">Scholarships</a></li>
+                                        <li><a href="{{ url('/grants') }}">Grants</a></li>
+                                        <li><a href="{{ url('/conferences') }}">Conferences</a></li>
                                     </ul>
                                 </div>
                                 <div class="col-6">
                                     <ul>
-                                        <li><a href="#">Courses</a></li>
-                                        <li><a href="#">Jobs</a></li>
-                                        <li><a href="#">Others</a></li>
+                                        <li><a href="{{ url('/courses') }}">Courses</a></li>
+                                        <li><a href="{{ url('/jobs') }}">Jobs</a></li>
+                                        <li><a href="{{ url('/others') }}">Others</a></li>
                                     </ul>
                                 </div>
                             </div>
@@ -158,10 +166,12 @@
                                     1203 Town Center Drive FL 33458 Thailand
                                 </li>
                                 <li>
-                                    <span><i class="fas fa-phone"></i></span>+505 94443233
+                                    <span><i class="fas fa-phone"></i></span>
+                                    <a href="tel:+959421069537">+505 94443233</a>
                                 </li>
                                 <li>
-                                    <span> <i class="fas fa-envelope"></i></span> admin.takeyourtime@gmail.com
+                                    <span> <i class="fas fa-envelope"></i></span>
+                                    <a href="mailto:admin.takeyourtime@gmail.com">admin.takeyourtime@gmail.com</a>
                                 </li>
 
                             </ul>

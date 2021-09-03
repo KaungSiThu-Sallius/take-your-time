@@ -17,7 +17,7 @@ class CreateLikesTable extends Migration
             $table->id();
             $table->integer('post_id');
             $table->string('type');
-            $table->interger('total_count');
+            $table->integer('total_count');
             $table->timestamps();
         });
     }

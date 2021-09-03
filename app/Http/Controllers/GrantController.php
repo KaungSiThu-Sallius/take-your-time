@@ -52,6 +52,15 @@ class GrantController extends Controller
      */
     public function store(Request $request)
     {
+        $request->validate([
+            'level' => 'required',
+            'funding' => 'required',
+            'image' => 'required|mimes:png,jpg,jpeg'
+        ], [
+            'level.required' => "Level need to be select",
+            'funding.required' => "Funding need to be select",
+            'image.mimes' => "Your image format have to be JPG, JPEG, PNG",
+        ]);
 
         $title = $request->title;
         $start_application_date = $request->start_application_date;
@@ -70,7 +79,7 @@ class GrantController extends Controller
 
         $image = request()->file('image');
         $img_name = uniqid() . $image->getClientOriginalName();
-        Storage::disk('post_images')->put($img_name, $image->get());
+        Storage::disk('upload_images')->put($img_name, $image->get());
 
         $grant = Grant::create([
             'slug' => Str::slug($title),
@@ -173,8 +182,8 @@ class GrantController extends Controller
         } else {
             $image = request()->file('image');
             $img_name = uniqid() . $image->getClientOriginalName();
-            Storage::disk('post_images')->delete([$old_image]);
-            Storage::disk('post_images')->put($img_name, $image->get());
+            Storage::disk('upload_images')->delete([$old_image]);
+            Storage::disk('upload_images')->put($img_name, $image->get());
         }
 
         $title = $request->title;

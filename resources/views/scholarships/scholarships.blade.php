@@ -110,7 +110,7 @@
                     <div class="col-md-6 col-lg-6 col-xl-4">
                         <a href="{{ url("/scholarships/detail/$d->slug/$d->id") }}">
                             <div class="card">
-                                <img class="card-img-top" src="{{ asset("post_images/$d->image") }}"
+                                <img class="card-img-top" src="{{ asset("upload_images/$d->image") }}"
                                     alt="Scholarship Image">
                                 <div class="card-header scholar_header">
                                     {{ str_replace(',', ', ', $d->type) }}

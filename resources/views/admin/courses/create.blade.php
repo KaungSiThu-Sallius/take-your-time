@@ -3,26 +3,26 @@
     <title>Create Course</title>
 @endsection
 @section('nav_items')
-    <li class="">
+    <li>
         <a href="{{ url('admin/dashboard') }}">
             <img src="{{ asset('images/dashboard.svg') }}" alt="dashboard" type="image/svg+xml" class="svg_icon" />
             <span>Dashboard</span>
         </a>
     </li>
-    <li class="">
+    <li>
         <a href="{{ url('admin/scholarshipIndex') }}">
             <img src="{{ asset('images/scholar.svg') }}" alt="scholarship" type="image/svg+xml"
                 class="svg_icon icon_sidebar" />
             <span>Scholarship</span>
         </a>
     </li>
-    <li class="">
+    <li>
         <a href="{{ url('admin/grantIndex') }}">
             <img src="{{ asset('images/grant.svg') }}" alt="grant" type="image/svg+xml" class="svg_icon" />
             <span>Grant</span>
         </a>
     </li>
-    <li class="">
+    <li>
         <a href="{{ url('admin/conferenceIndex') }}">
             <img src="{{ asset('images/conference.svg') }}" alt="conference" type="image/svg+xml" class="svg_icon" />
             <span>Conference</span>
@@ -34,19 +34,19 @@
             <span>Course</span>
         </a>
     </li>
-    <li class="">
+    <li>
         <a href="{{ url('admin/jobIndex') }}">
             <img src="{{ asset('images/jobs.svg') }}" alt="job" type="image/svg+xml" class="svg_icon" />
             <span>Job</span>
         </a>
     </li>
-    <li class="">
+    <li>
         <a href="{{ url('admin/otherIndex') }}">
             <img src="{{ asset('images/others.svg') }}" alt="other" type="image/svg+xml" class="svg_icon" />
             <span>Other</span>
         </a>
     </li>
-    <li class="">
+    <li>
         <a href="{{ url('admin/message') }}">
             <img src="{{ asset('images/message.svg') }}" alt="messge" type="image/svg+xml" class="svg_icon" />
             <span>Message</span>
@@ -60,7 +60,8 @@
         <div class="container">
             <div class="row">
                 <div class="offset-md-3 col-md-9 col-12">
-                    <form action="{{ route('course.store') }}" method="POST" enctype="multipart/form-data" class="card">
+                    <form action="{{ route('course.store') }}" method="POST" enctype="multipart/form-data"
+                        class="card">
                         @csrf
                         <div class="card-header">
                             <h2 class="mb-4">Create Course <span
@@ -75,7 +76,7 @@
                                     <div class="md-form mb-0">
                                         <input type="text" id="course_name" name="course_name" class="form-control"
                                             required>
-                                        <label for="course_name" class="">Course Name</label>
+                                        <label for="course_name">Course Name</label>
                                     </div>
                                 </div>
 
@@ -91,7 +92,7 @@
                                 <div class="col-md-12">
                                     <div class="md-form mb-0">
                                         <input type="text" id="taught_by" name="taught_by" class="form-control" required>
-                                        <label for="taught_by" class="">Taught By</label>
+                                        <label for="taught_by">Taught By</label>
                                     </div>
                                 </div>
                             </div>
@@ -119,16 +120,16 @@
                             <div class="row mb-2">
                                 <div class="col-md-6">
                                     <div class="md-form mb-0">
-                                        <input type="text" id="course_duration" name="course_duration" class="form-control"
-                                            required>
-                                        <label for="course_duration" class="">Course Duration</label>
+                                        <input type="text" id="course_duration" name="course_duration"
+                                            class="form-control" required>
+                                        <label for="course_duration">Course Duration</label>
                                     </div>
                                 </div>
 
                                 <div class="col-md-6">
                                     <div class="md-form mb-0">
-                                        <input type="text" id="apply_form_link" name="apply_form_link" class="form-control"
-                                            required>
+                                        <input type="text" id="apply_form_link" name="apply_form_link"
+                                            class="form-control" required>
                                         <label for="apply_form_link">Application Link</label>
                                     </div>
                                 </div>
@@ -137,7 +138,7 @@
                                 <div class="col-md-6">
                                     <div class="md-form mb-0">
                                         <input type="text" id="place" name="place" class="form-control" required>
-                                        <label for="place" class="">Place</label>
+                                        <label for="place">Place</label>
                                     </div>
                                 </div>
 
@@ -162,6 +163,11 @@
                             <div class="row mb-4">
                                 <div class="col-md-6 funding">
                                     <h5>Course Type</h5>
+                                    @error('type')
+                                        <small style="color: red;">
+                                            ( {{ $message }} )
+                                        </small>
+                                    @enderror
                                     <div class="custom-control custom-radio funding">
                                         <input type="radio" class="custom-control-input" id="free_course" name="type"
                                             value="free_course">
@@ -178,6 +184,11 @@
                             <div class="row mb-2">
                                 <div class="col-12 image">
                                     <h5 class="mb-4">Course Image</h5>
+                                    @error('image')
+                                        <small style="color: red;">
+                                            ( {{ $message }} )
+                                        </small>
+                                    @enderror
                                     <div class="input-group">
                                         <div class="input-group-prepend">
                                             <span class="input-group-text" id="inputGroupFileAddon01">Upload</span>

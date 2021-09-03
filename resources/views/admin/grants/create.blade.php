@@ -3,13 +3,13 @@
     <title>Create Grant</title>
 @endsection
 @section('nav_items')
-    <li class="">
+    <li>
         <a href="{{ url('admin/dashboard') }}">
             <img src="{{ asset('images/dashboard.svg') }}" alt="dashboard" type="image/svg+xml" class="svg_icon" />
             <span>Dashboard</span>
         </a>
     </li>
-    <li class="">
+    <li>
         <a href="{{ url('admin/scholarshipIndex') }}">
             <img src="{{ asset('images/scholar.svg') }}" alt="scholarship" type="image/svg+xml"
                 class="svg_icon icon_sidebar" />
@@ -22,31 +22,31 @@
             <span>Grant</span>
         </a>
     </li>
-    <li class="">
+    <li>
         <a href="{{ url('admin/conferenceIndex') }}">
             <img src="{{ asset('images/conference.svg') }}" alt="conference" type="image/svg+xml" class="svg_icon" />
             <span>Conference</span>
         </a>
     </li>
-    <li class="">
+    <li>
         <a href="{{ url('admin/courseIndex') }}">
             <img src="{{ asset('images/courses.svg') }}" alt="course" type="image/svg+xml" class="svg_icon" />
             <span>Course</span>
         </a>
     </li>
-    <li class="">
+    <li>
         <a href="{{ url('admin/jobIndex') }}">
             <img src="{{ asset('images/jobs.svg') }}" alt="job" type="image/svg+xml" class="svg_icon" />
             <span>Job</span>
         </a>
     </li>
-    <li class="">
+    <li>
         <a href="{{ url('admin/otherIndex') }}">
             <img src="{{ asset('images/others.svg') }}" alt="other" type="image/svg+xml" class="svg_icon" />
             <span>Other</span>
         </a>
     </li>
-    <li class="">
+    <li>
         <a href="{{ url('admin/message') }}">
             <img src="{{ asset('images/message.svg') }}" alt="messge" type="image/svg+xml" class="svg_icon" />
             <span>Message</span>
@@ -60,7 +60,8 @@
         <div class="container">
             <div class="row">
                 <div class="offset-md-3 col-md-9 col-12">
-                    <form action="{{ route('grant.store') }}" method="POST" enctype="multipart/form-data" class="card">
+                    <form action="{{ route('grant.store') }}" method="POST" enctype="multipart/form-data"
+                        class="card">
                         @csrf
                         <div class="card-header">
                             <h2 class="mb-4">Create Grant <span
@@ -74,7 +75,7 @@
                                 <div class="col-md-6">
                                     <div class="md-form mb-0">
                                         <input type="text" id="title" name="title" class="form-control" required>
-                                        <label for="title" class="">Title</label>
+                                        <label for="title">Title</label>
                                     </div>
                                 </div>
 
@@ -90,7 +91,7 @@
                                 <div class="col-md-12">
                                     <div class="md-form mb-0">
                                         <input type="text" id="given_by" name="given_by" class="form-control" required>
-                                        <label for="given_by" class="">Given By</label>
+                                        <label for="given_by">Given By</label>
                                     </div>
                                 </div>
                             </div>
@@ -117,13 +118,14 @@
                                 <div class="col-md-6">
                                     <div class="md-form mb-0">
                                         <input type="text" id="source" name="source" class="form-control" required>
-                                        <label for="source" class="">Source Link</label>
+                                        <label for="source">Source Link</label>
                                     </div>
                                 </div>
 
                                 <div class="col-md-6">
                                     <div class="md-form mb-0">
-                                        <input type="text" id="apply_link" name="apply_link" class="form-control" required>
+                                        <input type="text" id="apply_link" name="apply_link" class="form-control"
+                                            required>
                                         <label for="apply_link">Application Link</label>
                                     </div>
                                 </div>
@@ -152,6 +154,11 @@
                             <div class="row mb-4">
                                 <div class="col-md-6 type_checkbox">
                                     <h5>Level</h5>
+                                    @error('level')
+                                        <small style="color: red;">
+                                            ( {{ $message }} )
+                                        </small>
+                                    @enderror
                                     <div class="custom-control custom-checkbox">
                                         <input type="checkbox" class="custom-control-input" id="undergraduate"
                                             name="level[]" value="Undergraduate">
@@ -170,6 +177,11 @@
                                 </div>
                                 <div class="col-md-6 funding">
                                     <h5>Funding</h5>
+                                    @error('funding')
+                                        <small style="color: red;">
+                                            ( {{ $message }} )
+                                        </small>
+                                    @enderror
                                     <div class="custom-control custom-radio funding">
                                         <input type="radio" class="custom-control-input" id="fully_funded" name="funding"
                                             value="Fully-Funded">
@@ -365,6 +377,11 @@
                             <div class="row mb-2">
                                 <div class="col-12 image">
                                     <h5 class="mb-4">Grant Image</h5>
+                                    @error('image')
+                                        <small style="color: red;">
+                                            ( {{ $message }} )
+                                        </small>
+                                    @enderror
                                     <div class="input-group">
                                         <div class="input-group-prepend">
                                             <span class="input-group-text" id="inputGroupFileAddon01">Upload</span>

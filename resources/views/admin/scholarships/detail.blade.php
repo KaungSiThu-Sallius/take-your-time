@@ -160,7 +160,7 @@
                                         <tr>
                                             <th>Image</th>
                                             <td>
-                                                <img src="{{ asset("post_images/$scholarship->image") }}"
+                                                <img src="{{ asset("upload_images/$scholarship->image") }}"
                                                     alt="scholarship_image" style="width:200px">
                                             </td>
                                         </tr>

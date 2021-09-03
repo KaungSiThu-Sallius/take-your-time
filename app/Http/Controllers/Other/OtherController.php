@@ -52,7 +52,13 @@ class OtherController extends Controller
      */
     public function store(Request $request)
     {
-
+        $request->validate([
+            'type' => 'required',
+            'image' => 'required|mimes:png,jpg,jpeg'
+        ], [
+            'type.required' => "Type need to be select",
+            'image.mimes' => "Your image format have to be JPG, JPEG, PNG",
+        ]);
         $title = $request->title;
         $place = $request->place;
         $start_date = $request->start_date;
@@ -68,7 +74,7 @@ class OtherController extends Controller
 
         $image = request()->file('image');
         $img_name = uniqid() . $image->getClientOriginalName();
-        Storage::disk('post_images')->put($img_name, $image->get());
+        Storage::disk('upload_images')->put($img_name, $image->get());
 
         $other = Other::create([
             'slug' => Str::slug($title),
@@ -169,8 +175,8 @@ class OtherController extends Controller
         } else {
             $image = request()->file('image');
             $img_name = uniqid() . $image->getClientOriginalName();
-            Storage::disk('post_images')->delete([$old_image]);
-            Storage::disk('post_images')->put($img_name, $image->get());
+            Storage::disk('upload_images')->delete([$old_image]);
+            Storage::disk('upload_images')->put($img_name, $image->get());
         }
 
         $title = $request->title;

@@ -107,7 +107,7 @@
                     <div class="col-md-6 col-lg-6 col-xl-4">
                         <a href="{{ url('/jobs/detail/' . $j->slug . '/' . $j->id) }}">
                             <div class="card">
-                                <img class="card-img-top" src="{{ asset('post_images/' . $j->image) }}" alt="Job Image">
+                                <img class="card-img-top" src="{{ asset('upload_images/' . $j->image) }}" alt="Job Image">
                                 <div class="card-header">
                                     @if ($j->type == 'internship')
                                         Internship

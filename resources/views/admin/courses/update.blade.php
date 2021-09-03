@@ -200,7 +200,7 @@
                                             <label class="custom-file-label" for="inputGroupFile01">Choose image</label>
                                         </div>
                                     </div>
-                                    <img src="{{ asset("post_images/$course->image") }}" alt="scholarship_image"
+                                    <img src="{{ asset("upload_images/$course->image") }}" alt="scholarship_image"
                                         style="width:200px; border: 1px solid black; " class="mt-4">
                                 </div>
                             </div>

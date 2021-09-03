@@ -108,7 +108,7 @@
                     <div class="col-md-6 col-lg-6 col-xl-3">
                         <a href="{{ url("/courses/detail/$c->slug/$c->id") }}">
                             <div class="card mb-5">
-                                <img class="card-img" src="{{ asset("post_images/$c->image") }}" alt="Course Image">
+                                <img class="card-img" src="{{ asset("upload_images/$c->image") }}" alt="Course Image">
                                 <div class="card-body title">
                                     <h5 class="card-title text-center">{{ $c->course_name }}
                                     </h5>

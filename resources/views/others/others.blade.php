@@ -102,7 +102,7 @@
                     <div class="col-md-6 col-lg-6 col-xl-4">
                         <a href="{{ url('/others/detail/' . $o->slug . '/' . $o->id) }}">
                             <div class="card">
-                                <img class="card-img-top" src="{{ asset('post_images/' . $o->image) }}"
+                                <img class="card-img-top" src="{{ asset('upload_images/' . $o->image) }}"
                                     alt="Other Image">
                                 <div class="card-header">
                                     @if ($o->type == 'seminar')

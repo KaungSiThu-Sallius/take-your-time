@@ -58,6 +58,7 @@
 
 .footer .sitemap_items ul li {
     margin-bottom: 8px;
+    font-size: 15px;
 }
 
 .footer .sitemap_items ul a {
@@ -72,7 +73,7 @@
 .footer .section_heading .contact_heading {
     position: absolute;
     top: 4px;
-    left: 97px;
+    left: 81px;
 }
 
 .footer .contact_items ul {
@@ -105,6 +106,54 @@
     color: var(--black02);
 }
 
+.footer .nav_social_icon {
+    display: inline;
+    margin-right: 8px;
+}
+
+.footer .nav_social_icon .fab {
+    background-color: var(--primary01);
+    font-size: 1em;
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    color: #FFF;
+    color: rgba(255, 255, 255, 0.8);
+    -webkit-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    -ms-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+    border-radius: 50%;
+}
+
+.footer .nav_social_icon .fab:hover,
+.footer .nav_social_icon .fab:active {
+    -webkit-transform: scale(1.1);
+    -moz-transform: scale(1.1);
+    -ms-transform: scale(1.1);
+    -o-transform: scale(1.1);
+    transform: scale(1.1);
+}
+
+.footer .contact_hr {
+    width: 20%;
+    border: dotted #EAF6F6 6px;
+    border-bottom: none;
+    margin: 20px auto;
+}
+
+.footer .newsletter {
+    margin: 0 auto;
+}
+
+.newsletter h5 {
+    font-weight: 600;
+    color: var(--black02);
+    margin-bottom: 20px;
+}
+
 /* ------------------------- copyright ------------------------- */
 .copyright {
     background-color: var(--primary03);
@@ -125,7 +174,7 @@
     }
 
     .footer .section_heading .contact_heading {
-        left: 71px;
+        left: 52px;
     }
 
 }
@@ -148,9 +197,13 @@
         left: 51%;
     }
 
-    .footer .section_heading .sitemap_heading,
-    .footer .section_heading .contact_heading {
+    .footer .section_heading .sitemap_heading {
         left: 299px;
+    }
+
+
+    .footer .section_heading .contact_heading {
+        left: 276px;
     }
 
     .footer .contact_items {
@@ -161,9 +214,12 @@
 
 @media (max-width: 767px) {
 
-    .footer .section_heading .sitemap_heading,
-    .footer .section_heading .contact_heading {
+    .footer .section_heading .sitemap_heading {
         left: 210px;
+    }
+
+    .footer .section_heading .contact_heading {
+        left: 185px;
     }
 
 }

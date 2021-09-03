@@ -28,6 +28,8 @@
     <link rel="stylesheet" href="{{ asset('css/footer.css') }}">
     <link rel="stylesheet" href="{{ asset('css/styles.css') }}">
 
+    <link href="//cdn-images.mailchimp.com/embedcode/horizontal-slim-10_7.css" rel="stylesheet" type="text/css">
+
     <!-- JQuery -->
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
@@ -111,7 +113,7 @@
 
                 <div class="col-lg-4">
                     <div class="description text-center">
-                        <img src="{{ asset('images/logo.svg') }}" alt="logo" type="image/svg+xml" width="100">
+                        <img src="{{ asset('images/sm_logo.png') }}" alt="logo" type="image/svg+xml" width="120">
                         <p><span class="company_name">"Take Your Time"</span> is Opportunity Lorem Apsom for
                             youth.
                             Lorem Scholarships
@@ -156,7 +158,7 @@
                         <div class="section_heading">
                             <img src="{{ asset('images/heading_bg.svg') }}" alt="brush_background"
                                 type="image/svg+xml" class="brush_bg">
-                            <h4 class="contact_heading">Contact Us</h4>
+                            <h4 class="contact_heading">Keep In Touch</h4>
                         </div>
                         <div class="contact_items text-left">
                             <ul>
@@ -175,10 +177,49 @@
                                 </li>
 
                             </ul>
+
                         </div>
                     </div>
                     <img src="{{ asset('images/footer_divider.svg') }}" alt="section_divider" type="image/svg+xml"
                         class="divider2">
+                </div>
+
+            </div>
+            <hr class="contact_hr mx-auto">
+            <div class="row">
+                <div class="newsletter text-center">
+                    <div id="mc_embed_signup">
+                        <h5>Subscribe Newsletter</h5>
+                        <form
+                            action="https://youthchancesbytakeyourtime.us5.list-manage.com/subscribe/post?u=310f17ed8cb16efd4f6ccef28&amp;id=e65c58993a"
+                            method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form"
+                            class="validate" target="_blank" novalidate>
+                            <div id="mc_embed_signup_scroll">
+                                <input type="email" value="" name="EMAIL" class="email" id="mce-EMAIL"
+                                    placeholder="Email Address" required>
+                                <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text"
+                                        name="b_310f17ed8cb16efd4f6ccef28_e65c58993a" tabindex="-1" value=""></div>
+                                <div class="clear"><input type="submit" value="Subscribe" name="subscribe"
+                                        id="mc-embedded-subscribe" class="button">
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="nav_social_icons mt-4">
+                        <div class="nav_social_icon">
+                            <a href="https://www.facebook.com/takeyourtimemyanmar" target="__black"><i
+                                    class="fab fa-facebook-f" target="__black"></i></a>
+                        </div>
+                        <div class="nav_social_icon">
+                            <a href="https://www.linkedin.com/company/take-your-time-by-eric/?viewAsMember=true"
+                                target="__black"><i class="fab fa-linkedin-in"></i></a>
+
+                        </div>
+                        <div class="nav_social_icon">
+                            <a href="mailto:admin@youthchancesbytakeyourtime.com"><i
+                                    class="fab fas fa-envelope"></i></a>
+                        </div>
+                    </div>
                 </div>
 
             </div>

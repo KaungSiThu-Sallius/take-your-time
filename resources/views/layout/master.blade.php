@@ -28,6 +28,7 @@
     <link rel="stylesheet" href="{{ asset('css/footer.css') }}">
     <link rel="stylesheet" href="{{ asset('css/styles.css') }}">
 
+    <!-- Newsletter -->
     <link href="//cdn-images.mailchimp.com/embedcode/horizontal-slim-10_7.css" rel="stylesheet" type="text/css">
 
     <!-- JQuery -->
@@ -38,6 +39,17 @@
 </head>
 
 <body>
+
+    <!-- scroll_to_top -->
+    <span onclick="goTopFunction()" id="go_top_button"></span>
+
+    <!-- preloader -->
+    <div id="preloader_bg">
+        <div id="preloader">
+            <span></span>
+            <span></span>
+        </div>
+    </div>
 
     <!-- ------------------------- navbar -------------------------  -->
     <div class="_navbar">
@@ -246,7 +258,12 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"
         integrity="sha512-bZS47S7sPOxkjU/4Bt0zrhEtWx0y0CRkhEp8IckzK+ltifIIE9EMIMTuT/mEzoIMewUINruDBIR/jJnbguonqQ=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    {{-- Toastr --}}
     <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+
+    <!-- fontawesome -->
+    <script src="https://kit.fontawesome.com/bae217b688.js" crossorigin="anonymous"></script>
 
     <!-- js -->
     <script src="{{ asset('js/script.js') }}"></script>

@@ -33,7 +33,8 @@
     </li>
 
     <li class="nav-item">
-        <a class="nav-link" href="{{ url('/conferences') }}"> <i class="fas fa-users fa_hid"></i></i></i>Conferences</a>
+        <a class="nav-link" href="{{ url('/conferences') }}"> <i
+                class="fas fa-users fa_hid"></i></i></i>Conferences</a>
     </li>
 
     <li class="nav-item dropdown">
@@ -126,8 +127,8 @@
                     </div>
                 </div>
                 <div class="col-lg-5">
-                    <img src="images/main_graphic.svg" alt="guy_sitting_on_books" type="image/svg+xml" class="main_img"
-                        width="450">
+                    <img src="images/main_graphic.svg" alt="guy_sitting_on_books" type="image/svg+xml"
+                        class="main_img" width="450">
                 </div>
             </div>
         </div>
@@ -254,45 +255,63 @@
                     </div>
                     <div class="card latest_oppo_card">
                         <div class="card-body">
-                            <div class="row">
-                                <div class="col-lg-5">
-                                    <div class="latest_oppo_img">
-                                        <img src="{{ asset('upload_images/' . $grants[0]->image) }}"
-                                            alt="organization_photo">
+                            @if (isset($grants[0]))
+                                <div class="row">
+                                    <div class="col-lg-5">
+                                        <div class="latest_oppo_img">
+                                            <img src="{{ asset('upload_images/' . $grants[0]->image) }}"
+                                                alt="organization_photo">
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="col-lg-7">
-                                    <div class="latest_oppo_label">
-                                        <a href="{{ url('/grants/detail/' . $grants[0]->slug . '/' . $grants[0]->id) }}">
-                                            <h5>{{ $grants[0]->title }}</h5>
-                                        </a>
-                                        <p>Deadline: {{ date('F j, Y', strtotime($grants[0]->deadline)) }}</p>
-                                    </div>
+                                    <div class="col-lg-7">
+                                        <div class="latest_oppo_label">
+                                            <a
+                                                href="{{ url('/grants/detail/' . $grants[0]->slug . '/' . $grants[0]->id) }}">
+                                                <h5>{{ $grants[0]->title }}</h5>
+                                            </a>
+                                            <p>Deadline: {{ date('F j, Y', strtotime($grants[0]->deadline)) }}</p>
+                                        </div>
 
-                                </div>
-                            </div>
-                            <hr>
-                            <div class="row">
-                                <div class="col-12">
-                                    <div class="latest_oppo_label">
-                                        <a href="{{ url('/grants/detail/' . $grants[1]->slug . '/' . $grants[1]->id) }}">
-                                            <h5>{{ $grants[1]->title }}</h5>
-                                        </a>
-                                        <p>Deadline: {{ date('F j, Y', strtotime($grants[1]->deadline)) }}</p>
                                     </div>
                                 </div>
-                            </div>
-                            <hr>
-                            <div class="row">
-                                <div class="col-12">
-                                    <div class="latest_oppo_label">
-                                        <a href="{{ url('/grants/detail/' . $grants[2]->slug . '/' . $grants[2]->id) }}">
-                                            <h5>{{ $grants[2]->title }}</h5>
-                                        </a>
-                                        <p>Deadline: {{ date('F j, Y', strtotime($grants[1]->deadline)) }}</p>
+                                <hr>
+                            @else
+                                <div class="row">
+                                    <div class="col-12">
+                                        <div class="latest_oppo_label">
+                                            No data to show yet!
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
+                            @endif
+                            @if (isset($grants[1]))
+                                <div class="row">
+                                    <div class="col-12">
+                                        <div class="latest_oppo_label">
+                                            <a
+                                                href="{{ url('/grants/detail/' . $grants[1]->slug . '/' . $grants[1]->id) }}">
+                                                <h5>{{ $grants[1]->title }}</h5>
+                                            </a>
+                                            <p>Deadline: {{ date('F j, Y', strtotime($grants[1]->deadline)) }}</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <hr>
+                            @endif
+                            @if (isset($grants[2]))
+                                <div class="row">
+                                    <div class="col-12">
+                                        <div class="latest_oppo_label">
+                                            <a
+                                                href="{{ url('/grants/detail/' . $grants[2]->slug . '/' . $grants[2]->id) }}">
+                                                <h5>{{ $grants[2]->title }}</h5>
+                                            </a>
+                                            <p>Deadline: {{ date('F j, Y', strtotime($grants[1]->deadline)) }}</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            @endif
+
                         </div>
 
                     </div>
@@ -307,49 +326,65 @@
                     </div>
                     <div class="card latest_oppo_card">
                         <div class="card-body">
-                            <div class="row">
-                                <div class="col-lg-5">
-                                    <div class="latest_oppo_img">
-                                        <img src="{{ asset('upload_images/' . $conferences[0]->image) }}"
-                                            alt="organization_photo">
+                            @if (isset($conferences[0]))
+                                <div class="row">
+                                    <div class="col-lg-5">
+                                        <div class="latest_oppo_img">
+                                            <img src="{{ asset('upload_images/' . $conferences[0]->image) }}"
+                                                alt="organization_photo">
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="col-lg-7">
-                                    <div class="latest_oppo_label">
-                                        <a
-                                            href="{{ url('/conferences/detail/' . $conferences[0]->slug . '/' . $conferences[0]->id) }}">
-                                            <h5>{{ $conferences[0]->title }}</h5>
-                                        </a>
-                                        <p>Deadline: {{ date('F j, Y', strtotime($conferences[0]->deadline)) }}</p>
-                                    </div>
+                                    <div class="col-lg-7">
+                                        <div class="latest_oppo_label">
+                                            <a
+                                                href="{{ url('/conferences/detail/' . $conferences[0]->slug . '/' . $conferences[0]->id) }}">
+                                                <h5>{{ $conferences[0]->title }}</h5>
+                                            </a>
+                                            <p>Deadline: {{ date('F j, Y', strtotime($conferences[0]->deadline)) }}</p>
+                                        </div>
 
-                                </div>
-                            </div>
-                            <hr>
-                            <div class="row">
-                                <div class="col-12">
-                                    <div class="latest_oppo_label">
-                                        <a
-                                            href="{{ url('/conferences/detail/' . $conferences[1]->slug . '/' . $conferences[1]->id) }}">
-                                            <h5>{{ $conferences[1]->title }}</h5>
-                                        </a>
-                                        <p>Deadline: {{ date('F j, Y', strtotime($conferences[1]->deadline)) }}</p>
                                     </div>
                                 </div>
-                            </div>
-                            <hr>
-                            <div class="row">
-                                <div class="col-12">
-                                    <div class="latest_oppo_label">
-                                        <a
-                                            href="{{ url('/conferences/detail/' . $conferences[2]->slug . '/' . $conferences[2]->id) }}">
-                                            <h5>{{ $conferences[2]->title }}</h5>
-                                        </a>
-                                        <p>Deadline: Deadline: {{ date('F j, Y', strtotime($conferences[2]->deadline)) }}
-                                        </p>
+                                <hr>
+                            @else
+                                <div class="row">
+                                    <div class="col-12">
+                                        <div class="latest_oppo_label">
+                                            No data to show yet!
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
+                            @endif
+
+                            @if (isset($conferences[1]))
+                                <div class="row">
+                                    <div class="col-12">
+                                        <div class="latest_oppo_label">
+                                            <a
+                                                href="{{ url('/conferences/detail/' . $conferences[1]->slug . '/' . $conferences[1]->id) }}">
+                                                <h5>{{ $conferences[1]->title }}</h5>
+                                            </a>
+                                            <p>Deadline: {{ date('F j, Y', strtotime($conferences[1]->deadline)) }}</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <hr>
+                            @endif
+                            @if (isset($conferences[2]))
+                                <div class="row">
+                                    <div class="col-12">
+                                        <div class="latest_oppo_label">
+                                            <a
+                                                href="{{ url('/conferences/detail/' . $conferences[2]->slug . '/' . $conferences[2]->id) }}">
+                                                <h5>{{ $conferences[2]->title }}</h5>
+                                            </a>
+                                            <p>Deadline: Deadline:
+                                                {{ date('F j, Y', strtotime($conferences[2]->deadline)) }}
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            @endif
                         </div>
 
                     </div>
@@ -366,45 +401,60 @@
                     </div>
                     <div class="card latest_oppo_card">
                         <div class="card-body">
-                            <div class="row">
-                                <div class="col-lg-5">
-                                    <div class="latest_oppo_img">
-                                        <img src="{{ asset('upload_images/' . $jobs[0]->image) }}"
-                                            alt="organization_photo">
+                            @if (isset($jobs[0]))
+                                <div class="row">
+                                    <div class="col-lg-5">
+                                        <div class="latest_oppo_img">
+                                            <img src="{{ asset('upload_images/' . $jobs[0]->image) }}"
+                                                alt="organization_photo">
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="col-lg-7">
-                                    <div class="latest_oppo_label">
-                                        <a href="{{ url('/jobs/detail/' . $jobs[0]->slug . '/' . $jobs[0]->id) }}">
-                                            <h5>{{ $jobs[0]->title }}</h5>
-                                        </a>
-                                        <p>Deadline: {{ date('F j, Y', strtotime($jobs[0]->deadline)) }}</p>
-                                    </div>
+                                    <div class="col-lg-7">
+                                        <div class="latest_oppo_label">
+                                            <a href="{{ url('/jobs/detail/' . $jobs[0]->slug . '/' . $jobs[0]->id) }}">
+                                                <h5>{{ $jobs[0]->title }}</h5>
+                                            </a>
+                                            <p>Deadline: {{ date('F j, Y', strtotime($jobs[0]->deadline)) }}</p>
+                                        </div>
 
-                                </div>
-                            </div>
-                            <hr>
-                            <div class="row">
-                                <div class="col-12">
-                                    <div class="latest_oppo_label">
-                                        <a href="{{ url('/jobs/detail/' . $jobs[1]->slug . '/' . $jobs[1]->id) }}">
-                                            <h5>{{ $jobs[1]->title }}</h5>
-                                        </a>
-                                        <p>Deadline: {{ date('F j, Y', strtotime($jobs[1]->deadline)) }}</p>
                                     </div>
                                 </div>
-                            </div>
-                            <hr>
-                            <div class="row">
-                                <div class="col-12">
-                                    <div class="latest_oppo_label">
-                                        <a href="{{ url('/jobs/detail/' . $jobs[2]->slug . '/' . $jobs[2]->id) }}">
-                                            <h5>{{ $jobs[2]->title }}</h5>
-                                        </a>
-                                        <p>Deadline: {{ date('F j, Y', strtotime($jobs[2]->deadline)) }}</p>
+                                <hr>
+                            @else
+                                <div class="row">
+                                    <div class="col-12">
+                                        <div class="latest_oppo_label">
+                                            No data to show yet!
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
+                            @endif
+                            @if (isset($jobs[1]))
+                                <div class="row">
+                                    <div class="col-12">
+                                        <div class="latest_oppo_label">
+                                            <a href="{{ url('/jobs/detail/' . $jobs[1]->slug . '/' . $jobs[1]->id) }}">
+                                                <h5>{{ $jobs[1]->title }}</h5>
+                                            </a>
+                                            <p>Deadline: {{ date('F j, Y', strtotime($jobs[1]->deadline)) }}</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <hr>
+                            @endif
+                            @if (isset($jobs[2]))
+                                <div class="row">
+                                    <div class="col-12">
+                                        <div class="latest_oppo_label">
+                                            <a href="{{ url('/jobs/detail/' . $jobs[2]->slug . '/' . $jobs[2]->id) }}">
+                                                <h5>{{ $jobs[2]->title }}</h5>
+                                            </a>
+                                            <p>Deadline: {{ date('F j, Y', strtotime($jobs[2]->deadline)) }}</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            @endif
+
                         </div>
 
                     </div>
@@ -419,45 +469,63 @@
                     </div>
                     <div class="card latest_oppo_card">
                         <div class="card-body">
-                            <div class="row">
-                                <div class="col-lg-5">
-                                    <div class="latest_oppo_img">
-                                        <img src="{{ asset('upload_images/' . $others[0]->image) }}"
-                                            alt="organization_photo">
+                            @if (isset($others[0]))
+                                <div class="row">
+                                    <div class="col-lg-5">
+                                        <div class="latest_oppo_img">
+                                            <img src="{{ asset('upload_images/' . $others[0]->image) }}"
+                                                alt="organization_photo">
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="col-lg-7">
-                                    <div class="latest_oppo_label">
-                                        <a href="{{ url('/others/detail/' . $others[0]->slug . '/' . $others[0]->id) }}">
-                                            <h5>{{ $others[0]->title }}</h5>
-                                        </a>
-                                        <p>Deadline: {{ date('F j, Y', strtotime($others[0]->deadline)) }}</p>
-                                    </div>
+                                    <div class="col-lg-7">
+                                        <div class="latest_oppo_label">
+                                            <a
+                                                href="{{ url('/others/detail/' . $others[0]->slug . '/' . $others[0]->id) }}">
+                                                <h5>{{ $others[0]->title }}</h5>
+                                            </a>
+                                            <p>Deadline: {{ date('F j, Y', strtotime($others[0]->deadline)) }}</p>
+                                        </div>
 
-                                </div>
-                            </div>
-                            <hr>
-                            <div class="row">
-                                <div class="col-12">
-                                    <div class="latest_oppo_label">
-                                        <a href="{{ url('/others/detail/' . $others[1]->slug . '/' . $others[1]->id) }}">
-                                            <h5>{{ $others[1]->title }}</h5>
-                                        </a>
-                                        <p>Deadline: {{ date('F j, Y', strtotime($others[1]->deadline)) }}</p>
                                     </div>
                                 </div>
-                            </div>
-                            <hr>
-                            <div class="row">
-                                <div class="col-12">
-                                    <div class="latest_oppo_label">
-                                        <a href="{{ url('/others/detail/' . $others[2]->slug . '/' . $others[2]->id) }}">
-                                            <h5>{{ $others[2]->title }}</h5>
-                                        </a>
-                                        <p>Deadline: {{ date('F j, Y', strtotime($others[2]->deadline)) }}</p>
+                                <hr>
+                            @else
+                                <div class="row">
+                                    <div class="col-12">
+                                        <div class="latest_oppo_label">
+                                            No data to show yet!
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
+                            @endif
+                            @if (isset($others[1]))
+                                <div class="row">
+                                    <div class="col-12">
+                                        <div class="latest_oppo_label">
+                                            <a
+                                                href="{{ url('/others/detail/' . $others[1]->slug . '/' . $others[1]->id) }}">
+                                                <h5>{{ $others[1]->title }}</h5>
+                                            </a>
+                                            <p>Deadline: {{ date('F j, Y', strtotime($others[1]->deadline)) }}</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <hr>
+                            @endif
+                            @if (isset($others[2]))
+                                <div class="row">
+                                    <div class="col-12">
+                                        <div class="latest_oppo_label">
+                                            <a
+                                                href="{{ url('/others/detail/' . $others[2]->slug . '/' . $others[2]->id) }}">
+                                                <h5>{{ $others[2]->title }}</h5>
+                                            </a>
+                                            <p>Deadline: {{ date('F j, Y', strtotime($others[2]->deadline)) }}</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            @endif
+
                         </div>
 
                     </div>
@@ -476,7 +544,8 @@
                     <div class="col-lg-3 col-md-6 col-12">
                         <a href="{{ url("/courses/detail/$c->slug/$c->id") }}">
                             <div class="card mb-2">
-                                <img class="card-img" src="{{ asset("upload_images/$c->image") }}" alt="Course Image">
+                                <img class="card-img" src="{{ asset("upload_images/$c->image") }}"
+                                    alt="Course Image">
                                 <div class="card-body title">
                                     <h5 class="card-title text-center">{{ $c->course_name }}
                                     </h5>

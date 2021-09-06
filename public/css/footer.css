@@ -154,6 +154,7 @@
     margin-bottom: 20px;
 }
 
+
 /* ------------------------- copyright ------------------------- */
 .copyright {
     background-color: var(--primary03);
@@ -213,6 +214,10 @@
 }
 
 @media (max-width: 767px) {
+
+    #mce-EMAIL {
+        margin-bottom: 12px !important;
+    }
 
     .footer .section_heading .sitemap_heading {
         left: 210px;

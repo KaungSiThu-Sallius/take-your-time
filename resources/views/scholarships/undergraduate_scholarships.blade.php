@@ -34,7 +34,8 @@
     </li>
 
     <li class="nav-item">
-        <a class="nav-link" href="{{ url('/conferences') }}"> <i class="fas fa-users fa_hid"></i></i></i>Conferences</a>
+        <a class="nav-link" href="{{ url('/conferences') }}"> <i
+                class="fas fa-users fa_hid"></i></i></i>Conferences</a>
     </li>
 
     <li class="nav-item dropdown">
@@ -89,7 +90,8 @@
     <section class="filter_nav">
         <div class="container-fluid">
             <div class="filter_btns_group">
-                <a href="{{ url('/scholarships') }}" class="filter_btn_link"><button type="button" class="btn">All
+                <a href="{{ url('/scholarships') }}" class="filter_btn_link"><button type="button"
+                        class="btn">All
                         Scholarships</button></a>
                 <a href="{{ url('/scholarships/undergraduate') }}" class="filter_btn_link"><button type="button"
                         class="btn active filter_btn">Undergraduate</button></a>
@@ -108,7 +110,7 @@
         <div class="container">
             <div class="row">
                 @foreach ($data as $d)
-                    <div class="col-md-6 col-lg-6 col-xl-4">
+                    <div class="col-md-6 col-lg-6 col-xl-4" data-aos="zoom-in">
                         <a href="{{ url("/scholarships/detail/$d->slug/$d->scholarship_id") }}">
                             <div class="card">
                                 <img class="card-img-top" src="{{ asset("upload_images/$d->image") }}"

@@ -34,7 +34,8 @@
     </li>
 
     <li class="nav-item">
-        <a class="nav-link" href="{{ url('/conferences') }}"> <i class="fas fa-users fa_hid"></i></i></i>Conferences</a>
+        <a class="nav-link" href="{{ url('/conferences') }}"> <i
+                class="fas fa-users fa_hid"></i></i></i>Conferences</a>
     </li>
 
     <li class="nav-item dropdown active">
@@ -105,10 +106,11 @@
         <div class="container">
             <div class="row">
                 @foreach ($courses as $c)
-                    <div class="col-md-6 col-lg-6 col-xl-3">
+                    <div class="col-md-6 col-lg-6 col-xl-3" data-aos="zoom-in">
                         <a href="{{ url("/courses/detail/$c->slug/$c->id") }}">
                             <div class="card mb-5">
-                                <img class="card-img" src="{{ asset("upload_images/$c->image") }}" alt="Course Image">
+                                <img class="card-img" src="{{ asset("upload_images/$c->image") }}"
+                                    alt="Course Image">
                                 <div class="card-body title">
                                     <h5 class="card-title text-center">{{ $c->course_name }}
                                     </h5>

@@ -34,7 +34,8 @@
     </li>
 
     <li class="nav-item">
-        <a class="nav-link" href="{{ url('/conferences') }}"> <i class="fas fa-users fa_hid"></i></i></i>Conferences</a>
+        <a class="nav-link" href="{{ url('/conferences') }}"> <i
+                class="fas fa-users fa_hid"></i></i></i>Conferences</a>
     </li>
 
     <li class="nav-item dropdown">
@@ -104,10 +105,11 @@
         <div class="container">
             <div class="row">
                 @foreach ($jobs as $j)
-                    <div class="col-md-6 col-lg-6 col-xl-4">
+                    <div class="col-md-6 col-lg-6 col-xl-4" data-aos="zoom-in">
                         <a href="{{ url('/jobs/detail/' . $j->slug . '/' . $j->id) }}">
                             <div class="card">
-                                <img class="card-img-top" src="{{ asset('upload_images/' . $j->image) }}" alt="Job Image">
+                                <img class="card-img-top" src="{{ asset('upload_images/' . $j->image) }}"
+                                    alt="Job Image">
                                 <div class="card-header">
                                     @if ($j->type == 'internship')
                                         Internship

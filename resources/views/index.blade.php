@@ -142,7 +142,7 @@
         <div class="container">
             <div class="row">
                 @foreach ($featured_oppo as $f)
-                    <div class="col-lg-3 col-md-6 col-sm-6">
+                    <div class="col-lg-3 col-md-6 col-sm-6" data-aos="zoom-in">
                         @if ($f->name == 'scholarship')
                             <a href="{{ url("/scholarships/detail/$f->slug/$f->post_id") }}">
                             @elseif ($f->name == 'grant')
@@ -210,7 +210,7 @@
             <div class="scholar_cards">
                 <div class="row">
                     @foreach ($latest_scholar as $scholar)
-                        <div class="col-md-4">
+                        <div class="col-md-4" data-aos="zoom-in">
                             <a href="{{ url("/scholarships/detail/$scholar->slug/$scholar->id") }}">
                                 <div class="card mb-2">
                                     <div class="img_holder">
@@ -541,7 +541,7 @@
             <h2><span>Latest Courses</span></h2>
             <div class="row">
                 @foreach ($courses as $c)
-                    <div class="col-lg-3 col-md-6 col-12">
+                    <div class="col-lg-3 col-md-6 col-12" data-aos="zoom-in">
                         <a href="{{ url("/courses/detail/$c->slug/$c->id") }}">
                             <div class="card mb-2">
                                 <img class="card-img" src="{{ asset("upload_images/$c->image") }}"

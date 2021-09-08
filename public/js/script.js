@@ -21,5 +21,6 @@ window.onload = function () {
     document.querySelector("#preloader_bg").style.display = "none";
 }
 
-
+//AOS
+AOS.init();
 

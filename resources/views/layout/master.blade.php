@@ -34,6 +34,9 @@
     <!-- JQuery -->
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
+    {{-- AOS --}}
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
     <link rel="icon" href="{{ asset('images/tyt_icon.svg') }}" type="image/svg+xml">
     @yield('title')
 </head>
@@ -264,6 +267,9 @@
 
     <!-- fontawesome -->
     <script src="https://kit.fontawesome.com/bae217b688.js" crossorigin="anonymous"></script>
+
+    {{-- AOS --}}
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
 
     <!-- js -->
     <script src="{{ asset('js/script.js') }}"></script>

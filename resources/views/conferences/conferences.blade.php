@@ -1,7 +1,6 @@
 @extends('layout.master')
 <title>Take Your Time - Conferences</title>
 @section('nav_items')
-
     <li class="nav-item">
         <a class="nav-link" href="{{ url('/') }}">
             <i class="fas fa-home fa_hid"></i>
@@ -24,11 +23,14 @@
             <a class="dropdown-item" href="{{ url('/scholarships/master') }}">Master</a>
             <a class="dropdown-item" href="{{ url('/scholarships/phd') }}">PhD</a>
             <a class="dropdown-item" href="{{ url('/scholarships/fellowship') }}">Fellowship</a>
+            <a class="dropdown-item" href="{{ url('/grants') }}">Grants</a>
+            <a class="dropdown-item" href="{{ url('/scholarships/alumni') }}">Scholar Alumni</a>
         </div>
     </li>
 
     <li class="nav-item">
-        <a class="nav-link" href="{{ url('/grants') }}"><i class="fas fa-hand-holding-usd fa_hid"></i></i>Grants</a>
+        <a class="nav-link" href="{{ url('/others/competitions') }}"><i
+                class="fas fa-award fa_hid"></i>Competition</a>
     </li>
 
     <li class="nav-item active">
@@ -43,6 +45,7 @@
         <div class="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdownMenuLink">
             <a class="dropdown-item" href="{{ url('/courses/freeCourses') }}">Free Courses</a>
             <a class="dropdown-item" href="{{ url('/courses/paidCourses') }}">Paid Courses</a>
+            <a class="dropdown-item" href="{{ url('/courses/academicTeam') }}">Academic Team</a>
         </div>
     </li>
 
@@ -63,7 +66,6 @@
 
         <div class="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdownMenuLink">
             <a class="dropdown-item" href="{{ url('/others/seminars') }}">Seminars</a>
-            <a class="dropdown-item" href="{{ url('/others/competitions') }}">Competitions</a>
         </div>
     </li>
 

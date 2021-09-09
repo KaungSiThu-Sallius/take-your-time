@@ -21,6 +21,7 @@ Route::prefix('scholarships')->namespace('Scholarship')->group(function () {
     Route::get('master', 'MasterController@index');
     Route::get('phd', 'PhDController@index');
     Route::get('fellowship', 'FellowshipController@index');
+    Route::get('alumni', 'ScholarshipController@alumni');
     Route::get('detail/{slug}/{id}', 'ScholarshipController@detail');
     Route::get('/post/like/{id}', 'ScholarshipController@like');
     Route::post('/post/comment', 'ScholarshipController@comment');
@@ -43,6 +44,7 @@ Route::prefix('courses')->namespace('Course')->group(function () {
     Route::get('/', 'CourseController@allCourse');
     Route::get('/freeCourses', 'FreeCourseController@index');
     Route::get('/paidCourses', 'PaidCourseController@index');
+    Route::get('/academicTeam', 'CourseController@team');
     Route::get('/detail/{slug}/{id}', 'CourseController@detail');
 });
 
@@ -70,7 +72,7 @@ Route::prefix('others')->namespace('Other')->group(function () {
 
 
 // Authentication
-Route::get('/admin/login', 'Admin\AuthController@loginForm');
+Route::get('/parallelWorld/login', 'Admin\AuthController@loginForm');
 Route::post('/admin/login', 'Admin\AuthController@login');
 
 // Admin

@@ -1096,6 +1096,166 @@ a {
     margin-bottom: 55px;
 }
 
+/* ------------------------- academic team ------------------------- */
+.academicHeader {
+    color: var(--blue01);
+    width: 80%;
+}
+
+.academicHeader p {
+    font-size: 18px;
+}
+
+.academicHeader span {
+    font-size: 18px;
+}
+
+.academicteam h3 {
+    padding-bottom: 45px;
+    color: var(--blue01);
+    text-decoration: none;
+}
+
+.academicteam h3 span {
+    position: relative;
+    z-index: 100;
+}
+
+.academicteam h3 span::after {
+    content: url("../images/heading_brush_bg.svg");
+    position: absolute;
+    left: -44px;
+    top: -8px;
+    z-index: -1;
+}
+
+.academicProfile .academicImg {
+    width: 65%;
+    border-radius: 50%;
+}
+
+.academicProfile .academicBtn {
+    width: 70%;
+}
+
+
+.modalHeader {
+    display: flex;
+    align-items: center;
+}
+
+.modalHeader .modalHeaderImg {
+    width: 70px;
+    border-radius: 50%;
+}
+
+.modalHeader .modalHeaderLine {
+    margin: 0 20px;
+    height: 50px;
+    border-right: 3px solid var(--secondary02);
+}
+
+.academic_modal .header {
+    background-image: url(../images/background.webp);
+}
+
+.academic_modal .line {
+    border-right: 13px solid rgb(143, 227, 217);
+}
+
+.academic_modal .university {
+    line-height: 250%;
+}
+
+.academic_modal p,
+.academic_modal ul {
+    line-height: 180%;
+    text-align: justify;
+    margin-bottom: 20px;
+
+}
+
+/* ------------------------- Alumni ------------------------- */
+.alumni_content {
+    padding: 30px;
+}
+
+.alumni_img_area {
+    width: 150px;
+    height: 150px;
+    border: 8px solid var(--secondary02);
+    overflow: hidden;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    border-radius: 50%;
+    margin-bottom: 30px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.alumni_table th {
+    font-size: 17px;
+    font-weight: bold;
+}
+
+.alumni_table td {
+    font-size: 17px;
+}
+
+.alumni_property {
+    font-size: 17px;
+    font-weight: bold;
+    padding-bottom: 10px;
+    text-align: center;
+}
+
+.alumni_initial_para {
+    text-align: justify;
+    display: block;
+    font-size: 17px;
+    font-weight: lighter;
+}
+
+.alumni_initial {
+    font-size: 17px;
+    font-weight: lighter;
+}
+
+.alumni_lines {
+    position: relative;
+}
+
+.alumni_lines::after,
+.alumni_lines::before {
+    content: '';
+    position: absolute;
+    margin: auto;
+    height: 3px;
+    background-color: var(--secondary02);
+    width: 45%;
+    top: 45%;
+}
+
+.alumni_lines::after {
+    left: 0;
+}
+
+.alumni_lines::before {
+    right: 0;
+}
+
+.alumni_diamond {
+    height: 20px;
+    width: 20px;
+    border: 2px solid var(--secondary02);
+    margin: auto;
+    transform: rotate(45deg);
+    background-color: var(--secondary02);
+}
+
+.alumni_pattern2 {
+    display: none;
+}
 
 /* ------------------------- media query ------------------------- */
 @media (max-width: 1199px) {
@@ -1199,6 +1359,7 @@ a {
 
         margin-left: 23px;
     }
+
 
 }
 
@@ -1487,6 +1648,34 @@ a {
     .show_large_screen {
         display: none;
     }
+
+    .academicProfile .academicImg {
+        width: 75%;
+        border-radius: 50%;
+    }
+
+    .academicProfile .academicBtn {
+        width: 100%;
+        height: 40px;
+    }
+
+    .academicteam h3 span::after {
+        content: url(../images/heading_brush_bg_md.svg);
+        top: -3px;
+    }
+
+    .alumni_pattern1 {
+        display: none;
+    }
+
+    .alumni_pattern2 {
+        display: inline;
+    }
+
+    .alumni_diamond {
+        height: 15px;
+        width: 15px;
+    }
 }
 
 @media (max-width: 767px) {
@@ -1680,6 +1869,37 @@ a {
         width: 530px;
     }
 
+    .academicteam h3 {
+        text-align: center;
+        font-size: 24px;
+    }
+
+    .academicteam h3 span::after {
+        left: -74px;
+        top: -7px;
+    }
+
+    .academicProfile .academicImg {
+        width: 40%;
+    }
+
+    .academicProfile .academicBtn {
+        width: 50%;
+    }
+
+    .alumni_pattern2 {
+        display: none;
+    }
+
+    .alumni_pattern1 {
+        display: contents;
+    }
+
+    .alumni_diamond {
+        height: 20px;
+        width: 20px;
+    }
+
 }
 
 @media (max-width: 575px) {
@@ -1871,4 +2091,35 @@ a {
 
     }
 
+    .academicteam h3 span::after {
+        content: url(../images/heading_brush_bg_sm.svg);
+        left: -33px;
+        top: -3px;
+    }
+
+    .academicteam h3 {
+        padding-bottom: 10px;
+
+    }
+
+    .academicProfile .academicImg {
+        width: 45%;
+    }
+
+    .academicProfile .academicBtn {
+        width: 50%;
+    }
+
+    .alumni_pattern1 {
+        display: none;
+    }
+
+    .alumni_pattern2 {
+        display: inline;
+    }
+
+    .alumni_diamond {
+        height: 16px;
+        width: 16px;
+    }
 }

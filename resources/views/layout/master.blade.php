@@ -150,7 +150,7 @@
                                     <ul>
                                         <li><a href="{{ url('/about') }}">About Us</a></li>
                                         <li><a href="{{ url('scholarships') }}">Scholarships</a></li>
-                                        <li><a href="{{ url('/grants') }}">Grants</a></li>
+                                        <li><a href="{{ url('/others/competitions') }}">Competitions</a></li>
                                         <li><a href="{{ url('/conferences') }}">Conferences</a></li>
                                     </ul>
                                 </div>

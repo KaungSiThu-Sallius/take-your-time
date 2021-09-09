@@ -26,6 +26,7 @@
             <a class="dropdown-item" href="{{ url('/scholarships/master') }}">Master</a>
             <a class="dropdown-item" href="{{ url('/scholarships/phd') }}">PhD</a>
             <a class="dropdown-item" href="{{ url('/scholarships/fellowship') }}">Fellowship</a>
+            <a class="dropdown-item" href="{{ url('/scholarships/alumni') }}">Scholar Alumni</a>
         </div>
     </li>
 
@@ -34,7 +35,8 @@
     </li>
 
     <li class="nav-item">
-        <a class="nav-link" href="{{ url('/conferences') }}"> <i class="fas fa-users fa_hid"></i></i></i>Conferences</a>
+        <a class="nav-link" href="{{ url('/conferences') }}"> <i
+                class="fas fa-users fa_hid"></i></i></i>Conferences</a>
     </li>
 
     <li class="nav-item dropdown active">
@@ -44,6 +46,7 @@
         <div class="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdownMenuLink">
             <a class="dropdown-item" href="{{ url('/courses/freeCourses') }}">Free Courses</a>
             <a class="dropdown-item" href="{{ url('/courses/paidCourses') }}">Paid Courses</a>
+            <a class="dropdown-item" href="{{ url('/courses/academicTeam') }}">Academic Team</a>
         </div>
     </li>
 
@@ -191,7 +194,8 @@
     <div class="detail_btns">
         <div class="container">
             <div class="filter_btns_group">
-                <a href='{{ $detail->apply_form_link }}' class="filter_btn_link"><button type="button" class="btn">Course
+                <a href='{{ $detail->apply_form_link }}' class="filter_btn_link"><button type="button"
+                        class="btn">Course
                         Application</button></a>
             </div>
         </div>

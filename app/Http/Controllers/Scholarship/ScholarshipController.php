@@ -577,4 +577,9 @@ class ScholarshipController extends Controller
             return response()->json(['data' => $data]);
         }
     }
+
+    public function alumni()
+    {
+        return view('scholarships.alumni');
+    }
 }

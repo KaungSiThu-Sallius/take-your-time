@@ -1,7 +1,6 @@
 @extends('layout.master')
 
 @section('nav_items')
-
     <li class="nav-item">
         <a class="nav-link" href="{{ url('/') }}">
             <i class="fas fa-home fa_hid"></i>
@@ -24,11 +23,14 @@
             <a class="dropdown-item" href="{{ url('/scholarships/master') }}">Master</a>
             <a class="dropdown-item" href="{{ url('/scholarships/phd') }}">PhD</a>
             <a class="dropdown-item" href="{{ url('/scholarships/fellowship') }}">Fellowship</a>
+            <a class="dropdown-item" href="{{ url('/grants') }}">Grants</a>
+            <a class="dropdown-item" href="{{ url('/scholarships/alumni') }}">Scholar Alumni</a>
         </div>
     </li>
 
-    <li class="nav-item">
-        <a class="nav-link" href="{{ url('/grants') }}"><i class="fas fa-hand-holding-usd fa_hid"></i></i>Grants</a>
+    <li class="nav-item active">
+        <a class="nav-link" href="{{ url('/others/competitions') }}"><i
+                class="fas fa-award fa_hid"></i>Competition</a>
     </li>
 
     <li class="nav-item">
@@ -43,6 +45,7 @@
         <div class="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdownMenuLink">
             <a class="dropdown-item" href="{{ url('/courses/freeCourses') }}">Free Courses</a>
             <a class="dropdown-item" href="{{ url('/courses/paidCourses') }}">Paid Courses</a>
+            <a class="dropdown-item" href="{{ url('/courses/academicTeam') }}">Academic Team</a>
         </div>
     </li>
 
@@ -57,13 +60,12 @@
         </div>
     </li>
 
-    <li class="nav-item dropdown active">
+    <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true"
             aria-expanded="false"><i class="fas fa-ellipsis-h fa_hid"></i>Others</a>
 
         <div class="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdownMenuLink">
             <a class="dropdown-item" href="{{ url('/others/seminars') }}">Seminars</a>
-            <a class="dropdown-item" href="{{ url('/others/competitions') }}">Competitions</a>
         </div>
     </li>
 
@@ -73,27 +75,12 @@
     <!-- ------------------------- preview -------------------------  -->
     <section>
         <div class="preview">
-            <h2 class="previewText">Others</h2>
+            <h2 class="previewText">Competitions</h2>
             <ul class="breadcrumb">
                 <li class="breadcrumb-item"><a href="{{ '/' }}" class="previewLink">Home</a></li>
-                <li class="breadcrumb-item"><a href="{{ '/others' }}" class="previewLink">Others</a></li>
                 <li class="breadcrumb-item"><a href="{{ url('/others/competitions') }}"
                         class="previewLink activeLink">Competitions</a></li>
             </ul>
-        </div>
-    </section>
-
-    <!-- ------------------------- filter_nav -------------------------  -->
-    <section class="filter_nav">
-        <div class="container-fluid">
-            <div class="filter_btns_group">
-                <a href="{{ url('/others') }}" class="filter_btn_link"><button type="button"
-                        class="btn">Others</button></a>
-                <a href="{{ url('/others/seminars') }}" class="filter_btn_link"><button type="button"
-                        class="btn">Seminars</button></a>
-                <a href="{{ url('/others/competitions') }}" class="filter_btn_link"><button type="button"
-                        class="btn active filter_btn">Competitions</button></a>
-            </div>
         </div>
     </section>
 

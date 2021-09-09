@@ -222,4 +222,9 @@ class CourseController extends Controller
         $detail = Course::where('id', $id)->where('slug', $slug)->first();
         return view('courses.detail', compact('detail'));
     }
+
+    public function team()
+    {
+        return view('courses.team');
+    }
 }

@@ -11,46 +11,52 @@
         </a>
     </li>
     <li class="">
-        <a href="{{ url('admin/scholarshipIndex') }}">
-            <img src="{{ asset('images/scholar.svg') }}" alt="scholarship" type="image/svg+xml"
-                class="svg_icon icon_sidebar" />
-            <span>Scholarship</span>
+        <a href=" {{ url('admin/scholarshipIndex') }}">
+        <img src="{{ asset('images/scholar.svg') }}" alt="scholarship" type="image/svg+xml"
+            class="svg_icon icon_sidebar" />
+        <span>Scholarship</span>
         </a>
     </li>
     <li class="">
-        <a href="{{ url('admin/grantIndex') }}">
-            <img src="{{ asset('images/grant.svg') }}" alt="grant" type="image/svg+xml" class="svg_icon" />
-            <span>Grant</span>
+        <a href=" {{ url('admin/grantIndex') }}">
+        <img src="{{ asset('images/grant.svg') }}" alt="grant" type="image/svg+xml" class="svg_icon" />
+        <span>Grant</span>
         </a>
     </li>
     <li class="">
-        <a href="{{ url('admin/conferenceIndex') }}">
-            <img src="{{ asset('images/conference.svg') }}" alt="grant" type="image/svg+xml" class="svg_icon" />
-            <span>Conference</span>
+        <a href=" {{ url('admin/competitionIndex') }}">
+        <img src="{{ asset('images/award.svg') }}" alt="competition" type="image/svg+xml" class="svg_icon" />
+        <span>Competition</span>
         </a>
     </li>
     <li class="">
-        <a href="{{ url('admin/courseIndex') }}">
-            <img src="{{ asset('images/courses.svg') }}" alt="course" type="image/svg+xml" class="svg_icon" />
-            <span>Course</span>
+        <a href=" {{ url('admin/conferenceIndex') }}">
+        <img src="{{ asset('images/conference.svg') }}" alt="grant" type="image/svg+xml" class="svg_icon" />
+        <span>Conference</span>
         </a>
     </li>
     <li class="">
-        <a href="{{ url('admin/jobIndex') }}">
-            <img src="{{ asset('images/jobs.svg') }}" alt="job" type="image/svg+xml" class="svg_icon" />
-            <span>Job</span>
+        <a href=" {{ url('admin/courseIndex') }}">
+        <img src="{{ asset('images/courses.svg') }}" alt="course" type="image/svg+xml" class="svg_icon" />
+        <span>Course</span>
         </a>
     </li>
     <li class="">
-        <a href="{{ url('admin/otherIndex') }}">
-            <img src="{{ asset('images/others.svg') }}" alt="other" type="image/svg+xml" class="svg_icon" />
-            <span>Other</span>
+        <a href=" {{ url('admin/jobIndex') }}">
+        <img src="{{ asset('images/jobs.svg') }}" alt="job" type="image/svg+xml" class="svg_icon" />
+        <span>Job</span>
         </a>
     </li>
     <li class="">
-        <a href="{{ url('admin/message') }}">
-            <img src="{{ asset('images/message.svg') }}" alt="messge" type="image/svg+xml" class="svg_icon" />
-            <span>Message</span>
+        <a href=" {{ url('admin/otherIndex') }}">
+        <img src="{{ asset('images/others.svg') }}" alt="other" type="image/svg+xml" class="svg_icon" />
+        <span>Other</span>
+        </a>
+    </li>
+    <li class="">
+        <a href=" {{ url('admin/message') }}">
+        <img src="{{ asset('images/message.svg') }}" alt="messge" type="image/svg+xml" class="svg_icon" />
+        <span>Message</span>
         </a>
     </li>
 

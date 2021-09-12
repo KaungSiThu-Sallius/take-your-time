@@ -456,6 +456,11 @@ class ScholarshipController extends Controller
      */
     public function destroy($id)
     {
+        $old_image = Scholarship::where('id', $id)->first()->image;
+        $all_post_id = AllPost::where('name', 'scholarship')->where('post_id', $id)->first()->id;
+        Like::where('post_id', $all_post_id)->where('type', 'scholarship')->delete();
+        Comment::where('post_id', $all_post_id)->where('type', 'scholarship')->delete();
+        Storage::disk('upload_images')->delete([$old_image]);
         Scholarship::where('id', $id)->delete();
         AllPost::where('post_id', $id)->where('name', 'scholarship')->delete();
         Undergraduate::where('scholarship_id', $id)->delete();

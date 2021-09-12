@@ -87,6 +87,12 @@ class DashboardController extends Controller
         return redirect()->back()->with('success', 'Comment Deleted Successfully');
     }
 
+    public function dashboardLikesDelete($id)
+    {
+        Like::where('id', $id)->delete();
+        return redirect()->back()->with('success', 'Like Deleted Successfully');
+    }
+
     public function dashboardDetailTodayLikes()
     {
         $today_likes = Like::orderBy('created_at', 'DESC')->whereDate('created_at', Carbon::today())->with('post')->paginate(10);

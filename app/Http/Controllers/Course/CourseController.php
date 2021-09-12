@@ -191,6 +191,8 @@ class CourseController extends Controller
      */
     public function destroy($id)
     {
+        $old_image = Course::where('id', $id)->first()->image;
+        Storage::disk('upload_images')->delete([$old_image]);
         $type = Course::where('id', $id)->first()->type;
         Course::where('id', $id)->delete();
         OppotunityPlace::where('post_id', $id)->where('oppotunity', $type)->delete();

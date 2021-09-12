@@ -22,6 +22,12 @@
         <span>Grant</span>
         </a>
     </li>
+    <li>
+        <a href=" {{ url('admin/competitionIndex') }}">
+            <img src="{{ asset('images/award.svg') }}" alt="competition" type="image/svg+xml" class="svg_icon" />
+            <span>Competition</span>
+        </a>
+    </li>
     <li class="">
         <a href=" {{ url('admin/conferenceIndex') }}">
         <img src="{{ asset('images/conference.svg') }}" alt="conference" type="image/svg+xml" class="svg_icon" />

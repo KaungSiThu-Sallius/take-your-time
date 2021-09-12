@@ -1,5 +1,7 @@
 @extends('layout.master')
-
+@section('title')
+    <title>Take Your Time - Competitions</title>
+@endsection
 @section('nav_items')
     <li class="nav-item">
         <a class="nav-link" href="{{ url('/') }}">
@@ -29,8 +31,7 @@
     </li>
 
     <li class="nav-item active">
-        <a class="nav-link" href="{{ url('/others/competitions') }}"><i
-                class="fas fa-award fa_hid"></i>Competition</a>
+        <a class="nav-link" href="{{ url('/competitions') }}"><i class="fas fa-award fa_hid"></i>Competition</a>
     </li>
 
     <li class="nav-item">
@@ -45,7 +46,7 @@
         <div class="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdownMenuLink">
             <a class="dropdown-item" href="{{ url('/courses/freeCourses') }}">Free Courses</a>
             <a class="dropdown-item" href="{{ url('/courses/paidCourses') }}">Paid Courses</a>
-            <a class="dropdown-item" href="{{ url('/courses/academicTeam') }}">Academic Team</a>
+            <a class="dropdown-item" href="{{ url('/courses/academicTeam') }}">Academic Members</a>
         </div>
     </li>
 
@@ -78,7 +79,7 @@
             <h2 class="previewText">Competitions</h2>
             <ul class="breadcrumb">
                 <li class="breadcrumb-item"><a href="{{ '/' }}" class="previewLink">Home</a></li>
-                <li class="breadcrumb-item"><a href="{{ url('/others/competitions') }}"
+                <li class="breadcrumb-item"><a href="{{ url('/competitions') }}"
                         class="previewLink activeLink">Competitions</a></li>
             </ul>
         </div>
@@ -90,10 +91,10 @@
             <div class="row">
                 @foreach ($data as $d)
                     <div class="col-md-6 col-lg-6 col-xl-4" data-aos="zoom-in">
-                        <a href="{{ url('/others/detail/' . $d->slug . '/' . $d->id) }}">
+                        <a href="{{ url('/competitions/detail/' . $d->slug . '/' . $d->id) }}">
                             <div class="card">
                                 <img class="card-img-top" src="{{ asset('upload_images/' . $d->image) }}"
-                                    alt="Other Image">
+                                    alt="Competiton Image">
                                 <div class="card-header">Competition</div>
                                 <div class="card-body">
                                     <div class="card-text">{{ $d->title }} <br> <span

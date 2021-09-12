@@ -22,6 +22,12 @@
             <span>Grant</span>
         </a>
     </li>
+    <li class="">
+        <a href=" {{ url('admin/competitionIndex') }}">
+        <img src="{{ asset('images/award.svg') }}" alt="competition" type="image/svg+xml" class="svg_icon" />
+        <span>Competition</span>
+        </a>
+    </li>
     <li>
         <a href="{{ url('admin/conferenceIndex') }}">
             <img src="{{ asset('images/conference.svg') }}" alt="conference" type="image/svg+xml" class="svg_icon" />
@@ -156,11 +162,6 @@
                                         <input type="radio" class="custom-control-input" id="seminar" name="type"
                                             value="seminar">
                                         <label class="custom-control-label" for="seminar">Seminar</label>
-                                    </div>
-                                    <div class="custom-control custom-radio">
-                                        <input type="radio" class="custom-control-input" id="competition" name="type"
-                                            value="competition">
-                                        <label class="custom-control-label" for="competition">Competition</label>
                                     </div>
                                 </div>
                             </div>

@@ -274,6 +274,11 @@ class GrantController extends Controller
      */
     public function destroy($id)
     {
+        $old_image = Grant::where('id', $id)->first()->image;
+        $all_post_id = AllPost::where('name', 'grant')->where('post_id', $id)->first()->id;
+        Like::where('post_id', $all_post_id)->where('type', 'grant')->delete();
+        Comment::where('post_id', $all_post_id)->where('type', 'grant')->delete();
+        Storage::disk('upload_images')->delete([$old_image]);
         Grant::where('id', $id)->delete();
         AllPost::where('post_id', $id)->where('name', 'grant')->delete();
         OppotunityPlace::where('post_id', $id)->where('oppotunity', 'grant')->delete();

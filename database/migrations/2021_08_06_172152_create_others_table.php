@@ -16,7 +16,7 @@ class CreateOthersTable extends Migration
         Schema::create('others', function (Blueprint $table) {
             $table->id();
             $table->string('slug');
-            $table->enum('type', ['competition', 'seminar']);
+            $table->enum('type', ['seminar']);
             $table->string('title');
             $table->string('image');
             $table->dateTime('deadline');

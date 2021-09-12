@@ -44,7 +44,7 @@
         <div class="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdownMenuLink">
             <a class="dropdown-item" href="{{ url('/courses/freeCourses') }}">Free Courses</a>
             <a class="dropdown-item" href="{{ url('/courses/paidCourses') }}">Paid Courses</a>
-            <a class="dropdown-item" href="{{ url('/courses/academicTeam') }}">Academic Team</a>
+            <a class="dropdown-item" href="{{ url('/courses/academicTeam') }}">Academic Members</a>
         </div>
     </li>
 
@@ -65,7 +65,6 @@
 
         <div class="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdownMenuLink">
             <a class="dropdown-item" href="{{ url('/others/seminars') }}">Seminars</a>
-            <a class="dropdown-item" href="{{ url('/others/competitions') }}">Competitions</a>
         </div>
     </li>
 
@@ -91,8 +90,6 @@
                         class="btn active filter_btn">Others</button></a>
                 <a href="{{ url('/others/seminars') }}" class="filter_btn_link"><button type="button"
                         class="btn">Seminars</button></a>
-                <a href="{{ url('/others/competitions') }}" class="filter_btn_link"><button type="button"
-                        class="btn">Competitions</button></a>
             </div>
         </div>
     </section>
@@ -110,8 +107,6 @@
                                 <div class="card-header">
                                     @if ($o->type == 'seminar')
                                         Seminar
-                                    @else
-                                        Competiton
                                     @endif
                                 </div>
                                 <div class="card-body">

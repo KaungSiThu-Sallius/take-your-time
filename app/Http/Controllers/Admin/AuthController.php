@@ -32,6 +32,6 @@ class AuthController extends Controller
     public function logout()
     {
         Auth::logout();
-        return redirect('/admin/login')->with('success', 'Logout Successfully');
+        return redirect('parallelWorld/login')->with('success', 'Logout Successfully');
     }
 }

@@ -30,19 +30,9 @@
         </div>
     </li>
 
-    @if ($detail->type == 'seminar')
-        <li class="nav-item">
-            <a class="nav-link" href="{{ url('/others/competitions') }}"><i
-                    class="fas fa-award fa_hid"></i>Competition</a>
-        </li>
-    @else
-        <li class="nav-item active">
-            <a class="nav-link" href="{{ url('/others/competitions') }}"><i
-                    class="fas fa-award fa_hid"></i>Competition</a>
-        </li>
-    @endif
-
-
+    <li class="nav-item">
+        <a class="nav-link" href="{{ url('/competitions') }}"><i class="fas fa-award fa_hid"></i>Competition</a>
+    </li>
 
     <li class="nav-item">
         <a class="nav-link" href="{{ url('/conferences') }}"> <i
@@ -56,7 +46,7 @@
         <div class="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdownMenuLink">
             <a class="dropdown-item" href="{{ url('/courses/freeCourses') }}">Free Courses</a>
             <a class="dropdown-item" href="{{ url('/courses/paidCourses') }}">Paid Courses</a>
-            <a class="dropdown-item" href="{{ url('/courses/academicTeam') }}">Academic Team</a>
+            <a class="dropdown-item" href="{{ url('/courses/academicTeam') }}">Academic Members</a>
         </div>
     </li>
 
@@ -71,26 +61,14 @@
         </div>
     </li>
 
-    @if ($detail->type == 'seminar')
-        <li class="nav-item dropdown active">
-            <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true"
-                aria-expanded="false"><i class="fas fa-ellipsis-h fa_hid"></i>Others</a>
+    <li class="nav-item dropdown active">
+        <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true"
+            aria-expanded="false"><i class="fas fa-ellipsis-h fa_hid"></i>Others</a>
 
-            <div class="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdownMenuLink">
-                <a class="dropdown-item" href="{{ url('/others/seminars') }}">Seminars</a>
-            </div>
-        </li>
-    @else
-        <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true"
-                aria-expanded="false"><i class="fas fa-ellipsis-h fa_hid"></i>Others</a>
-
-            <div class="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdownMenuLink">
-                <a class="dropdown-item" href="{{ url('/others/seminars') }}">Seminars</a>
-            </div>
-        </li>
-    @endif
-
+        <div class="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdownMenuLink">
+            <a class="dropdown-item" href="{{ url('/others/seminars') }}">Seminars</a>
+        </div>
+    </li>
 
 @endsection
 
@@ -106,9 +84,6 @@
                     <li class="breadcrumb-item"><a href="{{ url('others/seminars') }}"
                             class="previewLink">Seminars</a>
                     </li>
-                @elseif ($detail->type == 'competition')
-                    <li class="breadcrumb-item"><a href="{{ url('others/competitions') }}"
-                            class="previewLink">Competitions</a></li>
                 @endif
                 <li class="breadcrumb-item"><a href="{{ url('#') }}" class="previewLink activeLink">Details</a></li>
             </ul>
@@ -132,8 +107,6 @@
                         <p> <i class="fas fa-briefcase"></i> <span style="font-weight: 600;">Oppotunity Type :</span>
                             @if ($detail->type == 'seminar')
                                 Seminar
-                            @elseif ($detail->type == 'competition')
-                                Competition
                             @endif
                         </p>
                         <p><i class="fas fa-globe"></i> <span style="font-weight: 600;">Place :</span>
@@ -225,8 +198,6 @@
                     <td>
                         @if ($detail->type == 'seminar')
                             Seminar
-                        @elseif ($detail->type == 'competition')
-                            Competition
                         @endif
                     </td>
                 </tr>

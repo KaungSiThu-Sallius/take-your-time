@@ -273,6 +273,11 @@ class JobController extends Controller
      */
     public function destroy($id)
     {
+        $old_image = Job::where('id', $id)->first()->image;
+        $all_post_id = AllPost::where('name', 'job')->where('post_id', $id)->first()->id;
+        Like::where('post_id', $all_post_id)->where('type', 'job')->delete();
+        Comment::where('post_id', $all_post_id)->where('type', 'job')->delete();
+        Storage::disk('upload_images')->delete([$old_image]);
         Job::where('id', $id)->delete();
         AllPost::where('post_id', $id)->where('name', 'job')->delete();
         OppotunityPlace::where('post_id', $id)->where('oppotunity', 'part_time_job')->delete();

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\AllPost;
+use App\Models\Competition;
 use App\Models\Conference;
 use App\Models\Course;
 use App\Models\FeaturedOppotunity;
@@ -110,7 +111,15 @@ class HomeController extends Controller
             } else {
                 return view('jobs.fullTime', compact('data'));
             }
-        } else if ($request->oppotunity == 'seminar' or $request->oppotunity == 'competition') {
+        } else if ($request->oppotunity == 'competition') {
+            if ($request->place != "") {
+                $data = Competition::where('place', $request->place)->orderBy('id', 'DESC')->paginate(9);
+            } else {
+                $data = Competition::orderBy('id', 'DESC')->paginate(9);
+            }
+            $data->appends($request->all());
+            return view('competitions.competitions', compact('data'));
+        } else if ($request->oppotunity == 'seminar') {
             if ($request->place != "") {
                 $data = Other::where('place', $request->place)->where('type', $request->oppotunity)->orderBy('id', 'DESC')->paginate(9);
             } else {
@@ -119,8 +128,6 @@ class HomeController extends Controller
             $data->appends($request->all());
             if ($request->oppotunity == 'seminar') {
                 return view('others.seminars', compact('data'));
-            } else {
-                return view('others.competitions', compact('data'));
             }
         } else {
             return redirect()->back();

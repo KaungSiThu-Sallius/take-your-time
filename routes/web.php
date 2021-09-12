@@ -33,6 +33,12 @@ Route::get('grants/detail/{slug}/{id}', 'GrantController@detail');
 Route::get('grants/post/like/{id}', 'GrantController@like');
 Route::post('grants/post/comment', 'GrantController@comment');
 
+// Competitions
+Route::get('/competitions', 'CompetitionController@allCompetitions');
+Route::get('competitions/detail/{slug}/{id}', 'CompetitionController@detail');
+Route::get('competitions/post/like/{id}', 'CompetitionController@like');
+Route::post('competitions/post/comment', 'CompetitionController@comment');
+
 // Conferences
 Route::get('/conferences', 'ConferenceController@allConference');
 Route::get('conferences/detail/{slug}/{id}', 'ConferenceController@detail');
@@ -63,7 +69,6 @@ Route::prefix('jobs')->namespace('Job')->group(function () {
 Route::prefix('others')->namespace('Other')->group(function () {
     Route::get('/', 'OtherController@allOther');
     Route::get('/seminars', 'SeminarController@index');
-    Route::get('/competitions', 'CompetitionController@index');
     Route::get('/detail/{slug}/{id}', 'OtherController@detail');
     Route::get('/post/like/{id}', 'OtherController@like');
     Route::post('/post/comment', 'OtherController@comment');
@@ -100,6 +105,11 @@ Route::prefix('admin')->middleware('admin')->group(function () {
     Route::get('grantIndex/search', 'GrantController@searchData');
     Route::resource('grant', 'GrantController');
 
+    // Competition
+    Route::get('competitionIndex', 'CompetitionController@allData');
+    Route::get('competitionIndex/search', 'CompetitionController@searchData');
+    Route::resource('competition', 'CompetitionController');
+
     // Conference
     Route::get('conferenceIndex', 'ConferenceController@allData');
     Route::get('conferenceIndex/search', 'ConferenceController@searchData');
@@ -126,4 +136,5 @@ Route::prefix('admin')->middleware('admin')->group(function () {
 
     // Comment
     Route::delete('/comments/{id}', 'Admin\DashboardController@dashboardCommentsDelete');
+    Route::delete('/likes/{id}', 'Admin\DashboardController@dashboardLikesDelete');
 });

@@ -31,8 +31,7 @@
     </li>
 
     <li class="nav-item">
-        <a class="nav-link" href="{{ url('/others/competitions') }}"><i
-                class="fas fa-award fa_hid"></i>Competition</a>
+        <a class="nav-link" href="{{ url('/competitions') }}"><i class="fas fa-award fa_hid"></i>Competition</a>
     </li>
 
     <li class="nav-item">
@@ -47,7 +46,7 @@
         <div class="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdownMenuLink">
             <a class="dropdown-item" href="{{ url('/courses/freeCourses') }}">Free Courses</a>
             <a class="dropdown-item" href="{{ url('/courses/paidCourses') }}">Paid Courses</a>
-            <a class="dropdown-item" href="{{ url('/courses/academicTeam') }}">Academic Team</a>
+            <a class="dropdown-item" href="{{ url('/courses/academicTeam') }}">Academic Members</a>
         </div>
     </li>
 

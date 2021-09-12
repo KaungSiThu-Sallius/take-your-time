@@ -269,6 +269,11 @@ class ConferenceController extends Controller
      */
     public function destroy($id)
     {
+        $old_image = Conference::where('id', $id)->first()->image;
+        $all_post_id = AllPost::where('name', 'conference')->where('post_id', $id)->first()->id;
+        Like::where('post_id', $all_post_id)->where('type', 'conference')->delete();
+        Comment::where('post_id', $all_post_id)->where('type', 'conference')->delete();
+        Storage::disk('upload_images')->delete([$old_image]);
         Conference::where('id', $id)->delete();
         AllPost::where('post_id', $id)->where('name', 'conference')->delete();
         OppotunityPlace::where('post_id', $id)->where('oppotunity', 'conference')->delete();

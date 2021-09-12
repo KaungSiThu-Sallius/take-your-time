@@ -245,7 +245,6 @@ class OtherController extends Controller
         ]);
 
         OppotunityPlace::where('post_id', $id)->where('oppotunity', 'seminar')->delete();
-        OppotunityPlace::where('post_id', $id)->where('oppotunity', 'competition')->delete();
         OppotunityPlace::create([
             'post_id' => $other_id,
             'oppotunity' => $type,
@@ -264,10 +263,14 @@ class OtherController extends Controller
      */
     public function destroy($id)
     {
+        $old_image = Other::where('id', $id)->first()->image;
+        $all_post_id = AllPost::where('name', 'other')->where('post_id', $id)->first()->id;
+        Like::where('post_id', $all_post_id)->where('type', 'other')->delete();
+        Comment::where('post_id', $all_post_id)->where('type', 'other')->delete();
+        Storage::disk('upload_images')->delete([$old_image]);
         Other::where('id', $id)->delete();
         AllPost::where('post_id', $id)->where('name', 'other')->delete();
         OppotunityPlace::where('post_id', $id)->where('oppotunity', 'seminar')->delete();
-        OppotunityPlace::where('post_id', $id)->where('oppotunity', 'competition')->delete();
         CriteriaOther::where('other_id', $id)->delete();
         BenefitOther::where('other_id', $id)->delete();
         ProcessOther::where('other_id', $id)->delete();
@@ -277,19 +280,17 @@ class OtherController extends Controller
     public function allData()
     {
         $total_seminar_count = Other::where('type', 'seminar')->count();
-        $total_competition_count = Other::where('type', 'competition')->count();
         $others = Other::orderBy('id', 'DESC')->paginate(10);
-        return view('admin.others.other', compact('total_seminar_count', 'total_competition_count', 'others'));
+        return view('admin.others.other', compact('total_seminar_count',  'others'));
     }
 
     public function searchData(Request $request)
     {
         $total_seminar_count = Other::where('type', 'seminar')->count();
-        $total_competition_count = Other::where('type', 'competition')->count();
         $searchData = $request->searchData;
         $others = Other::query()->where('title', 'LIKE', "%{$searchData}%")->orWhere('type', 'LIKE', "%{$searchData}%")->orWhere('place', 'LIKE', "%{$searchData}%")->paginate(10);
         $others->appends($request->all());
-        return view('admin.others.other', compact('total_seminar_count', 'total_competition_count', 'others'));
+        return view('admin.others.other', compact('total_seminar_count',  'others'));
     }
 
     public function detail($slug, $id)

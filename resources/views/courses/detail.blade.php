@@ -46,7 +46,7 @@
         <div class="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdownMenuLink">
             <a class="dropdown-item" href="{{ url('/courses/freeCourses') }}">Free Courses</a>
             <a class="dropdown-item" href="{{ url('/courses/paidCourses') }}">Paid Courses</a>
-            <a class="dropdown-item" href="{{ url('/courses/academicTeam') }}">Academic Team</a>
+            <a class="dropdown-item" href="{{ url('/courses/academicTeam') }}">Academic Members</a>
         </div>
     </li>
 
@@ -67,7 +67,7 @@
 
         <div class="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdownMenuLink">
             <a class="dropdown-item" href="{{ url('/others/seminars') }}">Seminars</a>
-            <a class="dropdown-item" href="{{ url('/others/competitions') }}">Competitions</a>
+            <a class="dropdown-item" href="{{ url('/competitions') }}">Competitions</a>
         </div>
     </li>
 

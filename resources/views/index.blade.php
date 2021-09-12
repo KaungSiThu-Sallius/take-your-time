@@ -153,12 +153,14 @@
                             <a href="{{ url("/scholarships/detail/$f->slug/$f->post_id") }}">
                             @elseif ($f->name == 'grant')
                                 <a href="{{ url("/grants/detail/$f->slug/$f->post_id") }}">
-                                @elseif($f->name == 'conference')
-                                    <a href="{{ url("/conferences/detail/$f->slug/$f->post_id") }}">
-                                    @elseif($f->name == 'job')
-                                        <a href="{{ url("/jobs/detail/$f->slug/$f->post_id") }}">
-                                        @elseif($f->name == 'other')
-                                            <a href="{{ url("/others/detail/$f->slug/$f->post_id") }}">
+                                @elseif($f->name == 'competition')
+                                    <a href="{{ url("/competitions/detail/$f->slug/$f->post_id") }}">
+                                    @elseif($f->name == 'conference')
+                                        <a href="{{ url("/conferences/detail/$f->slug/$f->post_id") }}">
+                                        @elseif($f->name == 'job')
+                                            <a href="{{ url("/jobs/detail/$f->slug/$f->post_id") }}">
+                                            @elseif($f->name == 'other')
+                                                <a href="{{ url("/others/detail/$f->slug/$f->post_id") }}">
                         @endif
                         <div class="featured_card card">
                             <div class="view overlay card_img">
@@ -179,6 +181,9 @@
                                     @endif
                                     @if ($f->name == 'grant')
                                         Grant
+                                    @endif
+                                    @if ($f->name == 'competition')
+                                        Competition
                                     @endif
                                     @if ($f->name == 'conference')
                                         Conference

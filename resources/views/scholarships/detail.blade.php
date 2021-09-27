@@ -26,17 +26,21 @@
             <a class="dropdown-item" href="{{ url('/scholarships/master') }}">Master</a>
             <a class="dropdown-item" href="{{ url('/scholarships/phd') }}">PhD</a>
             <a class="dropdown-item" href="{{ url('/scholarships/fellowship') }}">Fellowship</a>
+            <a class="dropdown-item" href="{{ url('/scholarships/grants') }}">Grants</a>
             <a class="dropdown-item" href="{{ url('/scholarships/alumni') }}">Scholar Alumni</a>
         </div>
     </li>
 
+    <!--<li class="nav-item">-->
+    <!--    <a class="nav-link" href="{{ url('/grants') }}"><i class="fas fa-hand-holding-usd fa_hid"></i></i>Grants</a>-->
+    <!--</li>-->
+    
     <li class="nav-item">
-        <a class="nav-link" href="{{ url('/grants') }}"><i class="fas fa-hand-holding-usd fa_hid"></i></i>Grants</a>
+        <a class="nav-link" href="{{ url('/competitions') }}"><i class="fas fa-award fa_hid"></i>Competition</a>
     </li>
-
+    
     <li class="nav-item">
-        <a class="nav-link" href="{{ url('/conferences') }}"> <i
-                class="fas fa-users fa_hid"></i></i></i>Conferences</a>
+        <a class="nav-link" href="{{ url('/conferences') }}"> <i class="fas fa-users fa_hid"></i></i></i>Conferences</a>
     </li>
 
     <li class="nav-item dropdown">
@@ -67,7 +71,7 @@
 
         <div class="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdownMenuLink">
             <a class="dropdown-item" href="{{ url('/others/seminars') }}">Seminars</a>
-            <a class="dropdown-item" href="{{ url('/competitions') }}">Competitions</a>
+            <!--<a class="dropdown-item" href="{{ url('/competitions') }}">Competitions</a>-->
         </div>
     </li>
 
@@ -168,10 +172,10 @@
     </div>
     <hr class="detail_hr">
 
-    <!-- ------------------------- application -------------------------  -->
+    <!-- ------------------------- Requirements -------------------------  -->
     <div class="application">
         <div class="container">
-            <h3><span>Application Process</span></h3>
+            <h3><span>Academic Requirements</span></h3>
             <ul>
 
                 @foreach ($process as $p)
@@ -227,7 +231,7 @@
                 <a href='{{ $detail->official_website }}' class="filter_btn_link"><button type="button"
                         class="btn">Official Website</button></a>
                 <a href='{{ $detail->apply_form_link }}' class="filter_btn_link"><button type="button"
-                        class="btn">Source</button></a>
+                        class="btn">Apply Now</button></a>
             </div>
         </div>
     </div>

@@ -150,7 +150,7 @@
                                             </td>
                                         </tr>
                                         <tr>
-                                            <th scope="row">Source</th>
+                                            <th scope="row">Application Link</th>
                                             <td>{{ $conference->apply_form_link }}</td>
                                         </tr>
                                         <tr>

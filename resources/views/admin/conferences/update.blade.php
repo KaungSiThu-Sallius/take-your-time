@@ -117,7 +117,7 @@
                                                         <input type="text" id="source" name="source" class="form-control"
                                                             required value="{{ $conference->official_website }}">
                                                         <label for="source"
-                                                            class="">Source Link</label>
+                                                            class="">Official Website</label>
                                     </div>
                                 </div>
 

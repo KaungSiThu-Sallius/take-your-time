@@ -117,7 +117,7 @@
                                                         <input type="text" id="source" name="source" class="form-control"
                                                             required value="{{ $scholarship->official_website }}">
                                                         <label for="source"
-                                                            class="">Source Link</label>
+                                                            class="">Official Website</label>
                                     </div>
                                 </div>
 
@@ -298,11 +298,11 @@
 
                                                 <div class="row mb-2 application_process">
                                                     <div class="col-12 mb-4">
-                                                        <h5>Application Process</h5>
+                                                        <h5>Academic Requirements</h5>
                                                     </div>
                                                     @foreach ($scholarship->process as $p)
                                                         <div class="col-md-6">
-                                                            <label for="process{{ $loop->iteration }}">Process
+                                                            <label for="process{{ $loop->iteration }}">Requirement
                                                                 {{ $loop->iteration }}</label>
                                                             <textarea class="form-control rounded-0 mb-3"
                                                                 id="{{ $loop->iteration }}" rows="3"

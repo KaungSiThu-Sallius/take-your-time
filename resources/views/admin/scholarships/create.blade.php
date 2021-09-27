@@ -124,7 +124,7 @@
                                 <div class="col-md-6">
                                     <div class="md-form mb-0">
                                         <input type="text" id="source" name="source" class="form-control" required>
-                                        <label for="source">Source Link</label>
+                                        <label for="source">Official Website</label>
                                     </div>
                                 </div>
 
@@ -338,7 +338,7 @@
 
                             <div class="row mb-2 application_process">
                                 <div class="col-12">
-                                    <h5>Application Process</h5>
+                                    <h5>Academic Requirements</h5>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="md-form mb-0">

@@ -139,7 +139,7 @@
                                             </td>
                                         </tr>
                                         <tr>
-                                            <td>Application Process</td>
+                                            <td>Academic Requirements</td>
                                             <td>
                                                 <ol>
                                                     @foreach ($grant->process as $p)
@@ -150,7 +150,7 @@
                                             </td>
                                         </tr>
                                         <tr>
-                                            <th scope="row">Source</th>
+                                            <th scope="row">Application form</th>
                                             <td>{{ $grant->apply_form_link }}</td>
                                         </tr>
                                         <tr>

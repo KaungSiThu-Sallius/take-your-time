@@ -125,7 +125,7 @@
                                 <div class="col-md-6">
                                     <div class="md-form mb-0">
                                         <input type="text" id="source" name="source" class="form-control" required>
-                                        <label for="source">Source Link</label>
+                                        <label for="source">Official Website</label>
                                     </div>
                                 </div>
 

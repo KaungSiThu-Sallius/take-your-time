@@ -151,10 +151,10 @@
     </div>
     <hr class="detail_hr">
 
-    <!-- ------------------------- application -------------------------  -->
+    <!-- ------------------------- Requirements -------------------------  -->
     <div class="application">
         <div class="container">
-            <h3><span>Application Process</span></h3>
+            <h3><span>Academic Requirements</span></h3>
             <ul>
 
                 @foreach ($process as $p)
@@ -210,7 +210,7 @@
                 <a href='{{ $detail->official_website }}' class="filter_btn_link"><button type="button"
                         class="btn">Official Website</button></a>
                 <a href='{{ $detail->apply_form_link }}' class="filter_btn_link"><button type="button"
-                        class="btn">Source</button></a>
+                        class="btn">Apply Now</button></a>
             </div>
         </div>
     </div>

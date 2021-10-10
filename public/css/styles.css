@@ -568,7 +568,7 @@ a {
 
 .what_we_do h3 {
     color: var(--blue01);
-    margin-bottom: 35px;
+    margin-bottom: 55px;
     position: relative;
 }
 
@@ -626,8 +626,8 @@ a {
     transform: translateX(-50%);
     width: 70px;
     height: 70px;
-    background-color: var(--black05);
-    color: var(--black04);
+    background-color: var(--black04);
+    color: var(--black02);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -673,6 +673,12 @@ a {
 .what_we_do .what_we_do_info .what_we_do_text {
     text-align: center;
     margin-top: 30px;
+}
+
+.what_we_do .para_we_do {
+    text-indent: 60px;
+    line-height: 34px;
+    margin-bottom: 60px;
 }
 
 /* ------------------------- founder ------------------------- */
@@ -1470,12 +1476,16 @@ a {
         line-height: 1.7rem;
     }
 
+    .what_we_do {
+        padding-bottom: 30px !important;
+    }
+
     .what_we_do .what_we_do_card fieldset {
         border: 1px solid transparent;
         border-top-color: var(--black04);
         box-sizing: border-box;
         grid-area: 1 / 1;
-        padding: 0 65px;
+        padding: 0 118px;
         width: 100%;
     }
 
@@ -1494,8 +1504,8 @@ a {
         transform: translateX(-50%);
         width: 50px;
         height: 50px;
-        background-color: var(--black05);
-        color: var(--black04);
+        background-color: var(--black04);
+        color: var(--black02);
         display: flex;
         justify-content: center;
         align-items: center;
@@ -1529,6 +1539,10 @@ a {
     .what_we_do .what_we_do_info .what_we_do_text {
         margin-top: 20px;
         line-height: 1.5rem;
+    }
+
+    .what_we_do .what_we_do_task {
+        margin-bottom: 65px;
     }
 
 
@@ -1675,6 +1689,10 @@ a {
     .alumni_diamond {
         height: 15px;
         width: 15px;
+    }
+
+    .what_we_do .para_we_do {
+        margin-bottom: 35px;
     }
 }
 

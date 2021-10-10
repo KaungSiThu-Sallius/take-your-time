@@ -99,9 +99,13 @@
                 <div class="col-md-6 col-12">
 
                     <div class="introText">
-                        <h3>Here will go about Take Your Time</h3>
+                        <h3>About Take Your Time</h3>
                         <p>
-                            Take Your Time is one of the fastest growing youth organization in Myanmar. We continue to enrich the global understanding of how to connect young people with hope, scholarship, jobs, and a brighter future. Anchored by our mission, we are constantly deepening our research and bridging new partnerships to innovate and provide scalable, sustainable solutions for the most challenging problems young people face. 
+                            Take Your Time is one of the fastest growing youth organization in Myanmar. We continue to
+                            enrich the global understanding of how to connect young people with hope, scholarship, jobs, and
+                            a brighter future. Anchored by our mission, we are constantly deepening our research and
+                            bridging new partnerships to innovate and provide scalable, sustainable solutions for the most
+                            challenging problems young people face.
                         </p>
                     </div>
 
@@ -116,12 +120,21 @@
             <div class="row">
                 <div class="col-12">
                     <h3 class="text-center">What We Are Doing</h3>
-                    <p class="text-justify">As a youth development platform, Take Your Time provides young people with opportunities to participate in programmes, events, activities and projects that contribute to their growth as active citizens. Through these initiatives, young people become agents of positive change who inspire others to take action. The purpose is to facilitate Myanmar youths in translating every opportunity into success. We work relentlessly to create an efficacious bridge between opportunity seekers with opportunity providers for mutually beneficial development through sharing of information. We help young people to better themselves, to better their communities, and to better their world. It gives them the Space to bring about Transformation in themselves and their communities, and make a positive difference – an Impact – as a result.</p>
+                    <p class="text-justify para_we_do">As a youth development platform, Take Your Time provides young people
+                        with
+                        opportunities to participate in programmes, events, activities and projects that contribute to their
+                        growth as active citizens. Through these initiatives, young people become agents of positive change
+                        who inspire others to take action. The purpose is to facilitate Myanmar youths in translating every
+                        opportunity into success. We work relentlessly to create an efficacious bridge between opportunity
+                        seekers with opportunity providers for mutually beneficial development through sharing of
+                        information. We help young people to better themselves, to better their communities, and to better
+                        their world. It gives them the Space to bring about Transformation in themselves and their
+                        communities, and make a positive difference – an Impact – as a result.</p>
                 </div>
             </div>
 
             <div class="row mt-5">
-                <div class="col-md-3">
+                <div class="col-lg-3 col-md-6">
                     <div class="what_we_do_task">
                         <div class="what_we_do_card">
                             <fieldset>
@@ -138,13 +151,15 @@
                                     <div class="circle"></div>
                                     <div class="line"></div>
                                 </div>
-                                <p class="what_we_do_text">The core of Take Your Time is youth education which we stimulate Myanmar youth to be enthusiastic, responsible and active citizens who understand the importance of ‘Access to Information’ for self-development.</p>
+                                <p class="what_we_do_text">The core of Take Your Time is youth education which we stimulate
+                                    Myanmar youth to be enthusiastic, responsible and active citizens who understand the
+                                    importance of ‘Access to Information’ for self-development.</p>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <div class="col-md-3">
+                <div class="col-lg-3 col-md-6">
                     <div class="what_we_do_task">
                         <div class="what_we_do_card">
                             <fieldset>
@@ -161,13 +176,16 @@
                                     <div class="circle"></div>
                                     <div class="line"></div>
                                 </div>
-                                <p class="what_we_do_text">We provide knowledgeable articles and tips to improve their wellbeing in body, mind and spirit. We are committed to helping young people overcome barriers to accessing quality. </p>
+                                <p class="what_we_do_text">We provide knowledgeable articles and tips to
+                                    improve their
+                                    wellbeing in body, mind and spirit. We are committed to helping young people overcome
+                                    barriers to accessing quality. </p>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <div class="col-md-3">
+                <div class="col-lg-3 col-md-6">
                     <div class="what_we_do_task">
                         <div class="what_we_do_card">
                             <fieldset>
@@ -184,12 +202,14 @@
                                     <div class="circle"></div>
                                     <div class="line"></div>
                                 </div>
-                                <p class="what_we_do_text">We also committed to providing platforms for young people to lead change in their communities through civic action and advocacy, gender equality, education, youth justice and leadership development. </p>
+                                <p class="what_we_do_text">We also committed to providing platforms for young people to lead
+                                    change in their communities through civic action and advocacy, gender equality,
+                                    education, youth justice and leadership development. </p>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-3">
+                <div class="col-lg-3 col-md-6">
                     <div class="what_we_do_task">
                         <div class="what_we_do_card">
                             <fieldset>
@@ -206,7 +226,9 @@
                                     <div class="circle"></div>
                                     <div class="line"></div>
                                 </div>
-                                <p class="what_we_do_text">Take Your Time is providing quality education, diverse courses, vocational training, and opportunities to young people to ensure they have the experience and knowledge needed to succeed in today’s work environment.</p>
+                                <p class="what_we_do_text">Take Your Time is providing quality education, diverse courses,
+                                    vocational training, and opportunities to young people to ensure they have the
+                                    experience and knowledge needed to succeed in today’s work environment.</p>
                             </div>
                         </div>
                     </div>
@@ -216,7 +238,7 @@
 
     </section>
 
-    <!-- ------------------------- founder -------------------------  -->
+    {{-- <!-- ------------------------- founder -------------------------  -->
     <section class="founder">
         <div class="container">
             <div class="row align-items-center">
@@ -308,7 +330,7 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section> --}}
 
     <!-- ------------------------- keepInTouch -------------------------  -->
     <section class="keepInTouch">

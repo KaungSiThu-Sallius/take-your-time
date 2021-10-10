@@ -81,7 +81,7 @@
             <div class="row">
                 <div class="col-lg-7">
                     <div class="main_label">
-                        <h1>Youths... Grab a Chance!</h1>
+                        <h1 class="mb-4">လူငယ်တို့အတွက် တံခါးတစ်ချပ်</h1>
                         <h3>Just take your time and do it right...</h3>
                         <form action="{{ url('search') }}" method="get">
                             <div class="row">

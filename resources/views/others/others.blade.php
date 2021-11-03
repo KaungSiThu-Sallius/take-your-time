@@ -24,7 +24,8 @@
             <a class="dropdown-item" href="{{ url('/scholarships/master') }}">Master</a>
             <a class="dropdown-item" href="{{ url('/scholarships/phd') }}">PhD</a>
             <a class="dropdown-item" href="{{ url('/scholarships/fellowship') }}">Fellowship</a>
-            <a class="dropdown-item" href="{{ url('/scholarships/alumni') }}">Scholar Alumni</a>
+            <a class="dropdown-item" href="{{ url('/grants') }}">Grants</a>
+            {{-- <a class="dropdown-item" href="{{ url('/scholarships/alumni') }}">Scholar Alumni</a> --}}
         </div>
     </li>
 

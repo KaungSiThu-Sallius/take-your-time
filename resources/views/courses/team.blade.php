@@ -26,7 +26,7 @@
             <a class="dropdown-item" href="{{ url('/scholarships/phd') }}">PhD</a>
             <a class="dropdown-item" href="{{ url('/scholarships/fellowship') }}">Fellowship</a>
             <a class="dropdown-item" href="{{ url('/grants') }}">Grants</a>
-            <a class="dropdown-item" href="{{ url('/scholarships/alumni') }}">Scholar Alumni</a>
+            {{-- <a class="dropdown-item" href="{{ url('/scholarships/alumni') }}">Scholar Alumni</a> --}}
         </div>
     </li>
 
@@ -110,7 +110,7 @@
             </div>
             <div class="col-12 col-lg-3 col-md-6 my-3">
                 <div class="academicProfile d-flex justify-content-center flex-column">
-                    <img src="{{ asset('images/TrBill.jpeg') }}" class="academicImg" alt="academicprofile" />
+                    <img src="{{ asset('images/TrBill.jpg') }}" class="academicImg" alt="academicprofile" />
                     <button type="button" class="btn button academicBtn mt-4 mx-auto" data-toggle="modal"
                         data-target="#academicProfileDetail_E02">Tr. Bill</button>
                     {{-- <div class="card">
@@ -140,7 +140,7 @@
 
             <div class="col-12 col-lg-3 col-md-6 my-3">
                 <div class="academicProfile d-flex justify-content-center flex-column">
-                    <img src="{{ asset('images/Tr paul.jpeg') }}" class="academicImg" alt="academicprofile" />
+                    <img src="{{ asset('images/Tr paul.jpg') }}" class="academicImg" alt="academicprofile" />
                     <button type="button" class="btn button academicBtn mt-4 mx-auto" data-toggle="modal"
                         data-target="#academicProfileDetail_E04">Tr. Paul</button>
 
@@ -149,7 +149,7 @@
 
             <div class="col-12 col-lg-3 col-md-6 my-3">
                 <div class="academicProfile d-flex justify-content-center flex-column">
-                    <img src="{{ asset('images/Tr mary.jpeg') }}" class="academicImg" alt="academicprofile" />
+                    <img src="{{ asset('images/Tr mary.jpg') }}" class="academicImg" alt="academicprofile" />
                     <button type="button" class="btn button academicBtn mt-4 mx-auto" data-toggle="modal"
                         data-target="#academicProfileDetail_E05">Tr. Mary</button>
 
@@ -227,7 +227,7 @@
 
             <div class="col-12 col-lg-3 col-md-6 my-3">
                 <div class="academicProfile d-flex justify-content-center flex-column">
-                    <img src="{{ asset('images/Tr Gen.jpeg') }}" class="academicImg" alt="academicprofile" />
+                    <img src="{{ asset('images/Tr Gen.jpg') }}" class="academicImg" alt="academicprofile" />
                     <button type="button" class="btn button academicBtn mt-4 mx-auto" data-toggle="modal"
                         data-target="#academicProfileDetail_L04">Tr. Gen</button>
 
@@ -276,7 +276,7 @@
                 <div class="modal-content">
                     <div class="modal-header">
                         <div class="modalHeader">
-                            <img src="{{ asset('images/TrBill.jpeg') }}" class="modalHeaderImg" alt="teacher_img">
+                            <img src="{{ asset('images/TrBill.jpg') }}" class="modalHeaderImg" alt="teacher_img">
                             <div class="modalHeaderLine"></div>
                             <div class="modalHeaderTitle">
                                 <h5>Tr. Bill (American)</h5>
@@ -341,7 +341,7 @@
                 <div class="modal-content">
                     <div class="modal-header">
                         <div class="modalHeader">
-                            <img src="{{ asset('images/Tr paul.jpeg') }}" class="modalHeaderImg" alt="teacher_img">
+                            <img src="{{ asset('images/Tr paul.jpg') }}" class="modalHeaderImg" alt="teacher_img">
                             <div class="modalHeaderLine"></div>
                             <div class="modalHeaderTitle">
                                 <h5>Tr. Paul (British)</h5>
@@ -371,7 +371,7 @@
                 <div class="modal-content">
                     <div class="modal-header">
                         <div class="modalHeader">
-                            <img src="{{ asset('images/Tr mary.jpeg') }}" class="modalHeaderImg" alt="teacher_img">
+                            <img src="{{ asset('images/Tr mary.jpg') }}" class="modalHeaderImg" alt="teacher_img">
                             <div class="modalHeaderLine"></div>
                             <div class="modalHeaderTitle">
                                 <h5>Tr. Mary</h5>
@@ -531,7 +531,7 @@
                 <div class="modal-content">
                     <div class="modal-header">
                         <div class="modalHeader">
-                            <img src="{{ asset('images/Tr Gen.jpeg') }}" class="modalHeaderImg" alt="teacher_img">
+                            <img src="{{ asset('images/Tr Gen.jpg') }}" class="modalHeaderImg" alt="teacher_img">
                             <div class="modalHeaderLine"></div>
                             <div class="modalHeaderTitle">
                                 <h5>Tr. Gen </h5>

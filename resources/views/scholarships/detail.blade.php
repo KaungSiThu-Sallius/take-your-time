@@ -27,20 +27,21 @@
             <a class="dropdown-item" href="{{ url('/scholarships/phd') }}">PhD</a>
             <a class="dropdown-item" href="{{ url('/scholarships/fellowship') }}">Fellowship</a>
             <a class="dropdown-item" href="{{ url('/scholarships/grants') }}">Grants</a>
-            <a class="dropdown-item" href="{{ url('/scholarships/alumni') }}">Scholar Alumni</a>
+            {{-- <a class="dropdown-item" href="{{ url('/scholarships/alumni') }}">Scholar Alumni</a> --}}
         </div>
     </li>
 
     <!--<li class="nav-item">-->
     <!--    <a class="nav-link" href="{{ url('/grants') }}"><i class="fas fa-hand-holding-usd fa_hid"></i></i>Grants</a>-->
     <!--</li>-->
-    
+
     <li class="nav-item">
         <a class="nav-link" href="{{ url('/competitions') }}"><i class="fas fa-award fa_hid"></i>Competition</a>
     </li>
-    
+
     <li class="nav-item">
-        <a class="nav-link" href="{{ url('/conferences') }}"> <i class="fas fa-users fa_hid"></i></i></i>Conferences</a>
+        <a class="nav-link" href="{{ url('/conferences') }}"> <i
+                class="fas fa-users fa_hid"></i></i></i>Conferences</a>
     </li>
 
     <li class="nav-item dropdown">

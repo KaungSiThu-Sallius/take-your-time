@@ -140,7 +140,7 @@
                             <fieldset>
                                 <legend>
                                     <div class="what_we_do_icon">
-                                        <i class="fas fa-bars"></i>
+                                        <i class="fas fa-book-reader"></i>
                                     </div>
                                 </legend>
                             </fieldset>
@@ -165,7 +165,7 @@
                             <fieldset>
                                 <legend>
                                     <div class="what_we_do_icon">
-                                        <i class="fas fa-bars"></i>
+                                        <i class="fas fa-heartbeat"></i>
                                     </div>
                                 </legend>
                             </fieldset>
@@ -191,7 +191,7 @@
                             <fieldset>
                                 <legend>
                                     <div class="what_we_do_icon">
-                                        <i class="fas fa-bars"></i>
+                                        <i class="fas fa-child"></i>
                                     </div>
                                 </legend>
                             </fieldset>
@@ -215,7 +215,7 @@
                             <fieldset>
                                 <legend>
                                     <div class="what_we_do_icon">
-                                        <i class="fas fa-bars"></i>
+                                        <i class="fas fa-user-tie"></i>
                                     </div>
                                 </legend>
                             </fieldset>

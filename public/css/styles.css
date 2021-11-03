@@ -1135,9 +1135,38 @@ a {
     z-index: -1;
 }
 
+.academicProfile .card {
+    padding-top: 55px;
+    position: relative;
+    bottom: 56px;
+}
+
+.academicProfile .card .khin {
+    font-size: 1.3rem;
+    margin-bottom: 15px;
+}
+
 .academicProfile .academicImg {
-    width: 65%;
+    width: 165px;
+    height: 158px;
     border-radius: 50%;
+    margin: 0 auto;
+    z-index: 5;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.academicProfile .name {
+    color: var(--blue01);
+    font-weight: 600 !important;
+}
+
+.academicProfile .role {
+    font-weight: 600 !important;
+}
+
+.academicProfile .role,
+.academicProfile .te {
+    font-size: 16px;
 }
 
 .academicProfile .academicBtn {
@@ -1151,8 +1180,10 @@ a {
 }
 
 .modalHeader .modalHeaderImg {
-    width: 70px;
+    width: 85px;
+    height: 78px;
     border-radius: 50%;
+
 }
 
 .modalHeader .modalHeaderLine {
@@ -1663,11 +1694,6 @@ a {
         display: none;
     }
 
-    .academicProfile .academicImg {
-        width: 75%;
-        border-radius: 50%;
-    }
-
     .academicProfile .academicBtn {
         width: 100%;
         height: 40px;
@@ -1897,12 +1923,10 @@ a {
         top: -7px;
     }
 
-    .academicProfile .academicImg {
-        width: 40%;
-    }
 
     .academicProfile .academicBtn {
         width: 50%;
+        line-height: 14px;
     }
 
     .alumni_pattern2 {
@@ -2120,9 +2144,6 @@ a {
 
     }
 
-    .academicProfile .academicImg {
-        width: 45%;
-    }
 
     .academicProfile .academicBtn {
         width: 50%;

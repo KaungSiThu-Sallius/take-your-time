@@ -129,11 +129,9 @@
                 <div class="col-lg-4">
                     <div class="description text-center">
                         <img src="{{ asset('images/sm_logo.png') }}" alt="logo" type="image/svg+xml" width="120">
-                        <p><span class="company_name">"Take Your Time"</span> is Opportunity Lorem Apsom for
-                            youth.
-                            Lorem Scholarships
-                            all around the
-                            world lorem apsom.</p>
+                        <p><span class="company_name">"Take Your Time"</span> is one of the fastest growing youth
+                            organization in Myanmar. We continue to enrich the global understanding of how to connect
+                            young people with hope, scholarship, jobs, and a brighter future.</p>
                     </div>
                 </div>
 

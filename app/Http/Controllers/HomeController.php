@@ -58,6 +58,8 @@ class HomeController extends Controller
         } else if (strtolower($request->oppotunity) == 'phd') {
             if ($request->place != "") {
                 $data = Phd::where('type', ucfirst($request->oppotunity))->where('country', $request->place)->orderBy('id', 'DESC')->paginate(9);
+            } else {
+                $data = Phd::where('type', ucfirst($request->oppotunity))->orderBy('id', 'DESC')->paginate(9);
             }
             $data->appends($request->all());
             return view('scholarships.phd_scholarships', compact('data'));
